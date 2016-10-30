@@ -1,0 +1,16 @@
+C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\BE\bin\Debug\BE.dll
+C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\BE\bin\Debug\BE.pdb
+C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\BE\bin\Debug\BE.xml
+C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\BE\obj\Debug\BE.Resources.resources
+C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\BE\obj\Debug\BE.vbproj.GenerateResource.Cache
+C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\BE\obj\Debug\BE.dll
+C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\BE\obj\Debug\BE.xml
+C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\BE\obj\Debug\BE.pdb
+D:\Farmacia Guru\MiProyecto\BE\bin\Debug\BE.dll
+D:\Farmacia Guru\MiProyecto\BE\bin\Debug\BE.pdb
+D:\Farmacia Guru\MiProyecto\BE\bin\Debug\BE.xml
+D:\Farmacia Guru\MiProyecto\BE\obj\Debug\BE.Resources.resources
+D:\Farmacia Guru\MiProyecto\BE\obj\Debug\BE.vbproj.GenerateResource.Cache
+D:\Farmacia Guru\MiProyecto\BE\obj\Debug\BE.dll
+D:\Farmacia Guru\MiProyecto\BE\obj\Debug\BE.xml
+D:\Farmacia Guru\MiProyecto\BE\obj\Debug\BE.pdb

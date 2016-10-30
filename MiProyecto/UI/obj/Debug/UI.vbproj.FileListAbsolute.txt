@@ -39,3 +39,7 @@ D:\Farmacia Guru\MiProyecto\UI\obj\Debug\UI.Form1.resources
 D:\Farmacia Guru\MiProyecto\UI\obj\Debug\UI.Resources.resources
 D:\Farmacia Guru\MiProyecto\UI\obj\Debug\UI.vbproj.GenerateResource.Cache
 D:\Farmacia Guru\MiProyecto\UI\obj\Debug\UI.Login.resources
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\bin\Debug\UI.exe.config
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.exe
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.xml
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.pdb

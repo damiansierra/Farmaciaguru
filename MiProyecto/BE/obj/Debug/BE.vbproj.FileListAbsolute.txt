@@ -6,3 +6,11 @@ C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\BE\obj\Debug\BE.vbproj.Gener
 C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\BE\obj\Debug\BE.dll
 C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\BE\obj\Debug\BE.xml
 C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\BE\obj\Debug\BE.pdb
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BE\bin\Debug\BE.dll
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BE\bin\Debug\BE.pdb
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BE\bin\Debug\BE.xml
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BE\obj\Debug\BE.Resources.resources
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BE\obj\Debug\BE.vbproj.GenerateResource.Cache
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BE\obj\Debug\BE.dll
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BE\obj\Debug\BE.xml
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BE\obj\Debug\BE.pdb

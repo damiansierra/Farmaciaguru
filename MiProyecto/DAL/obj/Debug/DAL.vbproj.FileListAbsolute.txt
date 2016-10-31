@@ -10,3 +10,15 @@ C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\DAL\obj\Debug\DAL.vbproj.Gen
 C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\DAL\obj\Debug\DAL.dll
 C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\DAL\obj\Debug\DAL.xml
 C:\Users\Navegador\Desktop\Nueva carpeta\MiProyecto\DAL\obj\Debug\DAL.pdb
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\bin\Debug\DAL.dll
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\bin\Debug\DAL.pdb
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\bin\Debug\DAL.xml
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\bin\Debug\BE.dll
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\bin\Debug\BE.pdb
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\bin\Debug\BE.xml
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.vbprojResolveAssemblyReference.cache
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.Resources.resources
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.vbproj.GenerateResource.Cache
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.dll
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.xml
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.pdb

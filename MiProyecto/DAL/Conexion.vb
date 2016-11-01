@@ -24,7 +24,7 @@ Public Class Conexion
         Try
             obtenercadenaconexion()
             conn = New SqlClient.SqlConnection
-            conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=IPStat;Integrated Security=True"
+            conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
 
             conn.Open()
         Catch ex As Exception

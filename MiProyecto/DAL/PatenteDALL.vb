@@ -30,12 +30,12 @@
         Try
             Dim dt As New DataTable
 
-            Dim SELECTPAT As String = "SELECT * FROM PATENTE"
+            Dim SELECTPAT As String = "SELECT * FROM patente"
             dt = DAL.Conexion.GetInstance.leer(SELECTPAT)
 
             Dim LISTADEPATENTES As New List(Of BE.Patente)
             For Each _ROW In dt.Rows
-                LISTADEPATENTES.Add(New BE.Patente With {.Idpatente = _ROW("id"), .Descripcion = _ROW("DESCRIPCION"), .DVH = _ROW("DVH")})
+                LISTADEPATENTES.Add(New BE.Patente With {.Idpatente = _ROW("id"), .Descripcion = _ROW("descripcion")})
             Next
 
             Return LISTADEPATENTES

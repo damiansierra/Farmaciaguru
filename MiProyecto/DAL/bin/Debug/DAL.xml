@@ -19,6 +19,29 @@ DAL
 	<summary>
   A strongly-typed resource class, for looking up localized strings, etc.
 </summary>
+</member><member name="M:DAL.Seguridad.DesEncriptar(System.String)">
+	<summary>
+ Utiliza la libreria Rijndael para realizar un desencriptado
+ </summary>
+	<param name="pPalabraEncriptada"> Palabra ya encriptada por el mismo metodo de desencriptación </param>
+	<returns> Palabra desencriptada </returns>
+	<remarks></remarks>
+</member><member name="M:DAL.Seguridad.EncriptarIrreversible(System.String)">
+	<summary>
+ Utiliza la libreria MD5 para encriptar de forma irrevesible una palabra retornando la misma
+ </summary>
+	<param name="pPalabra"> Palabra a ser encriptada</param>
+	<returns> Palabra encriptada mediante el algoritmo md5 </returns>
+	<remarks></remarks>
+</member><member name="M:DAL.Seguridad.EncriptarReversible(System.String)">
+	<summary>
+ Utiliza la libreria Rijndael para realizar un encriptado reversible
+ </summary>
+	<param name="pPalabra"> palabra a ser encriptada</param>
+	<returns> Palabra encriptada de manera reversible </returns>
+	<remarks></remarks>
+</member><member name="M:DAL.Conexion.GenerarBackup(System.String)">
+	<param name="pCarpeta"></param>
 </member>
 </members>
 </doc>

@@ -1,10 +1,13 @@
 ﻿Imports System.IO
+Imports System.Data.SqlClient
+Imports System.Configuration
+
 Public Class Conexion
 
-    Private servidor As String
-    Private instancia As String
-    Private conn As New SqlClient.SqlConnection
-    Private comm As New SqlClient.SqlCommand
+    Shared servidor As String
+    Shared instancia As String
+    Public Shared conn As New SqlClient.SqlConnection
+    Public comm As New SqlClient.SqlCommand
 
 
     Private Sub New()
@@ -18,6 +21,291 @@ Public Class Conexion
             _instancia = New DAL.Conexion
         End If
         Return _instancia
+    End Function
+
+
+
+
+    Public Shared Function EjecutarSQLReader(ByVal pCommandText As String) As DataSet
+        Dim mDs As New DataSet
+        Try
+            obtenercadenaconexion()
+            conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
+
+            Dim mDa As New SqlDataAdapter(pCommandText, conn)
+            conn.Open()
+            mDa.Fill(mDs)
+            Return mDs
+        Catch ex As SqlException
+            Dim mStr As String = ""
+            For Each mErr As SqlError In ex.Errors
+                mStr &= mErr.Message & ControlChars.CrLf
+            Next
+
+        Catch ex As Exception
+            Throw ex
+        
+        Finally
+            conn.Close()
+            conn.Dispose()
+        End Try
+
+    End Function
+
+    Public Shared Function EjecutarSQLReader(ByVal pCommandText As String, ByVal pParameters As Dictionary(Of String, Object)) As DataSet
+        Dim mDs As New DataSet
+        Try
+            obtenercadenaconexion()
+
+            conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
+
+            Dim mDa As New SqlDataAdapter(pCommandText, conn)
+
+            For Each key As String In pParameters.Keys
+                mDa.SelectCommand.Parameters.AddWithValue(key, pParameters(key))
+            Next
+
+            conn.Open()
+            mDa.Fill(mDs)
+            Return mDs
+        Catch ex As SqlException
+            Dim mStr As String = ""
+            For Each mErr As SqlError In ex.Errors
+                mStr &= mErr.Message & ControlChars.CrLf
+            Next
+
+
+
+        Catch ex As Exception
+            MsgBox("Problemas con la base de datos")
+        Finally
+            conn.Close()
+            conn.Dispose()
+        End Try
+
+    End Function
+
+
+    Public Shared Function ExecuteNonQuery(ByVal pCommandText As String) As Integer
+        Try
+            obtenercadenaconexion()
+
+            conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
+            Dim mCom As New SqlCommand(pCommandText, conn)
+            conn.Open()
+            Return mCom.ExecuteNonQuery
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conn.Close()
+            conn.Dispose()
+        End Try
+    End Function
+
+
+    Public Shared Function ExecuteScalar(ByVal pCommandText As String) As Object
+        Try
+            obtenercadenaconexion()
+
+            conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
+
+            Dim mCom As New SqlCommand(pCommandText, conn)
+            conn.Open()
+            Return mCom.ExecuteScalar
+        Catch ex As Exception
+            MsgBox("Problemas con la base de datos")
+        Finally
+            conn.Close()
+            conn.Dispose()
+        End Try
+    End Function
+
+
+    Public Shared Function ExecuteScalar(ByVal pCommandText As String, ByVal pParametersDictionary As Dictionary(Of String, Object)) As Object
+        Try
+            obtenercadenaconexion()
+
+            conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
+
+            Dim mCom As New SqlCommand(pCommandText, conn)
+
+            For Each key As String In pParametersDictionary.Keys
+                mCom.Parameters.AddWithValue(key, pParametersDictionary(key))
+            Next
+
+            conn.Open()
+            Return mCom.ExecuteScalar
+        Catch ex As Exception
+            MsgBox("Problemas con la base de datos")
+        Finally
+            conn.Close()
+            conn.Dispose()
+        End Try
+    End Function
+
+
+    Public Shared Function ExecuteNonQuery(ByVal pCommandText As String, ByVal pParametersDictionary As Dictionary(Of String, Object)) As Integer
+        Try
+            obtenercadenaconexion()
+
+            conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
+
+            Dim mCom As New SqlCommand(pCommandText, conn)
+
+            For Each key As String In pParametersDictionary.Keys
+                mCom.Parameters.AddWithValue(key, pParametersDictionary(key))
+            Next
+
+            conn.Open()
+            Return mCom.ExecuteNonQuery
+        Catch ex As Exception
+            MsgBox("Problemas con la base de datos3")
+        Finally
+            conn.Close()
+            conn.Dispose()
+        End Try
+    End Function
+
+    Public Shared Function ExecuteStoredProcedureNonQuery(ByVal pStoredProcedureName As String, ByVal pParameters As Dictionary(Of String, Object)) As Object
+        Try
+            obtenercadenaconexion()
+
+            conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
+
+            Dim mCommand As New SqlCommand()
+            mCommand.Connection = conn
+            mCommand.CommandType = CommandType.StoredProcedure
+            mCommand.CommandText = pStoredProcedureName
+
+            For Each key As String In pParameters.Keys
+                mCommand.Parameters.AddWithValue(key, pParameters(key))
+            Next
+
+            conn.Open()
+            Return mCommand.ExecuteScalar()
+        Catch ex As Exception
+            MsgBox("Problemas con la base de datos")
+        Finally
+            conn.Close()
+            conn.Dispose()
+        End Try
+    End Function
+
+    Public Shared Function EjecutarStoredProcedureSQLReader(ByVal pStoredProcedureName As String, ByVal pParameters As Dictionary(Of String, Object)) As DataSet
+        Dim mDs As New DataSet
+        Try
+            obtenercadenaconexion()
+
+            conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
+
+            Dim mCommand As New SqlCommand()
+            mCommand.Connection = conn
+            mCommand.CommandType = CommandType.StoredProcedure
+            mCommand.CommandText = pStoredProcedureName
+
+            For Each key As String In pParameters.Keys
+                mCommand.Parameters.AddWithValue(key, pParameters(key))
+            Next
+
+            Dim mDa As New SqlDataAdapter()
+            mDa.SelectCommand = mCommand
+            conn.Open()
+            mDa.Fill(mDs)
+            Return mDs
+        Catch ex As SqlException
+            Dim mStr As String = ""
+            For Each mErr As SqlError In ex.Errors
+                mStr &= mErr.Message & ControlChars.CrLf
+            Next
+
+           
+
+        Catch ex As Exception
+            MsgBox("Problemas con la base de datos")
+        Finally
+            conn.Close()
+            conn.Dispose()
+        End Try
+
+    End Function
+
+    Public Shared Function ObtenerUltimoId(ByVal pTabla As String) As Integer
+        Try
+            obtenercadenaconexion()
+
+            conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
+
+            Dim mCom As New SqlCommand("SELECT ISNULL(MAX(id),0) FROM " & pTabla & " (NoLock)", conn)
+            conn.Open()
+            Return DirectCast(mCom.ExecuteScalar, Integer)
+        Catch ex As Exception
+            MsgBox("Problemas con la base de datos")
+        Finally
+            conn.Close()
+            conn.Dispose()
+        End Try
+    End Function
+
+
+    Public Shared Function ObtenerMaximoValor(ByVal pTabla As String, ByVal pCampo As String) As Integer
+        Try
+            obtenercadenaconexion()
+
+            conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
+
+            Dim mCom As New SqlCommand("SELECT ISNULL(MAX(" & pCampo & "),0) FROM " & pTabla & " (NoLock)", conn)
+            conn.Open()
+            Return DirectCast(mCom.ExecuteScalar, Integer)
+        Catch ex As Exception
+            MsgBox("Problemas con la base de datos")
+        Finally
+            conn.Close()
+            conn.Dispose()
+        End Try
+    End Function
+
+    ''' 
+    ''' <param name="pCarpeta"></param>
+    Public Sub GenerarBackup(ByVal pCarpeta As String)
+
+    End Sub
+
+    Public Sub RestaurarBackup(ByVal pSqlBackup As String)
+        Dim sqlAlter As String = String.Empty
+        Dim mCom As New SqlCommand()
+        Try
+
+            obtenercadenaconexion()
+
+            conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
+
+            mCom.Connection = conn
+            conn.Open()
+            sqlAlter = String.Format("ALTER DATABASE {0} SET SINGLE_USER WITH ROLLBACK IMMEDIATE", Me.ObtenerBaseDatosNombre())
+            mCom.CommandText = sqlAlter
+            mCom.ExecuteNonQuery()
+            mCom.CommandText = pSqlBackup
+            mCom.ExecuteNonQuery()
+            sqlAlter = String.Format("ALTER DATABASE {0} SET MULTI_USER WITH ROLLBACK IMMEDIATE", Me.ObtenerBaseDatosNombre())
+            mCom.CommandText = sqlAlter
+            mCom.ExecuteNonQuery()
+        Catch ex As Exception
+            sqlAlter = String.Format("ALTER DATABASE {0} SET MULTI_USER WITH ROLLBACK IMMEDIATE", Me.ObtenerBaseDatosNombre())
+            mCom.CommandText = sqlAlter
+            mCom.ExecuteNonQuery()
+            MsgBox("Problemas con la base de datos")
+        Finally
+            conn.Close()
+            conn.Dispose()
+        End Try
+    End Sub
+
+    Public Function ObtenerBaseDatosNombre() As String
+        obtenercadenaconexion()
+
+        conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
+        Dim conBuilder As SqlConnectionStringBuilder = New SqlConnectionStringBuilder(conn.ConnectionString)
+        Return conBuilder.InitialCatalog
     End Function
 
     Public Function AbrirConexion() As SqlClient.SqlConnection
@@ -139,7 +427,7 @@ Public Class Conexion
     End Function
 
 
-    Public Sub obtenercadenaconexion()
+    Public Shared Sub obtenercadenaconexion()
 
         Dim rutaFicheroINI As String
         rutaFicheroINI = System.IO.Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory, "configuracion.txt")

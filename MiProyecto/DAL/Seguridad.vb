@@ -10,6 +10,10 @@ Public Class Seguridad
     Private Const key As String = "Pa$$word"
 
 
+
+
+
+
     ''' <summary>
     ''' Utiliza la libreria Rijndael para realizar un desencriptado
     ''' </summary>

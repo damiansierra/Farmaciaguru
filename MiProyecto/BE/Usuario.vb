@@ -1,6 +1,6 @@
 ﻿Public Class Usuario
 
-    Public Property Id As Integer
+    Public Property IdUsuario As Integer
     Public Property Nick As String
     Public Property Nombre As String
     Public Property Apellido As String
@@ -12,7 +12,8 @@
 
     Public Property bloqueado As Boolean
 
-    Public Property eliminado As Boolean
+
+
 
 
     Private mPasswordModificado As Boolean

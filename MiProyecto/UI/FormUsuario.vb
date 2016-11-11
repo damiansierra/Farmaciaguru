@@ -12,7 +12,7 @@
             ' Me.ValidarCampos()
             usuario.Nick = TxtNick.Text
             'En caso de ser un usuario nuevo si guardo el Password
-            If (usuario.Id = 0) Then
+            If (usuario.IdUsuario = 0) Then
                 usuario.Password = Txtpassword.Text
             End If
             usuario.Nombre = TxtNombre.Text
@@ -29,4 +29,6 @@
         Finally
         End Try
     End Sub
+
+  
 End Class

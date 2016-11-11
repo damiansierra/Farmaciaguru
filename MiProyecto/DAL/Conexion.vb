@@ -235,7 +235,7 @@ Public Class Conexion
 
             conn.ConnectionString = "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
 
-            Dim mCom As New SqlCommand("SELECT ISNULL(MAX(id),0) FROM " & pTabla & " (NoLock)", conn)
+            Dim mCom As New SqlCommand("SELECT ISNULL(MAX(idUsuario),0) FROM " & pTabla & " (NoLock)", conn)
             conn.Open()
             Return DirectCast(mCom.ExecuteScalar, Integer)
         Catch ex As Exception

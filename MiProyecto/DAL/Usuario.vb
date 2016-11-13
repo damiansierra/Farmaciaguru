@@ -92,7 +92,7 @@ Public Class Usuario
 
             '  DAL.Conexion.GetInstance.Escribir("DELETE FROM USUFAM WHERE IDUSUARIO = " & obj.IdUsuario)
             '  DAL.Conexion.GetInstance.Escribir("DELETE FROM USUPAT WHERE IDUSUARIO = " & obj.IdUsuario)
-            DAL.Conexion.GetInstance.Escribir("UPDATE USUARIO SET baja = 1 WHERE IDUSUARIO =   '" & obj.IdUsuario & "'")
+            DAL.Conexion.GetInstance.Escribir("Delete from USUARIO WHERE IDUSUARIO =   '" & obj.IdUsuario & "'")
 
 
 

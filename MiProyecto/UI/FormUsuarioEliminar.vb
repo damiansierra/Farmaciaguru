@@ -53,6 +53,8 @@
             If COMBOUSER.Text <> "" Then
                 If bllusuario.baja(Nick) = True Then
                     MessageBox.Show("SE ELIMINO USUARIO")
+                    COMBOUSER.Items.Clear()
+                    CARGARCOMBOUSER()
 
                     '           Dim BLLbitacora As New BLL.BITACORA
                     '    Dim bebitacora As New BE.BITACORA With {.CRITICIDAD = "ALTA", .USUARIO = UI.Principal.Usuariologueado, .DESCRIPCION = "SE ELIMINO USUARIO " & USUARIO.USERNAME}

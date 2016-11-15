@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bitacora.vb" />
+    <Compile Include="DV.vb" />
     <Compile Include="DVH.vb" />
     <Compile Include="DVV.vb" />
     <Compile Include="Familia.vb" />

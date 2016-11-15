@@ -43,3 +43,4 @@ D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormPatente.res
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormUsuario.resources
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormUsuarioEliminar.resources
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormaFamiliaAlta.resources
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormFamilias.resources

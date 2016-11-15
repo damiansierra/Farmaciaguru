@@ -15,7 +15,12 @@
     End Function
 
     Public Function listarTodos() As List(Of BE.Familia) Implements BE.ICrud(Of BE.Familia).listarTodos
-
+        Try
+            Dim DALFAMILIA As New DAL.Familia
+            Return DALFAMILIA.listarTodos
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Function
 
     Public Function modificacion(obj As BE.Familia) As Boolean Implements BE.ICrud(Of BE.Familia).modificacion

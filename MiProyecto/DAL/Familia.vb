@@ -110,7 +110,7 @@
             Dim DALSEGURIDAD As New DAL.Seguridad
             Dim LISTADEFAMILIAS As New List(Of BE.Familia)
             For Each _ROW In dt.Rows
-                LISTADEFAMILIAS.Add(New BE.Familia With {.IdFamilia = _ROW("IDFAMILIA"), .Nombre = DAL.Seguridad.EncriptarReversible(_ROW("Nombre")), .DVH = _ROW("DVH")})
+                LISTADEFAMILIAS.Add(New BE.Familia With {.IdFamilia = _ROW("IDFAMILIA"), .Nombre = DAL.Seguridad.DesEncriptar(_ROW("Nombre")), .DVH = _ROW("DVH")})
             Next
 
             Return LISTADEFAMILIAS

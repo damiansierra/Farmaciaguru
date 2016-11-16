@@ -10,7 +10,7 @@
 
         For Each row In patente.listarTodos
             DataGridView1.Rows.Add(row.Idpatente,
-                                   row.Descripcion
+                                   row.Nombre
                                    )
         Next
     End Sub

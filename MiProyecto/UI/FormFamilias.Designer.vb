@@ -25,9 +25,10 @@ Partial Class FormFamilias
         Me.Combofamilia = New System.Windows.Forms.ComboBox()
         Me.txtfamilia = New System.Windows.Forms.Label()
         Me.DataGridViewfamilia = New System.Windows.Forms.DataGridView()
-        Me.Patente = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Agregar = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.btnconfirmarmodificaciones = New System.Windows.Forms.Button()
+        Me.IDPatente = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Agregada = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         CType(Me.DataGridViewfamilia, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -53,21 +54,11 @@ Partial Class FormFamilias
         'DataGridViewfamilia
         '
         Me.DataGridViewfamilia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridViewfamilia.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Patente, Me.Agregar})
+        Me.DataGridViewfamilia.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDPatente, Me.Nombre, Me.Agregada})
         Me.DataGridViewfamilia.Location = New System.Drawing.Point(42, 86)
         Me.DataGridViewfamilia.Name = "DataGridViewfamilia"
         Me.DataGridViewfamilia.Size = New System.Drawing.Size(389, 307)
         Me.DataGridViewfamilia.TabIndex = 9
-        '
-        'Patente
-        '
-        Me.Patente.HeaderText = "Patente"
-        Me.Patente.Name = "Patente"
-        '
-        'Agregar
-        '
-        Me.Agregar.HeaderText = "Agregar"
-        Me.Agregar.Name = "Agregar"
         '
         'btnconfirmarmodificaciones
         '
@@ -77,6 +68,21 @@ Partial Class FormFamilias
         Me.btnconfirmarmodificaciones.TabIndex = 12
         Me.btnconfirmarmodificaciones.Text = "Asignar"
         Me.btnconfirmarmodificaciones.UseVisualStyleBackColor = True
+        '
+        'IDPatente
+        '
+        Me.IDPatente.HeaderText = "IDPatente"
+        Me.IDPatente.Name = "IDPatente"
+        '
+        'Nombre
+        '
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
+        '
+        'Agregada
+        '
+        Me.Agregada.HeaderText = "Agregar"
+        Me.Agregada.Name = "Agregada"
         '
         'FormFamilias
         '
@@ -97,7 +103,8 @@ Partial Class FormFamilias
     Friend WithEvents Combofamilia As System.Windows.Forms.ComboBox
     Friend WithEvents txtfamilia As System.Windows.Forms.Label
     Friend WithEvents DataGridViewfamilia As System.Windows.Forms.DataGridView
-    Friend WithEvents Patente As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Agregar As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents btnconfirmarmodificaciones As System.Windows.Forms.Button
+    Friend WithEvents IDPatente As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Agregada As System.Windows.Forms.DataGridViewCheckBoxColumn
 End Class

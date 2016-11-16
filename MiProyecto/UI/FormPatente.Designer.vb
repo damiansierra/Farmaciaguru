@@ -24,7 +24,7 @@ Partial Class FormPatente
     Private Sub InitializeComponent()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DVH = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -32,7 +32,7 @@ Partial Class FormPatente
         'DataGridView1
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.Descripcion, Me.DVH})
+        Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.Nombre, Me.DVH})
         Me.DataGridView1.Location = New System.Drawing.Point(74, 42)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(427, 307)
@@ -43,10 +43,10 @@ Partial Class FormPatente
         Me.id.HeaderText = "id"
         Me.id.Name = "id"
         '
-        'Descripcion
+        'Nombre
         '
-        Me.Descripcion.HeaderText = "Descripción"
-        Me.Descripcion.Name = "Descripcion"
+        Me.Nombre.HeaderText = "Nombre"
+        Me.Nombre.Name = "Nombre"
         '
         'DVH
         '
@@ -68,6 +68,6 @@ Partial Class FormPatente
     End Sub
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DVH As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

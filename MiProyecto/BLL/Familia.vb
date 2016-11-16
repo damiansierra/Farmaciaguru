@@ -11,7 +11,7 @@
     End Function
 
     Public Function listarPorId(obj As BE.Familia) As BE.Familia Implements BE.ICrud(Of BE.Familia).listarPorId
-
+        Return DAL.Familia.GetInstance.listarPorId(obj)
     End Function
 
     Public Function listarTodos() As List(Of BE.Familia) Implements BE.ICrud(Of BE.Familia).listarTodos

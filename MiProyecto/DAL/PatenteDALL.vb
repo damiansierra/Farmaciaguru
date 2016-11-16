@@ -35,7 +35,7 @@
 
             Dim LISTADEPATENTES As New List(Of BE.Patente)
             For Each _ROW In dt.Rows
-                LISTADEPATENTES.Add(New BE.Patente With {.Idpatente = _ROW("id"), .Descripcion = _ROW("descripcion")})
+                LISTADEPATENTES.Add(New BE.Patente With {.Idpatente = _ROW("IdPatente"), .Nombre = _ROW("Nombre")})
             Next
 
             Return LISTADEPATENTES

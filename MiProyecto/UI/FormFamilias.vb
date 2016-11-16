@@ -42,10 +42,10 @@
 
             Dim I As Integer = 0
             For Each Pat In FAMILIA.Patente
-                DataGridViewfamilia.Rows.Add()
-                DataGridViewfamilia.Rows(I).Cells("IDPATENTE").Value = Pat.Idpatente
-                DataGridViewfamilia.Rows(I).Cells("PATENTE").Value = Pat.Nombre
-                DataGridViewfamilia.Rows(I).Cells("AGREGADA").Value = True
+
+                DataGridViewfamilia.Rows.Add(Pat.Idpatente,
+                                              Pat.Nombre,
+                                              True)
                 I = I + 1
             Next
 
@@ -63,18 +63,21 @@
                 Next
 
                 If BAND = 0 Then
-                    Dim CANT As Integer = DataGridViewfamilia.Rows.Count
-                    DataGridViewfamilia.Rows.Add()
-                    DataGridViewfamilia.Rows(CANT).Cells("ID_PATENTE").Value = PAT.Patente
-                    DataGridViewfamilia.Rows(CANT).Cells("PATENTE").Value = PAT.Descripcion
-                    DataGridViewfamilia.Rows(CANT).Cells("AGREGADA").Value = False
+
+                    DataGridViewfamilia.Rows.Add(PAT.Idpatente,
+                                                  PAT.Nombre,
+                                                  False)
+                    
                 End If
 
             Next
 
+          
+         
+
 
         Catch ex As Exception
-            MessageBox.Show("FALLO AL CARGAR LOS ATRIBUTOS DE LA FAMILIA")
+            MessageBox.Show("FALLO LA CARGAR LOS ATRIBUTOS DE LA FAMILIA")
         End Try
 
 
@@ -170,7 +173,29 @@
 
 
     Private Sub btnconfirmarmodificaciones_Click(sender As Object, e As EventArgs) Handles btnconfirmarmodificaciones.Click
+        Try
+            Dim BLLFAMILIA As New BLL.Familia
+            Dim FAMILIA As New BE.Familia
+            FAMILIA.Nombre = FAMILIASELECCIONADA
+            FAMILIA.IdFamilia = FAMILIAIDSELECCIONADA
+            Dim PATENTES As New List(Of BE.Patente)
 
+            For Each _ROW As DataGridViewRow In DataGridViewfamilia.Rows
+                If _ROW.Cells("AGREGADA").Value = True Then
+                    PATENTES.Add(New BE.Patente With {.Idpatente = _ROW.Cells("IDPATENTE").Value, .Nombre = _ROW.Cells("Nombre").Value})
+                End If
+            Next
+            FAMILIA.Patente = PATENTES
+
+            '   If BLLFAMILIA.modificacion(FAMILIA, UI.Principal.Usuariologueado) = True Then
+            'MessageBox.Show("SE MODIFICO LA FAMILIA SELECCIONADA")
+            '      End If
+
+            CARGARCOMBO()
+
+        Catch ex As Exception
+            MessageBox.Show("FALLO AL INTENTAR MODIFICAR LA FAMILIA")
+        End Try
     End Sub
 
 
@@ -206,4 +231,6 @@
     '       MessageBox.Show("IMPOSIBLE CAMBIAR EL IDIOMA")
     '  End Try
     'End Sub
+
+  
 End Class

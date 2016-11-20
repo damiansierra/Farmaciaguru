@@ -187,9 +187,9 @@
             Next
             FAMILIA.Patente = PATENTES
 
-            '   If BLLFAMILIA.modificacion(FAMILIA, UI.Principal.Usuariologueado) = True Then
-            'MessageBox.Show("SE MODIFICO LA FAMILIA SELECCIONADA")
-            '      End If
+            If BLLFAMILIA.modificacion(FAMILIA) = True Then
+                MessageBox.Show("SE MODIFICO LA FAMILIA SELECCIONADA")
+            End If
 
             CARGARCOMBO()
 

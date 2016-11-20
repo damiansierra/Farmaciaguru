@@ -123,6 +123,30 @@
 
     Public Function modificacion(obj As BE.Familia) As Boolean Implements BE.ICrud(Of BE.Familia).modificacion
 
+        Try
+
+            DAL.Conexion.GetInstance.Escribir("DELETE FROM FAMPAT WHERE IDFAMILIA = " & obj.IdFamilia)
+
+
+
+            Dim DALDV As New DAL.DV
+            For Each PAT In obj.Patente
+                Dim DVV2 As Integer = DALDV.pasaraASCII(obj.IdFamilia & PAT.Idpatente)
+                DAL.Conexion.GetInstance.Escribir("INSERT INTO FAMPAT VALUES (" & obj.IdFamilia & "," & PAT.Idpatente & "," & DVV2 & ")")
+            Next
+
+            Dim SELECTFAM As String = "SELECT SUM(DVH) FROM FAMPAT"
+            Dim DVV As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM)
+            Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRETABLA = 'FAMPAT'"
+            DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
+
+            Return True
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+
     End Function
 
    

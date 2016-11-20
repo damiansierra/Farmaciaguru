@@ -25,5 +25,17 @@
 
     Public Function modificacion(obj As BE.Familia) As Boolean Implements BE.ICrud(Of BE.Familia).modificacion
 
+        Try
+
+
+            '  Dim dalbitacora As New DAL.BITACORA
+            '    Dim bebitacora As New BE.Bitacora With {.Criticidad = "MEDIA", .USUARIO = Usuario, .Descripcion = "Se modifico la familia:" & objeto.DESCRIPCION}
+            '     dalbitacora.ALTA(bebitacora)
+
+            Return DAL.Familia.GetInstance.modificacion(obj)
+
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Function
 End Class

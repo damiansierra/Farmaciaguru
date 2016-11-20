@@ -20,5 +20,6 @@
 
     Public Function modificacion(obj As BE.Patente) As Boolean Implements BE.ICrud(Of BE.Patente).modificacion
 
+
     End Function
 End Class

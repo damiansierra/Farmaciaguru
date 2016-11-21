@@ -13,7 +13,8 @@
             familiaBll.alta(Familia)
             '      MsgBox(lenguajeBLL.Traducir("OperacionExitosa"), MsgBoxStyle.Information, Me.Text)
             Me.DialogResult = Windows.Forms.DialogResult.OK
-            Me.Close()
+            Me.TxtNombre.Clear()
+
 
       Catch ex As Exception
             MsgBox("Problemas con la base de datos")

@@ -11,6 +11,8 @@
 
 
             COMBOUSER.Items.Clear()
+            COMBOUSER.Items.Clear()
+            COMBOUSER.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
             CARGARCOMBOUSER()
 
 
@@ -90,6 +92,7 @@
     '    MessageBox.Show("IMPOSIBLE CAMBIAR EL IDIOMA")
     '     End Try
     ' End Sub
+
 
 
 End Class

@@ -2,6 +2,13 @@
     Implements BE.ICrud(Of BE.Patente)
 
 
+    Private Shared _instancia As BLL.PatenteBLL
+    Public Shared Function GetInstance() As BLL.PatenteBLL
+        If _instancia Is Nothing Then
+            _instancia = New BLL.PatenteBLL
+        End If
+        Return _instancia
+    End Function
     Public Function alta(obj As BE.Patente) As Boolean Implements BE.ICrud(Of BE.Patente).alta
 
     End Function

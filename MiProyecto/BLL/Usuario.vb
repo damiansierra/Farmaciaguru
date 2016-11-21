@@ -2,6 +2,14 @@
     Implements BE.ICrud(Of BE.Usuario)
 
 
+    Private Shared _instancia As BLL.Usuario
+    Public Shared Function GetInstance() As BLL.Usuario
+        If _instancia Is Nothing Then
+            _instancia = New BLL.Usuario
+        End If
+        Return _instancia
+    End Function
+
     Public Function alta(obj As BE.Usuario) As Boolean Implements BE.ICrud(Of BE.Usuario).alta
         Return DAL.Usuario.GetInstance.alta(obj)
     End Function
@@ -11,7 +19,7 @@
     End Function
 
     Public Function listarPorId(obj As BE.Usuario) As BE.Usuario Implements BE.ICrud(Of BE.Usuario).listarPorId
-
+        Return DAL.Usuario.GetInstance.listarPorId(obj)
     End Function
 
     Public Function listarTodos() As List(Of BE.Usuario) Implements BE.ICrud(Of BE.Usuario).listarTodos

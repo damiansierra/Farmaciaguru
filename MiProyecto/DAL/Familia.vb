@@ -50,8 +50,8 @@
             Dim MODIFICARDVH As String = "UPDATE FAMILIA SET DVH = " & obj.DVH & " WHERE IDFAMILIA = " & obj.IdFamilia
             DAL.Conexion.GetInstance.Escribir(MODIFICARDVH)
 
-            '         Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRE = 'FAMILIA'"
-            '        DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
+            Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRE = 'FAMILIA'"
+            DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
 
             Return True
 

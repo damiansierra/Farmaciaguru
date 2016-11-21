@@ -113,6 +113,12 @@
     <Compile Include="FormUsuarioEliminar.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormUsuarioSeguridad.Designer.vb">
+      <DependentUpon>FormUsuarioSeguridad.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormUsuarioSeguridad.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUsuarioEliminar.resx">
       <DependentUpon>FormUsuarioEliminar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUsuarioSeguridad.resx">
+      <DependentUpon>FormUsuarioSeguridad.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

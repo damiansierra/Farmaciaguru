@@ -6,7 +6,7 @@
 
     Public Property DVH As Integer
 
-
+    Public Property NEGADO As Boolean
     Public Property Usuario As List(Of BE.Usuario)
 
     Public Property Patente As List(Of BE.Familia)

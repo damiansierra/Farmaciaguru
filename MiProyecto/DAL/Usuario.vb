@@ -128,6 +128,52 @@ Public Class Usuario
 
     Public Function listarPorId(obj As BE.Usuario) As BE.Usuario Implements BE.ICrud(Of BE.Usuario).listarPorId
 
+        Try
+
+            Dim USUARIO As New BE.Usuario
+            Dim dt As New DataTable
+
+
+            Dim USUARIOENCRIPTADO As String = Seguridad.EncriptarReversible(obj.Nick)
+            Dim SELECTUSER As String = "SELECT * FROM USUARIO WHERE Nick = '" & USUARIOENCRIPTADO & "'"
+            dt = DAL.Conexion.GetInstance.leer(SELECTUSER)
+
+            Dim _ROW As DataRow = dt.Rows(0)
+
+            USUARIO.IdUsuario = _ROW("IDUSUARIO")
+            USUARIO.Apellido = _ROW("APELLIDO")
+            USUARIO.Nick = obj.Nick
+            USUARIO.Nombre = _ROW("NOMBRE")
+            USUARIO.Cant_Int = _ROW("CANT_INT")
+
+
+            Dim dt2 As New DataTable
+            SELECTUSER = "SELECT US.IDPATENTE,PA.NOMBRE,US.NEGADO FROM USUPAT AS US JOIN PATENTE AS PA ON US.IDPATENTE = PA.IDPATENTE WHERE US.IDUSUARIO = " & USUARIO.IdUsuario
+            dt2 = DAL.Conexion.GetInstance.leer(SELECTUSER)
+
+            Dim LISTADEPATENTES As New List(Of BE.Patente)
+            USUARIO.Patentes = LISTADEPATENTES
+            For Each _ROW In dt2.Rows
+                USUARIO.Patentes.Add(New BE.Patente With {.Idpatente = _ROW("IDPATENTE"), .Nombre = _ROW("NOMBRE"), .NEGADO = _ROW("NEGADO")})
+            Next
+
+            Dim dt3 As New DataTable
+            SELECTUSER = "SELECT US.IDFAMILIA,FA.NOMBRE  FROM USUFAM AS US JOIN FAMILIA AS FA ON US.IDFAMILIA = FA.IDFAMILIA WHERE US.IDUSUARIO= " & USUARIO.IdUsuario
+            dt3 = DAL.Conexion.GetInstance.leer(SELECTUSER)
+
+            Dim LISTADEFAMILIAS As New List(Of BE.Familia)
+            USUARIO.Familias = LISTADEFAMILIAS
+
+            For Each _ROW In dt3.Rows
+                USUARIO.Familias.Add(New BE.Familia With {.IdFamilia = _ROW("IDFAMILIA"), .Nombre = Seguridad.DesEncriptar(_ROW("NOMBRE"))})
+            Next
+
+            Return USUARIO
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
     End Function
 
     Public Function listarTodos() As List(Of BE.Usuario) Implements BE.ICrud(Of BE.Usuario).listarTodos

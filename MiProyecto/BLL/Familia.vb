@@ -1,6 +1,13 @@
 ﻿Public Class Familia
     Implements BE.ICrud(Of BE.Familia)
 
+    Private Shared _instancia As BLL.Familia
+    Public Shared Function GetInstance() As BLL.Familia
+        If _instancia Is Nothing Then
+            _instancia = New BLL.Familia
+        End If
+        Return _instancia
+    End Function
 
     Public Function alta(obj As BE.Familia) As Boolean Implements BE.ICrud(Of BE.Familia).alta
         Return DAL.Familia.GetInstance.alta(obj)

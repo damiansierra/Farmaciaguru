@@ -198,5 +198,64 @@ Public Class Usuario
 
     Public Function modificacion(obj As BE.Usuario) As Boolean Implements BE.ICrud(Of BE.Usuario).modificacion
 
+        Try
+            Dim USUARIO As New BE.Usuario
+            Dim dt As New DataTable
+
+            Dim USUARIOENCRIPTADO As String = Seguridad.EncriptarReversible(obj.Nick)
+            Dim SELECTUSER As String = "SELECT * FROM USUARIO WHERE Nick = '" & USUARIOENCRIPTADO & "'"
+            dt = DAL.Conexion.GetInstance.leer(SELECTUSER)
+
+            Dim _ROW As DataRow = dt.Rows(0)
+
+            Usuario.IdUsuario = _ROW("IDUSUARIO")
+            Usuario.Apellido = _ROW("APELLIDO")
+            Usuario.Nick = obj.Nick
+            Usuario.Nombre = _ROW("NOMBRE")
+            Usuario.Cant_Int = _ROW("CANT_INT")
+
+
+
+            DAL.Conexion.GetInstance.Escribir("DELETE FROM USUPAT WHERE IDUSUARIO = " & USUARIO.IdUsuario)
+            DAL.Conexion.GetInstance.Escribir("DELETE FROM USUFAM WHERE IDUSUARIO = " & USUARIO.IdUsuario)
+
+
+            Dim DALDV As New DAL.DV
+            For Each PAT In obj.Patentes
+                Dim NEG = 0
+                If PAT.NEGADO = True Then
+                    NEG = 1
+                End If
+                Dim DVV2 As Integer = DALDV.pasaraASCII(PAT.Idpatente & USUARIO.IdUsuario & NEG)
+                DAL.Conexion.GetInstance.Escribir("INSERT INTO USUPAT VALUES (" & USUARIO.IdUsuario & "," & PAT.Idpatente & "," & NEG & " ," & DVV2 & ")")
+            Next
+
+            Dim SELECTPAT As String = "SELECT SUM(DVH) FROM USUPAT"
+            Dim DVV As Integer = DAL.Conexion.GetInstance.leerINT(SELECTPAT)
+            Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRE = 'USUPAT'"
+            DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
+
+
+
+            For Each FAM In obj.Familias
+
+                Dim DVV3 As Integer = DALDV.pasaraASCII(USUARIO.IdUsuario & FAM.IdFamilia)
+                DAL.Conexion.GetInstance.Escribir("INSERT INTO USUFAM VALUES (" & USUARIO.IdUsuario & "," & FAM.IdFamilia & "," & DVV3 & ")")
+            Next
+
+            Dim SELECTFAM As String = "SELECT SUM(DVH) FROM USUFAM"
+            Dim DVV4 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM)
+            Dim MODIFICARDVV2 As String = "UPDATE DV SET DVV = " & DVV4 & " WHERE NOMBRE = 'USUFAM'"
+            DAL.Conexion.GetInstance.Escribir(MODIFICARDVV2)
+
+
+            Return True
+
+
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
     End Function
 End Class

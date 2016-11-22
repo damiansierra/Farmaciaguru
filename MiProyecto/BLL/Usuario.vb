@@ -35,5 +35,15 @@
 
     Public Function modificacion(obj As BE.Usuario) As Boolean Implements BE.ICrud(Of BE.Usuario).modificacion
 
+        Try
+            '         Dim dalservicios As New DAL.SERVICIOS
+            '        If dalservicios.checkborradousuarios(objeto) = True Then
+            Dim DALUSUARIO As New DAL.Usuario
+            Return DALUSUARIO.modificacion(obj)
+            '         End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+
     End Function
 End Class

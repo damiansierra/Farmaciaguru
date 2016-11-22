@@ -53,6 +53,7 @@
 
         SELECCIONUSUARIOCOMBO = COMBOUSER.SelectedItem.ToString
 
+
         dgFamilias.Rows.Clear()
         For Each FamiliaBE In BLL.Familia.GetInstance().listarTodos
             Dim n As Integer = dgFamilias.Rows.Add()
@@ -101,6 +102,49 @@
 
    
     Private Sub btnconfirmarmodificaciones_Click(sender As Object, e As EventArgs) Handles btnconfirmarmodificaciones.Click
-       
+
+        Try
+            Dim BLLUSUARIO As New BLL.Usuario
+            Dim USUARIO As New BE.Usuario
+            SELECCIONUSUARIOCOMBO = COMBOUSER.SelectedItem.ToString
+
+
+            USUARIO.Nick = SELECCIONUSUARIOCOMBO
+            
+            Dim PATENTES As New List(Of BE.Patente)
+
+            For Each _ROW As DataGridViewRow In dgPatentes.Rows
+                If _ROW.Cells("dgAsignarPatente").Value = True Then
+                    PATENTES.Add(New BE.Patente With {.Idpatente = _ROW.Cells("patente_id").Value, .Nombre = _ROW.Cells("Nombre").Value})
+                End If
+                If _ROW.Cells("dgPatenteNegada").Value = True Then
+                    PATENTES.Add(New BE.Patente With {.Idpatente = _ROW.Cells("patente_id").Value, .Nombre = _ROW.Cells("Nombre").Value, .NEGADO = _ROW.Cells("dgPatenteNegada").Value})
+                End If
+            Next
+            USUARIO.Patentes = PATENTES
+
+
+
+            Dim FAMILIAS As New List(Of BE.Familia)
+
+            For Each _ROW As DataGridViewRow In dgFamilias.Rows
+                If _ROW.Cells("dgAsignarFamilia").Value = True Then
+                    FAMILIAS.Add(New BE.Familia With {.IdFamilia = _ROW.Cells("familia_id").Value, .Nombre = _ROW.Cells("Nombre_Familia").Value})
+                End If
+            Next
+            USUARIO.Familias = FAMILIAS
+
+            If BLLUSUARIO.modificacion(USUARIO) = True Then
+                MessageBox.Show("SE MODIFICO EL USUARIO SELECCIONADO")
+            Else
+                MessageBox.Show("NO SE PUEDE MODIFICAR EL USUARIO YA QUE DETERMINADAS PATENTES / FAMILIAS NO SE PUEDEN ELIMINAR SI NO EXISTE OTRO USUARIO QUE LAS POSEA")
+            End If
+
+
+
+        Catch ex As Exception
+            MessageBox.Show("FALLO AL INTENTAR MODIFICAR EL USUARIO")
+        End Try
+
     End Sub
 End Class

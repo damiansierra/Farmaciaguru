@@ -13,13 +13,6 @@ Public Class Seguridad
 
 
 
-
-    ''' <summary>
-    ''' Utiliza la libreria Rijndael para realizar un desencriptado
-    ''' </summary>
-    ''' <param name="pPalabraEncriptada"> Palabra ya encriptada por el mismo metodo de desencriptación </param>
-    ''' <returns> Palabra desencriptada </returns>
-    ''' <remarks></remarks>
     Public Shared Function DesEncriptar(ByVal pPalabraEncriptada As String) As String
 
         Dim bytesADescencriptar As Byte() = Convert.FromBase64String(pPalabraEncriptada)
@@ -55,12 +48,7 @@ Public Class Seguridad
     End Function
 
 
-    ''' <summary>
-    ''' Utiliza la libreria MD5 para encriptar de forma irrevesible una palabra retornando la misma
-    ''' </summary>
-    ''' <param name="pPalabra"> Palabra a ser encriptada</param>
-    ''' <returns> Palabra encriptada mediante el algoritmo md5 </returns>
-    ''' <remarks></remarks>
+
     Public Shared Function EncriptarIrreversible(ByVal pPalabra As String) As String
         Dim md5Hasher As New MD5CryptoServiceProvider()
         Dim bytesHashed As Byte()
@@ -72,12 +60,7 @@ Public Class Seguridad
         Return palabraEncriptada
     End Function
 
-    ''' <summary>
-    ''' Utiliza la libreria Rijndael para realizar un encriptado reversible
-    ''' </summary>
-    ''' <param name="pPalabra"> palabra a ser encriptada</param>
-    ''' <returns> Palabra encriptada de manera reversible </returns>
-    ''' <remarks></remarks>
+  
     Public Shared Function EncriptarReversible(ByVal pPalabra As String) As String
 
         Dim bytesAEncriptar As Byte() = Encoding.UTF8.GetBytes(pPalabra)

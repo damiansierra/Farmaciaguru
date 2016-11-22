@@ -137,14 +137,33 @@
             If BLLUSUARIO.modificacion(USUARIO) = True Then
                 MessageBox.Show("SE MODIFICO EL USUARIO SELECCIONADO")
             Else
-                MessageBox.Show("NO SE PUEDE MODIFICAR EL USUARIO YA QUE DETERMINADAS PATENTES / FAMILIAS NO SE PUEDEN ELIMINAR SI NO EXISTE OTRO USUARIO QUE LAS POSEA")
+                MessageBox.Show("No se Guarda quedan patentes escenciales sin asignar")
             End If
 
 
 
         Catch ex As Exception
-            MessageBox.Show("FALLO AL INTENTAR MODIFICAR EL USUARIO")
+            MessageBox.Show("Error")
         End Try
 
     End Sub
+
+
+
+    '    Private Sub dgFamilias_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgFamilias.CellContentClick
+    '        Try
+    '
+    '           If (e.RowIndex >= 0 And e.ColumnIndex = 2) Then
+    '
+    '                If (dgFamilias.Rows(e.RowIndex).Cells("dgAsignarFamilia").Value = True And BLL.Familia.GetInstance.ValidarEliminarFamiliaUsuario(New BE.Familia With {.IdFamilia = dgFamilias.Rows(e.RowIndex).Cells("familia_id").Value}, BLL.Usuario.GetInstance.listarPorId(unUsuario)) = False) Then
+    '                    MsgBox("No se puede quitar la familia al usuario porque contiene patentes esenciales y quedaria sin asignar")
+    '
+    '
+    '                End If
+    '            End If
+    '
+    '        Catch ex As Exception
+    '            MsgBox("error")
+    '        End Try
+    '    End Sub
 End Class

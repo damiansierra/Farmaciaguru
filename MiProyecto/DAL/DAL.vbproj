@@ -84,6 +84,7 @@
     <Compile Include="Parametrizaciones.vb" />
     <Compile Include="PatenteDALL.vb" />
     <Compile Include="Seguridad.vb" />
+    <Compile Include="SERVICIOS.vb" />
     <Compile Include="Usuario.vb" />
   </ItemGroup>
   <ItemGroup>

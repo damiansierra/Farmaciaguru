@@ -83,40 +83,40 @@ Public Class Usuario
             Dim ID As Integer = DAL.Conexion.GetInstance.leerINT("SELECT IdUsuario FROM USUARIO WHERE Nick = '" & obj.Nick & "'")
             obj.IdUsuario = ID
 
-            '  Dim USUARIO As New BE.Usuario With {.IdUsuario = ID, .Nick = obj.Nick, .Familias = New List(Of BE.Familia), .Patentes = New List(Of BE.Patente)}
+            Dim USUARIO As New BE.Usuario With {.IdUsuario = ID, .Nick = obj.Nick, .Familias = New List(Of BE.Familia), .Patentes = New List(Of BE.Patente)}
 
 
-            'Dim dalservicios As New DAL.SERVICIOS
+            Dim dalservicios As New DAL.SERVICIOS
 
-            '  If dalservicios.checkborradousuarios(USUARIO) = True Then
+            If dalservicios.checkborradousuarios(USUARIO) = True Then
 
-            '  DAL.Conexion.GetInstance.Escribir("DELETE FROM USUFAM WHERE IDUSUARIO = " & obj.IdUsuario)
-            '  DAL.Conexion.GetInstance.Escribir("DELETE FROM USUPAT WHERE IDUSUARIO = " & obj.IdUsuario)
-            DAL.Conexion.GetInstance.Escribir("Delete from USUARIO WHERE IDUSUARIO =   '" & obj.IdUsuario & "'")
-
-
+                DAL.Conexion.GetInstance.Escribir("DELETE FROM USUFAM WHERE IDUSUARIO = " & obj.IdUsuario)
+                DAL.Conexion.GetInstance.Escribir("DELETE FROM USUPAT WHERE IDUSUARIO = " & obj.IdUsuario)
+                DAL.Conexion.GetInstance.Escribir("Delete from USUARIO WHERE IDUSUARIO =   '" & obj.IdUsuario & "'")
 
 
-            '   Dim SELECTFAM As String = "SELECT SUM(DVH) FROM USUFAM"
-            '    Dim DVV As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM)
-            '    Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRE = 'USUFAM'"
-            '   DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
 
-            '   Dim SELECTFAM2 As String = "SELECT SUM(DVH) FROM USUPAT"
-            '    Dim DVV2 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM2)
-            '   Dim MODIFICARDVV2 As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRE = 'USUPAT'"
-            '    DAL.Conexion.GetInstance.Escribir(MODIFICARDVV2)
 
-            ' Dim SELECTFAM3 As String = "SELECT SUM(DVH) FROM USUARIO"
-            'Dim DVV3 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM3)
-            'Dim MODIFICARDVV3 As String = "UPDATE DV SET DVV = " & DVV3 & " WHERE NOMBRE = 'USUARIO'"
-            'DAL.Conexion.GetInstance.Escribir(MODIFICARDVV3)
+                Dim SELECTFAM As String = "SELECT SUM(DVH) FROM USUFAM"
+                Dim DVV As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM)
+                Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRE = 'USUFAM'"
+                DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
 
-            Return True
+                Dim SELECTFAM2 As String = "SELECT SUM(DVH) FROM USUPAT"
+                Dim DVV2 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM2)
+                Dim MODIFICARDVV2 As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRE = 'USUPAT'"
+                DAL.Conexion.GetInstance.Escribir(MODIFICARDVV2)
 
-            '  Else
-            '   Return False
-            '   End If
+                ' Dim SELECTFAM3 As String = "SELECT SUM(DVH) FROM USUARIO"
+                'Dim DVV3 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM3)
+                'Dim MODIFICARDVV3 As String = "UPDATE DV SET DVV = " & DVV3 & " WHERE NOMBRE = 'USUARIO'"
+                'DAL.Conexion.GetInstance.Escribir(MODIFICARDVV3)
+
+                Return True
+
+            Else
+                Return False
+            End If
 
 
 

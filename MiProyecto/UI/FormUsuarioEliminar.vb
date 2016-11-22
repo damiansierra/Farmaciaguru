@@ -50,7 +50,7 @@
             Dim bllusuario As New BLL.Usuario
             Dim Nick As New BE.Usuario With {.Nick = COMBOUSER.Text}
 
-            '   USUARIO = bllusuario.CONSULTA(USUARIO)
+            '        USUARIO = bllusuario.CONSULTA(USUARIO)
 
             If COMBOUSER.Text <> "" Then
                 If bllusuario.baja(Nick) = True Then

@@ -15,7 +15,24 @@
     End Function
 
     Public Function baja(obj As BE.Usuario) As Boolean Implements BE.ICrud(Of BE.Usuario).baja
-        Return DAL.Usuario.GetInstance.baja(obj)
+
+        Try
+
+            Dim dalservicios As New DAL.SERVICIOS
+
+            Dim bandera As Boolean = dalservicios.verificaralborrarusuario(obj)
+            If bandera = False Then
+                Return False
+            End If
+
+
+            Dim DALUSUARIO As New DAL.Usuario
+            Return DALUSUARIO.baja(obj)
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
     End Function
 
     Public Function listarPorId(obj As BE.Usuario) As BE.Usuario Implements BE.ICrud(Of BE.Usuario).listarPorId
@@ -36,11 +53,11 @@
     Public Function modificacion(obj As BE.Usuario) As Boolean Implements BE.ICrud(Of BE.Usuario).modificacion
 
         Try
-            '         Dim dalservicios As New DAL.SERVICIOS
-            '        If dalservicios.checkborradousuarios(objeto) = True Then
-            Dim DALUSUARIO As New DAL.Usuario
-            Return DALUSUARIO.modificacion(obj)
-            '         End If
+            Dim dalservicios As New DAL.SERVICIOS
+            If dalservicios.checkborradousuarios(obj) = True Then
+                Dim DALUSUARIO As New DAL.Usuario
+                Return DALUSUARIO.modificacion(obj)
+            End If
         Catch ex As Exception
             Throw ex
         End Try

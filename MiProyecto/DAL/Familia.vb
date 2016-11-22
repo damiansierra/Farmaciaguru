@@ -15,6 +15,10 @@
     End Function
 
 
+    Public servidor As String
+    Public instancia As String
+    Public Shared conn As New SqlClient.SqlConnection
+
     Public Function alta(obj As BE.Familia) As Boolean Implements BE.ICrud(Of BE.Familia).alta
 
 
@@ -147,6 +151,16 @@
         End Try
 
 
+    End Function
+
+
+    Function ValidarEliminarFamiliaUsuario(FamiliaBE As BE.Familia, UsuarioBE As BE.Usuario) As Boolean
+        Dim returnValue As Boolean
+
+
+
+
+        Return returnValue
     End Function
 
    

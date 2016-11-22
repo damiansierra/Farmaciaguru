@@ -45,4 +45,13 @@
             Throw ex
         End Try
     End Function
+
+
+    Public Function ValidarEliminarFamiliaUsuario(ByVal FamiliaBE As BE.Familia, ByVal UsuarioBE As BE.Usuario) As Boolean
+        Try
+            Return DAL.Familia.GetInstance.ValidarEliminarFamiliaUsuario(FamiliaBE, UsuarioBE)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 End Class

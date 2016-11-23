@@ -8,7 +8,7 @@
 
 
 
-        For Each row In patente.listarTodos
+        For Each row In listpatente
             DataGridView1.Rows.Add(row.Idpatente,
                                    row.Nombre
                                    )

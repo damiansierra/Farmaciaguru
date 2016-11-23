@@ -54,10 +54,10 @@
 
         Try
             Dim dalservicios As New DAL.SERVICIOS
-            If dalservicios.checkborradousuarios(obj) = True Then
-                Dim DALUSUARIO As New DAL.Usuario
-                Return DALUSUARIO.modificacion(obj)
-            End If
+            'If dalservicios.checkborradousuarios(obj) = True Then
+            Dim DALUSUARIO As New DAL.Usuario
+            Return DALUSUARIO.modificacion(obj)
+            '   End If
         Catch ex As Exception
             Throw ex
         End Try

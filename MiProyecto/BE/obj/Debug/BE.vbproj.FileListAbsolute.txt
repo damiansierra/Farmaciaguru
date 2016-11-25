@@ -14,3 +14,11 @@ D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BE\obj\Debug\BE.vbproj.Generate
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BE\obj\Debug\BE.dll
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BE\obj\Debug\BE.xml
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BE\obj\Debug\BE.pdb
+D:\damian\Farmaciaguru\MiProyecto\BE\bin\Debug\BE.dll
+D:\damian\Farmaciaguru\MiProyecto\BE\bin\Debug\BE.pdb
+D:\damian\Farmaciaguru\MiProyecto\BE\bin\Debug\BE.xml
+D:\damian\Farmaciaguru\MiProyecto\BE\obj\Debug\BE.Resources.resources
+D:\damian\Farmaciaguru\MiProyecto\BE\obj\Debug\BE.vbproj.GenerateResource.Cache
+D:\damian\Farmaciaguru\MiProyecto\BE\obj\Debug\BE.dll
+D:\damian\Farmaciaguru\MiProyecto\BE\obj\Debug\BE.xml
+D:\damian\Farmaciaguru\MiProyecto\BE\obj\Debug\BE.pdb

@@ -46,3 +46,31 @@ D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormaFamiliaAlt
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormFamilias.resources
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormUsuarioSeguridad.resources
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.Login.resources
+D:\damian\Farmaciaguru\MiProyecto\UI\bin\Debug\UI.exe.config
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.exe
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.xml
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.pdb
+D:\damian\Farmaciaguru\MiProyecto\UI\bin\Debug\UI.exe
+D:\damian\Farmaciaguru\MiProyecto\UI\bin\Debug\UI.pdb
+D:\damian\Farmaciaguru\MiProyecto\UI\bin\Debug\UI.xml
+D:\damian\Farmaciaguru\MiProyecto\UI\bin\Debug\BE.dll
+D:\damian\Farmaciaguru\MiProyecto\UI\bin\Debug\BLL.dll
+D:\damian\Farmaciaguru\MiProyecto\UI\bin\Debug\DAL.dll
+D:\damian\Farmaciaguru\MiProyecto\UI\bin\Debug\BE.pdb
+D:\damian\Farmaciaguru\MiProyecto\UI\bin\Debug\BE.xml
+D:\damian\Farmaciaguru\MiProyecto\UI\bin\Debug\BLL.pdb
+D:\damian\Farmaciaguru\MiProyecto\UI\bin\Debug\BLL.xml
+D:\damian\Farmaciaguru\MiProyecto\UI\bin\Debug\DAL.pdb
+D:\damian\Farmaciaguru\MiProyecto\UI\bin\Debug\DAL.xml
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.vbprojResolveAssemblyReference.cache
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.Form1.resources
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormaFamiliaAlta.resources
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormFamilias.resources
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormInicio.resources
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormPatente.resources
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormUsuario.resources
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormUsuarioEliminar.resources
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormUsuarioSeguridad.resources
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.Login.resources
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.Resources.resources
+D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.vbproj.GenerateResource.Cache

@@ -28,3 +28,18 @@ D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BLL\obj\Debug\BLL.vbproj.Genera
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BLL\obj\Debug\BLL.dll
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BLL\obj\Debug\BLL.xml
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BLL\obj\Debug\BLL.pdb
+D:\damian\Farmaciaguru\MiProyecto\BLL\bin\Debug\BLL.dll
+D:\damian\Farmaciaguru\MiProyecto\BLL\bin\Debug\BLL.pdb
+D:\damian\Farmaciaguru\MiProyecto\BLL\bin\Debug\BLL.xml
+D:\damian\Farmaciaguru\MiProyecto\BLL\bin\Debug\BE.dll
+D:\damian\Farmaciaguru\MiProyecto\BLL\bin\Debug\DAL.dll
+D:\damian\Farmaciaguru\MiProyecto\BLL\bin\Debug\BE.pdb
+D:\damian\Farmaciaguru\MiProyecto\BLL\bin\Debug\BE.xml
+D:\damian\Farmaciaguru\MiProyecto\BLL\bin\Debug\DAL.pdb
+D:\damian\Farmaciaguru\MiProyecto\BLL\bin\Debug\DAL.xml
+D:\damian\Farmaciaguru\MiProyecto\BLL\obj\Debug\BLL.vbprojResolveAssemblyReference.cache
+D:\damian\Farmaciaguru\MiProyecto\BLL\obj\Debug\BLL.Resources.resources
+D:\damian\Farmaciaguru\MiProyecto\BLL\obj\Debug\BLL.vbproj.GenerateResource.Cache
+D:\damian\Farmaciaguru\MiProyecto\BLL\obj\Debug\BLL.dll
+D:\damian\Farmaciaguru\MiProyecto\BLL\obj\Debug\BLL.xml
+D:\damian\Farmaciaguru\MiProyecto\BLL\obj\Debug\BLL.pdb

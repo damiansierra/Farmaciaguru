@@ -22,3 +22,15 @@ D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.vbproj.Genera
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.dll
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.xml
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.pdb
+D:\damian\Farmaciaguru\MiProyecto\DAL\bin\Debug\DAL.dll
+D:\damian\Farmaciaguru\MiProyecto\DAL\bin\Debug\DAL.pdb
+D:\damian\Farmaciaguru\MiProyecto\DAL\bin\Debug\DAL.xml
+D:\damian\Farmaciaguru\MiProyecto\DAL\bin\Debug\BE.dll
+D:\damian\Farmaciaguru\MiProyecto\DAL\bin\Debug\BE.pdb
+D:\damian\Farmaciaguru\MiProyecto\DAL\bin\Debug\BE.xml
+D:\damian\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.vbprojResolveAssemblyReference.cache
+D:\damian\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.Resources.resources
+D:\damian\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.vbproj.GenerateResource.Cache
+D:\damian\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.dll
+D:\damian\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.xml
+D:\damian\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.pdb

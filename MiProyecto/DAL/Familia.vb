@@ -198,11 +198,11 @@
                     sqlString2 = sqlString2 & String.Format("	from usupat up 	where up.idusuario = " & UsuarioBE.IdUsuario & " and up.negado = 1) ")
                     sqlString2 = sqlString2 & String.Format(" and pf.idpatente = " & row.Idpatente & " ")
                     sqlString2 = sqlString2 & String.Format("	and pf.idpatente = " & row.Idpatente & " and (pf.idfamilia != " & FamiliaBE.IdFamilia & " or fu.idusuario != " & UsuarioBE.IdUsuario & " ")
-                    sqlString2 = sqlString2 & String.Format("	and u.bloqueado = 0	and u.eliminado = 0 ")
+                    sqlString2 = sqlString2 & String.Format("	and u.bloqueado = 0	and u.baja = 0 )")
 
                     Dim SELECTFAM2 As String = (sqlString2)
-                    dt2 = DAL.Conexion.GetInstance.leer(SELECTFAM)
-                    If dt2.Rows.Count > 0 Then
+                    dt2 = DAL.Conexion.GetInstance.leer(SELECTFAM2)
+                    If dt2.Rows.Count > 1 Then
                         Return True
                     Else
                         Return False

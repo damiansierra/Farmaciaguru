@@ -1,4 +1,5 @@
-﻿Imports System.Transactions
+﻿Imports System.IO
+
 Public Class Usuario
     Implements BE.ICrud(Of BE.Usuario)
 
@@ -25,9 +26,9 @@ Public Class Usuario
         Dim passEncriptado As String = obj.Password
 
         'En caso de que haya sido modificado el password, el nuevo tiene que ser encriptado
-        If (obj.PasswordModificado) Then
-            passEncriptado = Seguridad.EncriptarIrreversible(obj.Password)
-        End If
+        '   If (obj.PasswordModificado) Then
+        passEncriptado = Seguridad.EncriptarIrreversible(obj.Password)
+        '   End If
 
         Dim sqlString As String
         Dim parameters As New Dictionary(Of String, Object)
@@ -88,35 +89,35 @@ Public Class Usuario
 
             Dim dalservicios As New DAL.SERVICIOS
 
-            If dalservicios.checkborradousuarios(USUARIO) = True Then
+            ' If dalservicios.checkborradousuarios(USUARIO) = True Then
 
-                DAL.Conexion.GetInstance.Escribir("DELETE FROM USUFAM WHERE IDUSUARIO = " & obj.IdUsuario)
-                DAL.Conexion.GetInstance.Escribir("DELETE FROM USUPAT WHERE IDUSUARIO = " & obj.IdUsuario)
-                DAL.Conexion.GetInstance.Escribir("Delete from USUARIO WHERE IDUSUARIO =   '" & obj.IdUsuario & "'")
-
-
+            DAL.Conexion.GetInstance.Escribir("DELETE FROM USUFAM WHERE IDUSUARIO = " & obj.IdUsuario)
+            DAL.Conexion.GetInstance.Escribir("DELETE FROM USUPAT WHERE IDUSUARIO = " & obj.IdUsuario)
+            DAL.Conexion.GetInstance.Escribir("Delete from USUARIO WHERE IDUSUARIO =   '" & obj.IdUsuario & "'")
 
 
-                Dim SELECTFAM As String = "SELECT SUM(DVH) FROM USUFAM"
-                Dim DVV As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM)
-                Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRE = 'USUFAM'"
-                DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
 
-                Dim SELECTFAM2 As String = "SELECT SUM(DVH) FROM USUPAT"
-                Dim DVV2 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM2)
-                Dim MODIFICARDVV2 As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRE = 'USUPAT'"
-                DAL.Conexion.GetInstance.Escribir(MODIFICARDVV2)
 
-                ' Dim SELECTFAM3 As String = "SELECT SUM(DVH) FROM USUARIO"
-                'Dim DVV3 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM3)
-                'Dim MODIFICARDVV3 As String = "UPDATE DV SET DVV = " & DVV3 & " WHERE NOMBRE = 'USUARIO'"
-                'DAL.Conexion.GetInstance.Escribir(MODIFICARDVV3)
+            Dim SELECTFAM As String = "SELECT SUM(DVH) FROM USUFAM"
+            Dim DVV As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM)
+            Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRE = 'USUFAM'"
+            DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
 
-                Return True
+            Dim SELECTFAM2 As String = "SELECT SUM(DVH) FROM USUPAT"
+            Dim DVV2 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM2)
+            Dim MODIFICARDVV2 As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRE = 'USUPAT'"
+            DAL.Conexion.GetInstance.Escribir(MODIFICARDVV2)
 
-            Else
-                Return False
-            End If
+            ' Dim SELECTFAM3 As String = "SELECT SUM(DVH) FROM USUARIO"
+            'Dim DVV3 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM3)
+            'Dim MODIFICARDVV3 As String = "UPDATE DV SET DVV = " & DVV3 & " WHERE NOMBRE = 'USUARIO'"
+            'DAL.Conexion.GetInstance.Escribir(MODIFICARDVV3)
+
+            Return True
+
+            '   Else
+            '     Return False
+            '     End If
 
 
 
@@ -258,4 +259,295 @@ Public Class Usuario
         End Try
 
     End Function
+
+
+    Public Function LOGIN(USUARIO As BE.Usuario) As Integer
+
+        Try
+            Dim dt As New DataTable
+            Dim i As Integer = 0
+
+            Dim PASSENCRIPTADA As String = ""
+            Dim USUARIOENCRIPTADO As String = ""
+            Dim DALSEGURIDAD As New DAL.seguridad
+            USUARIOENCRIPTADO = Seguridad.EncriptarReversible(USUARIO.Nick)
+            PASSENCRIPTADA = Seguridad.EncriptarIrreversible(USUARIO.Password)
+
+            Dim SELECTUSER As String = "SELECT * FROM USUARIO WHERE nick = '" & USUARIOENCRIPTADO & "'"
+            ' AND password = '" & PASSENCRIPTADA & "' AND CANT_INT < 4"
+            dt = DAL.Conexion.GetInstance.leer(SELECTUSER)
+            If dt.Rows.Count = 1 Then
+                '''' DEVUELVO 1 SI EL USUARIO Y CONTRASEÑA SON CORRECTOS
+                '''' vuelvo a 0 el contador de intentos fallidos
+                Try
+                    Dim DV As New DAL.DV
+                    Dim dt3 As New DataTable
+                    Dim dt4 As New DataTable
+
+                    Dim DVV As Integer = 0
+
+
+
+                    Dim UPDATEBLOCK As String = "UPDATE USUARIO SET CANT_INT = 0 WHERE IDUSUARIO = " & dt.Rows(0).Item(0)
+                    DAL.Conexion.GetInstance.Escribir(UPDATEBLOCK)
+                    '    Dim SELECTUSU As String = "SELECT * FROM USUARIO WHERE DVH = 1"
+
+                    '     dt3 = DAL.Conexion.GetInstance.leer(SELECTUSU)
+
+
+
+                    '    USUARIO.DVH = DV.concatenar(dt3.Rows(0), dt3.Columns.Count)
+
+
+
+                    '    Dim MODIFICARDVH As String = "UPDATE USUARIO SET DVH = " & USUARIO.DVH & " WHERE ID_USUARIO = " & dt.Rows(0).Item(0)
+                    '       DAL.Conexion.GetInstance.Escribir(MODIFICARDVH)
+
+
+                    '  Dim SELECTDVH As String = "SELECT SUM(DVH) FROM USUARIO"
+                    '     Dim DVV2 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTDVH)
+
+
+                    '           Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRE = 'USUARIO'"
+                    '       DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
+
+
+
+                Catch ex As Exception
+                    Throw ex
+                End Try
+
+
+
+
+                Return 1
+            End If
+
+            Dim SELECTUSER2 As String = "SELECT * FROM USUARIO WHERE nick = '" & USUARIOENCRIPTADO & "'"
+            Dim dt2 As DataTable = DAL.Conexion.GetInstance.leer(SELECTUSER2)
+            If dt2.Rows.Count = 1 Then
+                '''' DEVUELVO 2 SI EL USUARIO ES CORRECTO PERO LA CONTRASEÑA NO}
+                Return 2
+            End If
+
+            Return 0
+
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Function
+
+    Public Function AGREGARINTENTODEBLOQUEO(OBJETO As BE.Usuario) As Boolean
+        Try
+            Dim DV As New DAL.DV
+            Dim dt As New DataTable
+            Dim dt2 As New DataTable
+
+            Dim DVV As Integer = 0
+
+
+
+            Dim SELECTBLOCK As Integer = DAL.Conexion.GetInstance.leerINT("SELECT CANT_INT FROM USUARIO WHERE IDUSUARIO =" & OBJETO.IdUsuario)
+            Dim UPDATEBLOCK As String = "UPDATE USUARIO SET CANT_INT = " & SELECTBLOCK + 1 & " WHERE IDUSUARIO = " & OBJETO.IdUsuario
+            DAL.Conexion.GetInstance.Escribir(UPDATEBLOCK)
+            '     Dim SELECTUSU As String = "SELECT * FROM USUARIO WHERE DVH = 1"
+
+            '   dt2 = DAL.Conexion.GetInstance.leer(SELECTUSU)
+
+
+
+            '   OBJETO.DVH = DV.concatenar(dt2.Rows(0), dt2.Columns.Count)
+
+
+
+            '   Dim MODIFICARDVH As String = "UPDATE USUARIO SET DVH = " & OBJETO.DVH & " WHERE ID_USUARIO = " & OBJETO.ID_USUARIO
+            '    DAL.Conexion.GetInstance.Escribir(MODIFICARDVH)
+
+
+            '   Dim SELECTDVH As String = "SELECT SUM(DVH) FROM USUARIO"
+            '    Dim DVV2 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTDVH)
+
+
+            '      Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRE = 'USUARIO'"
+            '    DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
+
+            Return True
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+
+
+    End Function
+
+    Public Function MODIFICARDATOS(OBJETO As BE.Usuario) As Boolean
+
+        Try
+            Dim DV As New DAL.DV
+            Dim dt As New DataTable
+            Dim dt2 As New DataTable
+
+            Dim DVV As Integer = 0
+
+
+            Dim DALSEGURIDAD As New DAL.seguridad
+            Dim USUARIOENCRIPTADO As String = Seguridad.EncriptarReversible(OBJETO.Nick)
+
+            Dim ID As Integer = DAL.Conexion.GetInstance.leerINT("SELECT IDUSUARIO FROM USUARIO WHERE USUARIO= '" & USUARIOENCRIPTADO & "'")
+            OBJETO.IdUsuario = ID
+
+            Dim UPDATE As String = "UPDATE USUARIO SET NOMBRE= '" & OBJETO.Nombre & "', APELLIDO= '" & OBJETO.Apellido & "' WHERE IDUSUARIO =" & OBJETO.IdUsuario
+            DAL.Conexion.GetInstance.Escribir(UPDATE)
+
+
+
+            'Dim SELECTUSU As String = "SELECT * FROM USUARIO WHERE DVH = 1"
+            '   dt2 = DAL.Conexion.GetInstance.leer(SELECTUSU)
+
+
+
+            '   OBJETO.DVH = DV.concatenar(dt2.Rows(0), dt2.Columns.Count)
+
+
+
+            '   Dim MODIFICARDVH As String = "UPDATE USUARIO SET DVH = " & OBJETO.DVH & " WHERE ID_USUARIO = " & OBJETO.ID_USUARIO
+            '    DAL.Conexion.GetInstance.Escribir(MODIFICARDVH)
+
+
+            '   Dim SELECTDVH As String = "SELECT SUM(DVH) FROM USUARIO"
+            '  Dim DVV2 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTDVH)
+
+
+            '  Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRE = 'USUARIO'"
+            ' DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
+
+            Return True
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+
+
+    End Function
+
+    Public Function CAMBIARPASS(USER As String, PASSANTERIOR As String, NUEVAPASS As String) As Boolean
+
+        Try
+            Dim DV As New DAL.DV
+            Dim dt As New DataTable
+            Dim dt2 As New DataTable
+
+            Dim DVV As Integer = 0
+
+
+            Dim DALSEGURIDAD As New DAL.seguridad
+            Dim USUARIOENCRIPTADO As String = Seguridad.EncriptarReversible(USER)
+            Dim passencriptada As String = Seguridad.EncriptarIrreversible(PASSANTERIOR)
+
+            Dim DT3 As DataTable = DAL.Conexion.GetInstance.leer("SELECT IDUSUARIO FROM USUARIO WHERE USUARIO= '" & USUARIOENCRIPTADO & "' AND PASS= '" & passencriptada & "'")
+
+            If DT3.Rows.Count = 1 Then
+
+                Dim NUEVAPASSENCRIPTADA As String = Seguridad.EncriptarIrreversible(NUEVAPASS)
+
+                Dim UPDATE As String = "UPDATE USUARIO SET PASS= '" & NUEVAPASSENCRIPTADA & "', DVH= 1 WHERE IDUSUARIO =" & DT3.Rows(0).Item(0)
+                DAL.Conexion.GetInstance.Escribir(UPDATE)
+
+
+
+                '  Dim SELECTUSU As String = "SELECT * FROM USUARIO WHERE DVH = 1"
+                ' dt2 = DAL.Conexion.GetInstance.leer(SELECTUSU)
+
+
+
+                ' Dim DVH As Integer = DV.concatenar(dt2.Rows(0), dt2.Columns.Count)
+
+
+
+                '      Dim MODIFICARDVH As String = "UPDATE USUARIO SET DVH = " & DVH & " WHERE ID_USUARIO = " & DT3.Rows(0).Item(0)
+                '       DAL.Conexion.GetInstance.Escribir(MODIFICARDVH)
+
+
+                '    Dim SELECTDVH As String = "SELECT SUM(DVH) FROM USUARIO"
+                '   Dim DVV2 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTDVH)
+
+
+                '     Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRE = 'USUARIO'"
+                '     DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
+
+
+
+
+
+
+
+
+                Return True
+            Else
+                Return False
+            End If
+
+
+
+
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+
+    End Function
+
+
+
+    Sub ESCRIBIRPASSENTXT(PASS As String, USER As String)
+        Dim sRenglon As String = Nothing
+        Dim strStreamW As Stream = Nothing
+        Dim strStreamWriter As StreamWriter = Nothing
+        Dim ContenidoArchivo As String = Nothing
+        ' Donde guardamos los paths de los archivos que vamos a estar utilizando ..
+        Dim PathArchivo As String
+
+
+        Dim i As Integer
+
+        Try
+
+            If Directory.Exists("D:\IPStat\Resets") = False Then ' si no existe la carpeta se crea
+                Directory.CreateDirectory("D:\IPStat\Resets")
+            End If
+
+            'Windows.Forms.Cursor.Current = Cursors.WaitCursor
+            PathArchivo = "D:\IPStat\Resets\" & USER & Format(Today.Date, "ddMMyyyy") & ".txt" ' Se determina el nombre del archivo con la fecha actual
+
+            'verificamos si existe el archivo
+
+            If File.Exists(PathArchivo) Then
+                strStreamW = File.Open(PathArchivo, FileMode.Open) 'Abrimos el archivo
+            Else
+                strStreamW = File.Create(PathArchivo) ' lo creamos
+            End If
+
+            strStreamWriter = New StreamWriter(strStreamW, System.Text.Encoding.Default) ' tipo de codificacion para escritura
+
+
+            'escribimos en el archivo
+
+            strStreamWriter.WriteLine(PASS)
+
+
+            strStreamWriter.Close() ' cerramos
+
+        Catch ex As Exception
+            strStreamWriter.Close() ' cerramos
+        End Try
+
+
+
+
+
+    End Sub
 End Class

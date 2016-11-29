@@ -41,19 +41,27 @@
             End If
 
             If BLLDV.verificarDV() = True And (I = 1 Or I = 3) Then
-                UI.FormInicio.Show()
+
+
+                '    Dim MenuUI As New FormInicio()
+                ' MenuUI.Show()
+
                 '''''''''''''''' CARGA EL USUARIO LOGUEADO Y MUESTRA  ''''''''''''''''
                 Try
                     Dim BLLUSUARIO As New BLL.Usuario
+
+
+
                     FormInicio.Usuariologueado = BLLUSUARIO.listarPorId(FormInicio.Usuariologueado)
                     UI.FormInicio.Show()
+                    ACTIVARFORMPRINCIPALFALLODV()
                     ACTIVARFORMPRINCIPAL(FormInicio.Usuariologueado)
 
                     '  UI.Principal.CAMBIARIDIOMAS()
                     '     UI.RevisionDispositivos.Show()
                     '    UI.RevisionDispositivos.Visible = False
 
-                    Me.Close()
+                    '     Me.Close()
                 Catch ex As Exception
                     MessageBox.Show("ERROR CARGANDO LOS DATOS DEL USUARIO")
                 End Try
@@ -71,7 +79,7 @@
             End If
 
         Catch ex As Exception
-            MessageBox.Show("FALLO AL CALCULAR LOS DIGITOS VERIFICADORES , ERROR 01")
+            MessageBox.Show("FALLO AL CALCULAR LOS DIGITOS VERIFICADORES")
         End Try
 
     End Sub
@@ -79,7 +87,7 @@
 
     Private Function logueo(USER As String, pass As String) As Integer
         Try
-            Dim USUARIO As New BE.Usuario With {.Nick = USER, .Password = pass}
+            Dim USUARIO As New BE.Usuario With {.Nick = Trim(USER), .Password = Trim(pass)}
             Dim BLLUSUARIO As New BLL.Usuario
             Dim LOGUEA As Integer = BLLUSUARIO.LOGIN(USUARIO)
             Return LOGUEA
@@ -95,14 +103,14 @@
 
     Private Sub ACTIVARFORMPRINCIPAL(USUARIO As BE.Usuario)
 
-        For Each patente In USUARIO.PATENTES
+        For Each patente In USUARIO.Patentes
             If patente.NEGADO = False Then
                 habilitarform(patente)
             End If
         Next
 
-        Dim bllfamilia As New BLL.FAMILIA
-        For Each fam As BE.FAMILIA In USUARIO.FAMILIAS
+        Dim bllfamilia As New BLL.Familia
+        For Each fam As BE.Familia In USUARIO.Familias
             fam = bllfamilia.listarPorId(fam)
             '   If fam.NEGADO = False Then
             For Each patente As BE.Patente In fam.Patente
@@ -188,25 +196,25 @@
             FormInicio.ListarToolStripMenuItem5.Visible = True
             FormInicio.AsignarPermisosToolStripMenuItem.Visible = True
         End If
-        If patente.DESCRIPCION = "Clientes" Then
+        If patente.nombre = "Clientes" Then
             FormInicio.ClientesToolStripMenuItem.Visible = True
             FormInicio.IngresarToolStripMenuItem1.Visible = True
             FormInicio.ListarToolStripMenuItem1.Visible = True
         End If
 
         ''''''CU 7
-        If patente.DESCRIPCION = "Ventas" Then
+        If patente.nombre = "Ventas" Then
             FormInicio.VentasToolStripMenuItem.Visible = True
             FormInicio.OrdenesDeCompraToolStripMenuItem.Visible = True
             FormInicio.PedidosToolStripMenuItem.Visible = True
             FormInicio.ListarToolStripMenuItem2.Visible = True
         End If
-        If patente.DESCRIPCION = "Productos" Then
+        If patente.nombre = "Productos" Then
             FormInicio.ProductosToolStripMenuItem.Visible = True
             FormInicio.IngresarToolStripMenuItem.Visible = True
             FormInicio.ListarToolStripMenuItem.Visible = True
         End If
-        If patente.DESCRIPCION = "Backup" Then
+        If patente.nombre = "Backup" Then
             FormInicio.SeguridadToolStripMenuItem.Visible = True
             FormInicio.GenerarBackupToolStripMenuItem.Visible = True
             FormInicio.RestoreToolStripMenuItem.Visible = True
@@ -242,10 +250,10 @@
 
     End Sub
 
- 
 
 
-  
+
+
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 

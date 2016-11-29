@@ -39,21 +39,21 @@ Partial Class FormInicio
         Me.GenerarBackupToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RestoreToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.FamiliasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PatentesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BitacoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AltaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AltaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModificacionToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarToolStripMenuItem3 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AsignarPermisosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FamiliasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AltaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.BajaToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ModificaciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarToolStripMenuItem4 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PatentesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarToolStripMenuItem5 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AsignarPermisosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MenuStrip1.SuspendLayout
-        Me.SuspendLayout
+        Me.BitacoraToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MenuStrip1.SuspendLayout()
+        Me.SuspendLayout()
         '
         'MenuStrip1
         '
@@ -74,7 +74,7 @@ Partial Class FormInicio
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(96, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'ProductosToolStripMenuItem
@@ -166,43 +166,17 @@ Partial Class FormInicio
         Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
-        'FamiliasToolStripMenuItem
-        '
-        Me.FamiliasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem1, Me.BajaToolStripMenuItem1, Me.ModificaciónToolStripMenuItem, Me.ListarToolStripMenuItem4})
-        Me.FamiliasToolStripMenuItem.Name = "FamiliasToolStripMenuItem"
-        Me.FamiliasToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-        Me.FamiliasToolStripMenuItem.Text = "Familias"
-        '
-        'PatentesToolStripMenuItem
-        '
-        Me.PatentesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListarToolStripMenuItem5})
-        Me.PatentesToolStripMenuItem.Name = "PatentesToolStripMenuItem"
-        Me.PatentesToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-        Me.PatentesToolStripMenuItem.Text = "Patentes"
-        '
-        'BitacoraToolStripMenuItem
-        '
-        Me.BitacoraToolStripMenuItem.Name = "BitacoraToolStripMenuItem"
-        Me.BitacoraToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
-        Me.BitacoraToolStripMenuItem.Text = "Bitacora"
-        '
         'AltaToolStripMenuItem
         '
         Me.AltaToolStripMenuItem.Name = "AltaToolStripMenuItem"
-        Me.AltaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.AltaToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
         Me.AltaToolStripMenuItem.Text = "Alta"
         '
         'BajaToolStripMenuItem
         '
         Me.BajaToolStripMenuItem.Name = "BajaToolStripMenuItem"
-        Me.BajaToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.BajaToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
         Me.BajaToolStripMenuItem.Text = "Baja"
-        '
-        'AltaToolStripMenuItem1
-        '
-        Me.AltaToolStripMenuItem1.Name = "AltaToolStripMenuItem1"
-        Me.AltaToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
-        Me.AltaToolStripMenuItem1.Text = "Alta"
         '
         'ModificacionToolStripMenuItem
         '
@@ -216,10 +190,29 @@ Partial Class FormInicio
         Me.ListarToolStripMenuItem3.Size = New System.Drawing.Size(165, 22)
         Me.ListarToolStripMenuItem3.Text = "Listar"
         '
+        'AsignarPermisosToolStripMenuItem
+        '
+        Me.AsignarPermisosToolStripMenuItem.Name = "AsignarPermisosToolStripMenuItem"
+        Me.AsignarPermisosToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
+        Me.AsignarPermisosToolStripMenuItem.Text = "Asignar Permisos"
+        '
+        'FamiliasToolStripMenuItem
+        '
+        Me.FamiliasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.AltaToolStripMenuItem1, Me.BajaToolStripMenuItem1, Me.ModificaciónToolStripMenuItem, Me.ListarToolStripMenuItem4})
+        Me.FamiliasToolStripMenuItem.Name = "FamiliasToolStripMenuItem"
+        Me.FamiliasToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.FamiliasToolStripMenuItem.Text = "Familias"
+        '
+        'AltaToolStripMenuItem1
+        '
+        Me.AltaToolStripMenuItem1.Name = "AltaToolStripMenuItem1"
+        Me.AltaToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.AltaToolStripMenuItem1.Text = "Alta"
+        '
         'BajaToolStripMenuItem1
         '
         Me.BajaToolStripMenuItem1.Name = "BajaToolStripMenuItem1"
-        Me.BajaToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.BajaToolStripMenuItem1.Size = New System.Drawing.Size(144, 22)
         Me.BajaToolStripMenuItem1.Text = "Baja"
         '
         'ModificaciónToolStripMenuItem
@@ -231,27 +224,35 @@ Partial Class FormInicio
         'ListarToolStripMenuItem4
         '
         Me.ListarToolStripMenuItem4.Name = "ListarToolStripMenuItem4"
-        Me.ListarToolStripMenuItem4.Size = New System.Drawing.Size(152, 22)
+        Me.ListarToolStripMenuItem4.Size = New System.Drawing.Size(144, 22)
         Me.ListarToolStripMenuItem4.Text = "Listar"
+        '
+        'PatentesToolStripMenuItem
+        '
+        Me.PatentesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ListarToolStripMenuItem5})
+        Me.PatentesToolStripMenuItem.Name = "PatentesToolStripMenuItem"
+        Me.PatentesToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.PatentesToolStripMenuItem.Text = "Patentes"
         '
         'ListarToolStripMenuItem5
         '
         Me.ListarToolStripMenuItem5.Name = "ListarToolStripMenuItem5"
-        Me.ListarToolStripMenuItem5.Size = New System.Drawing.Size(152, 22)
+        Me.ListarToolStripMenuItem5.Size = New System.Drawing.Size(102, 22)
         Me.ListarToolStripMenuItem5.Text = "Listar"
         '
-        'AsignarPermisosToolStripMenuItem
+        'BitacoraToolStripMenuItem
         '
-        Me.AsignarPermisosToolStripMenuItem.Name = "AsignarPermisosToolStripMenuItem"
-        Me.AsignarPermisosToolStripMenuItem.Size = New System.Drawing.Size(165, 22)
-        Me.AsignarPermisosToolStripMenuItem.Text = "Asignar Permisos"
+        Me.BitacoraToolStripMenuItem.Name = "BitacoraToolStripMenuItem"
+        Me.BitacoraToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.BitacoraToolStripMenuItem.Text = "Bitacora"
         '
         'FormInicio
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(423, 261)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "FormInicio"
         Me.Text = "Inicio"

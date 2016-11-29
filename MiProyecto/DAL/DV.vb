@@ -53,9 +53,7 @@ Public Class DV
                 Next
 
 
-
-
-                Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRE = '" & parametrizaciones.tablasDV(i) & "'"
+                Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRETABLA = '" & parametrizaciones.tablasDV(i) & "'"
                 DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
 
                 i = i + 1
@@ -76,45 +74,16 @@ Public Class DV
 
 
     Private Function GETIDSTRING(_ROW As DataRow, TABLA As String) As String
-        If TABLA = "BITACORA" Then
-            Return "ID_BITACORA = " & _ROW(0)
-        End If
-
-        If TABLA = "DISPOSITIVO" Then
-            Return "ID_DISPOSITIVO = " & _ROW(0)
-        End If
-
+    
         If TABLA = "DV" Then
-            Return "ID_TABLA = " & _ROW(0)
+            Return "IDTABLA = " & _ROW(0)
         End If
 
-        If TABLA = "FAMILIA" Then
-            Return "ID_FAMILIA = " & _ROW(0)
-        End If
 
         If TABLA = "FAMPAT" Then
             Return "ID_FAMILIA = " & _ROW(0) & " AND ID_PATENTE = " & _ROW(1)
         End If
 
-        If TABLA = "PATENTE" Then
-            Return "ID_PATENTE = " & _ROW(0)
-        End If
-
-        If TABLA = "SOPORTE" Then
-            Return "ID_SOPORTE = " & _ROW(0)
-        End If
-
-        If TABLA = "TIPO_DISPOSITIVO" Then
-            Return "ID_TIPODISPOSITIVO = " & _ROW(0)
-        End If
-
-        If TABLA = "TIPO_MONITOREO" Then
-            Return "ID_TIPOMONITOREO = " & _ROW(0)
-        End If
-
-        If TABLA = "USUARIO" Then
-            Return "ID_USUARIO  = " & _ROW(0)
-        End If
 
         If TABLA = "USUFAM" Then
             Return "ID_USUARIO = " & _ROW(0) & " AND ID_FAMILIA = " & _ROW(1)
@@ -138,7 +107,7 @@ Public Class DV
             For Each tabla In parametrizaciones.tablasDV
 
                 Dim selectDV As String = "Select * from "
-                Dim selectDVV As String = "Select DVV from DV where NOMBRE="
+                Dim selectDVV As String = "Select DVV from DV where NOMBRETABLA="
 
                 selectDV = selectDV & parametrizaciones.tablasDV(i)
                 selectDVV = selectDVV & "'" & parametrizaciones.tablasDV(i) & "'"

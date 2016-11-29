@@ -22,8 +22,8 @@ Public Class Usuario
 
 
 
-        Dim userEncriptado As String = Seguridad.EncriptarReversible(obj.Nick)
-        Dim passEncriptado As String = obj.Password
+        Dim userEncriptado As String = Trim(Seguridad.EncriptarReversible(obj.Nick))
+        Dim passEncriptado As String
 
         'En caso de que haya sido modificado el password, el nuevo tiene que ser encriptado
         '   If (obj.PasswordModificado) Then
@@ -35,11 +35,11 @@ Public Class Usuario
         Dim idUsuario As Integer
         If (obj.IdUsuario = 0) Then
             idUsuario = Conexion.ObtenerUltimoId("Usuario") + 1
-            sqlString = "INSERT INTO USUARIO(Apellido, Nombre, [Password],[Nick], Cant_Int, Bloqueado, Baja) " & _
+            sqlString = "INSERT INTO USUARIO(Apellido, Nombre, Password, Nick, Cant_Int, Bloqueado, Baja) " & _
                             "values(@Apellido,@Nombre,@Password,@Nick,@Cant_Int,@Bloqueado,@Baja)"
         Else
             idUsuario = obj.IdUsuario
-            sqlString = "UPDATE USUARIO SET Apellido = @Apellido, Nombre = @Nombre, [Password] = @Password, [Nick] = @Nick, " & _
+            sqlString = "UPDATE USUARIO SET Apellido = @Apellido, Nombre = @Nombre, Password = @Password, Nick = @Nick, " & _
                 "Cant_Int = @CCant_Int, Bloqueado = @Bloqueado, Baja = @Baja WHERE id = @id"
 
         End If
@@ -100,12 +100,12 @@ Public Class Usuario
 
             Dim SELECTFAM As String = "SELECT SUM(DVH) FROM USUFAM"
             Dim DVV As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM)
-            Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRE = 'USUFAM'"
+            Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRETABLA = 'USUFAM'"
             DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
 
             Dim SELECTFAM2 As String = "SELECT SUM(DVH) FROM USUPAT"
             Dim DVV2 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM2)
-            Dim MODIFICARDVV2 As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRE = 'USUPAT'"
+            Dim MODIFICARDVV2 As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRETABLA = 'USUPAT'"
             DAL.Conexion.GetInstance.Escribir(MODIFICARDVV2)
 
             ' Dim SELECTFAM3 As String = "SELECT SUM(DVH) FROM USUARIO"
@@ -233,7 +233,7 @@ Public Class Usuario
 
             Dim SELECTPAT As String = "SELECT SUM(DVH) FROM USUPAT"
             Dim DVV As Integer = DAL.Conexion.GetInstance.leerINT(SELECTPAT)
-            Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRE = 'USUPAT'"
+            Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRETABLA = 'USUPAT'"
             DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
 
 
@@ -246,7 +246,7 @@ Public Class Usuario
 
             Dim SELECTFAM As String = "SELECT SUM(DVH) FROM USUFAM"
             Dim DVV4 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM)
-            Dim MODIFICARDVV2 As String = "UPDATE DV SET DVV = " & DVV4 & " WHERE NOMBRE = 'USUFAM'"
+            Dim MODIFICARDVV2 As String = "UPDATE DV SET DVV = " & DVV4 & " WHERE NOMBRETABLA = 'USUFAM'"
             DAL.Conexion.GetInstance.Escribir(MODIFICARDVV2)
 
 
@@ -270,8 +270,9 @@ Public Class Usuario
             Dim PASSENCRIPTADA As String = ""
             Dim USUARIOENCRIPTADO As String = ""
             Dim DALSEGURIDAD As New DAL.seguridad
-            USUARIOENCRIPTADO = Seguridad.EncriptarReversible(USUARIO.Nick)
+            USUARIOENCRIPTADO = Seguridad.EncriptarReversible(Trim(USUARIO.Nick))
             PASSENCRIPTADA = Seguridad.EncriptarIrreversible(USUARIO.Password)
+
 
             Dim SELECTUSER As String = "SELECT * FROM USUARIO WHERE nick = '" & USUARIOENCRIPTADO & "'"
             ' AND password = '" & PASSENCRIPTADA & "' AND CANT_INT < 4"

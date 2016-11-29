@@ -10,13 +10,13 @@
             Dim usuario As New BE.Usuario
             Dim bllusuario As New BLL.Usuario
             ' Me.ValidarCampos()
-            usuario.Nick = TxtNick.Text
+            usuario.Nick = Trim(TxtNick.Text)
             'En caso de ser un usuario nuevo si guardo el Password
             If (usuario.IdUsuario = 0) Then
                 usuario.Password = Txtpassword.Text
             End If
-            usuario.Nombre = TxtNombre.Text
-            usuario.Apellido = TxtApellido.Text
+            usuario.Nombre = Trim(TxtNombre.Text)
+            usuario.Apellido = Trim(TxtApellido.Text)
             
 
             Dim usuarioLogic As New BLL.Usuario
@@ -31,7 +31,8 @@
     End Sub
 
   
-    Private Sub FormUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+    Private Sub FormUsuario_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        UI.FormInicio = Me.MdiParent
     End Sub
 End Class

@@ -34,7 +34,7 @@
 
 
 
-            sqlString = "INSERT INTO BITACORA(NICK,CRITICIDAD,fechahora,DESCRIPCION,DVH) " & _
+            sqlString = "INSERT INTO BITACORA(NICK,CRITICIDAD,fechahora,DESCRIPCIO,DVH) " & _
                             "values(@Nick,@Criticidad,@fechahora,@Descripcion,@DVH)"
 
             Dim valor As Integer = 1
@@ -42,7 +42,7 @@
             parameters.Add("@Nick", obj.nick)
             parameters.Add("@Criticidad", obj.Criticidad)
             parameters.Add("@fechahora", System.DateTime.Now)
-            parameters.Add("@Descripcion", valor)
+            parameters.Add("@Descripcion", DESCRIPCIONENCRIPTADA)
             parameters.Add("@DVH", valor)
           
 
@@ -84,10 +84,10 @@
             obj.DVH = DVH
             DVV = DVV + DVH
 
-            Dim MODIFICARDVH As String = "UPDATE BITACORA SET DVH = " & obj.DVH & " WHERE ID_BITACORA = " & obj.IdBitacora
+            Dim MODIFICARDVH As String = "UPDATE BITACORA SET DVH = " & obj.DVH & " WHERE IDBITACORA = " & obj.IdBitacora
             DAL.Conexion.GetInstance.Escribir(MODIFICARDVH)
 
-            Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRE = 'BITACORA'"
+            Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRETABLA = 'BITACORA'"
             DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
 
             Return True

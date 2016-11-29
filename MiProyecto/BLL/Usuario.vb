@@ -173,4 +173,30 @@
 
 
     End Function
+
+
+    Public Function ValidarEliminarUsuarioPatente(ByVal UsuarioBE As BE.Usuario, ByVal PatenteBE As BE.Patente) As Boolean
+        Try
+            Return DAL.Usuario.GetInstance().ValidarEliminarUsuarioPatente(UsuarioBE, PatenteBE)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+
+    Public Function ValidarEliminarUsuarioPatenteNegacion(ByVal UsuarioBE As BE.Usuario, ByVal PatenteBE As BE.Patente) As Boolean
+        Try
+            Return DAL.Usuario.GetInstance().ValidarEliminarUsuarioPatenteNegacion(UsuarioBE, PatenteBE)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function ValidarEliminarUsuario(ByVal UsuarioBE As BE.Usuario) As Boolean
+        Try
+            Return DAL.Usuario.GetInstance().ValidarEliminarUsuario(UsuarioBE)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 End Class

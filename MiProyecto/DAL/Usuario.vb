@@ -546,9 +546,223 @@ Public Class Usuario
             strStreamWriter.Close() ' cerramos
         End Try
 
-
-
-
-
     End Sub
+
+
+
+    Function ValidarEliminarUsuarioPatente(UsuarioBE As BE.Usuario, PatenteBE As BE.Patente) As Boolean
+
+
+        Dim sqlString As String
+        Dim sqlString2 As String
+        Dim sqlString3 As String
+
+
+
+
+
+        Dim dt As New DataTable
+        Dim dt2 As New DataTable
+        Dim dt3 As New DataTable
+
+
+
+
+
+        'sqlString = String.Format("select idpatente from fampat join usufam ")
+        'sqlString = sqlString & String.Format(" on fampat.idfamilia = usufam.idfamilia ")
+        'sqlString = sqlString & String.Format(" where idpatente = " & row.Idpatente & " and fampat.idfamilia <> " & FamiliaBE.IdFamilia & " ")
+        'sqlString = sqlString & String.Format(" and usufam.idusuario <> " & UsuarioBE.IdUsuario & " ")
+        'sqlString = sqlString & String.Format(" and idusuario not in(select idusuario from usupat ")
+        'sqlString = sqlString & String.Format(" where idpatente = fampat.idpatente and ")
+        'sqlString = sqlString & String.Format(" idusuario = usufam.idusuario and negado = 1) ")
+
+
+        Try
+
+
+            sqlString = String.Format(" select * from UsuPat up	inner join Usuario u on u.idusuario = up.idusuario ")
+            sqlString = sqlString & String.Format(" where up.idpatente = " & PatenteBE.Idpatente & " and u.idusuario != " & UsuarioBE.IdUsuario & " and up.Negado = 0 ")
+            sqlString = sqlString & String.Format("	and u.bloqueado = 0	")
+            Dim SELECTUSU As String = (sqlString)
+
+            dt = DAL.Conexion.GetInstance.leer(SELECTUSU)
+            If dt.Rows.Count > 0 Then
+                Return True
+            Else
+
+                sqlString3 = String.Format(" select *  from dbo.fampat pf, dbo.usufam fu, dbo.Usuario u, dbo.UsuPat up where pf.idpatente = " & PatenteBE.Idpatente & " ")
+                sqlString3 = sqlString3 & String.Format(" And pf.idfamilia = fu.idfamilia  and fu.idusuario = u.idusuario  and u.idusuario = " & UsuarioBE.IdUsuario & " ")
+                sqlString3 = sqlString3 & String.Format(" and u.bloqueado = 0 ")
+                Dim SELECTALGO As String = (sqlString3)
+
+                dt3 = DAL.Conexion.GetInstance.leer(SELECTALGO)
+                If dt3.Rows.Count > 0 Then
+                    Return True
+                Else
+
+
+
+                    sqlString2 = String.Format(" select *  from dbo.fampat pf,  dbo.usufam fu, dbo.Usuario u, dbo.UsuPat up")
+                    sqlString2 = sqlString2 & String.Format("	where pf.idpatente = " & PatenteBE.Idpatente & " ")
+                    sqlString2 = sqlString2 & String.Format("	and pf.idfamilia = fu.idfamilia ")
+                    sqlString2 = sqlString2 & String.Format("	and fu.idusuario = u.idusuario ")
+                    sqlString2 = sqlString2 & String.Format("  and u.idusuario != " & UsuarioBE.IdUsuario & " and u.bloqueado = 0 ")
+                    sqlString2 = sqlString2 & String.Format("	AND pf.idpatente NOT in ( Select up.idpatente from UsuPat up ")
+                    sqlString2 = sqlString2 & String.Format("	where up.idusuario = u.idusuario and up.negado = 1 )")
+
+                    Dim SELECTFAM2 As String = (sqlString2)
+                    dt2 = DAL.Conexion.GetInstance.leer(SELECTFAM2)
+                    If dt2.Rows.Count > 0 Then
+                        Return True
+                    Else
+                        Return False
+                    End If
+                End If
+
+            End If
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return ValidarEliminarUsuarioPatente
+
+    End Function
+
+
+
+    Function ValidarEliminarUsuarioPatenteNegacion(UsuarioBE As BE.Usuario, PatenteBE As BE.Patente) As Boolean
+        Dim sqlString As String
+        Dim sqlString2 As String
+
+
+
+
+
+
+        Dim dt As New DataTable
+        Dim dt2 As New DataTable
+        Dim dt3 As New DataTable
+
+
+
+
+
+        'sqlString = String.Format("select idpatente from fampat join usufam ")
+        'sqlString = sqlString & String.Format(" on fampat.idfamilia = usufam.idfamilia ")
+        'sqlString = sqlString & String.Format(" where idpatente = " & row.Idpatente & " and fampat.idfamilia <> " & FamiliaBE.IdFamilia & " ")
+        'sqlString = sqlString & String.Format(" and usufam.idusuario <> " & UsuarioBE.IdUsuario & " ")
+        'sqlString = sqlString & String.Format(" and idusuario not in(select idusuario from usupat ")
+        'sqlString = sqlString & String.Format(" where idpatente = fampat.idpatente and ")
+        'sqlString = sqlString & String.Format(" idusuario = usufam.idusuario and negado = 1) ")
+
+
+        Try
+
+
+
+
+            sqlString = String.Format(" select * from UsuPat up	inner join Usuario u on u.idusuario = up.idusuario ")
+            sqlString = sqlString & String.Format(" where up.idpatente = " & PatenteBE.Idpatente & " and u.idusuario != " & UsuarioBE.IdUsuario & " and up.Negado = 0 ")
+            sqlString = sqlString & String.Format("	and u.bloqueado = 0	")
+            Dim SELECTUSU As String = (sqlString)
+
+            dt = DAL.Conexion.GetInstance.leer(SELECTUSU)
+            If dt.Rows.Count > 0 Then
+                Return True
+            Else
+
+
+                sqlString2 = String.Format(" select *  from dbo.fampat pf,  dbo.usufam fu, dbo.Usuario u ")
+                sqlString2 = sqlString2 & String.Format("	where pf.idpatente = " & PatenteBE.Idpatente & " ")
+                sqlString2 = sqlString2 & String.Format("	and pf.idfamilia = fu.idfamilia ")
+                sqlString2 = sqlString2 & String.Format("	and fu.idusuario = u.idusuario ")
+                sqlString2 = sqlString2 & String.Format("  and u.idusuario != " & UsuarioBE.IdUsuario & " ")
+                sqlString2 = sqlString2 & String.Format("	AND pf.idpatente NOT in ( Select up.idpatente from UsuPat up ")
+                sqlString2 = sqlString2 & String.Format("	where up.idusuario = u.idusuario and up.negado = 1 )")
+
+                Dim SELECTFAM2 As String = (sqlString2)
+                dt2 = DAL.Conexion.GetInstance.leer(SELECTFAM2)
+                If dt2.Rows.Count > 0 Then
+                    Return True
+                Else
+                    Return False
+                End If
+            End If
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return ValidarEliminarUsuarioPatenteNegacion
+
+    End Function
+
+
+
+    Function ValidarEliminarUsuario(UsuarioBE As BE.Usuario) As Boolean
+        Dim sqlString As String
+        Dim sqlString2 As String
+
+
+
+
+        Try
+            Dim listpatente As New List(Of BE.Patente)
+
+            listpatente = DAL.PatenteDALL.GetInstance.listarTodos
+
+            Dim dt As New DataTable
+            Dim dt2 As New DataTable
+
+            For Each row In listpatente
+
+
+                'sqlString = String.Format("select idpatente from fampat join usufam ")
+                'sqlString = sqlString & String.Format(" on fampat.idfamilia = usufam.idfamilia ")
+                'sqlString = sqlString & String.Format(" where idpatente = " & row.Idpatente & " and fampat.idfamilia <> " & FamiliaBE.IdFamilia & " ")
+                'sqlString = sqlString & String.Format(" and usufam.idusuario <> " & UsuarioBE.IdUsuario & " ")
+                'sqlString = sqlString & String.Format(" and idusuario not in(select idusuario from usupat ")
+                'sqlString = sqlString & String.Format(" where idpatente = fampat.idpatente and ")
+                'sqlString = sqlString & String.Format(" idusuario = usufam.idusuario and negado = 1) ")
+
+
+                sqlString = String.Format(" select * from UsuPat up	inner join Usuario u on u.idusuario = up.idusuario ")
+                sqlString = sqlString & String.Format(" where up.idpatente = " & row.Idpatente & " and up.Negado = 0 ")
+                sqlString = sqlString & String.Format("	and u.bloqueado = 0	")
+                Dim SELECTFAM As String = (sqlString)
+
+                dt = DAL.Conexion.GetInstance.leer(SELECTFAM)
+                If dt.Rows.Count > 0 Then
+                    Return True
+                Else
+
+                    sqlString2 = String.Format(" select * from fampat pf ")
+                    sqlString2 = sqlString2 & String.Format("	inner join usufam fu on fu.idfamilia = pf.idfamilia inner join Usuario u ")
+                    sqlString2 = sqlString2 & String.Format("	on u.idusuario = fu.idusuario AND pf.idpatente NOT in ( Select up.idpatente ")
+                    sqlString2 = sqlString2 & String.Format("	from usupat up 	where up.idusuario = " & UsuarioBE.IdUsuario & " and up.negado = 1) ")
+                    sqlString2 = sqlString2 & String.Format(" and pf.idpatente = " & row.Idpatente & " ")
+                    sqlString2 = sqlString2 & String.Format("	and pf.idpatente = " & row.Idpatente & " and (fu.idusuario != " & UsuarioBE.IdUsuario & " ")
+                    sqlString2 = sqlString2 & String.Format("	and u.bloqueado = 0	and u.baja = 0 )")
+
+                    Dim SELECTFAM2 As String = (sqlString2)
+                    dt2 = DAL.Conexion.GetInstance.leer(SELECTFAM2)
+                    If dt2.Rows.Count > 0 Then
+                        Return True
+                    Else
+                        Return False
+                    End If
+                End If
+            Next
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+        Return ValidarEliminarUsuario
+
+    End Function
+
+
+
 End Class

@@ -83,6 +83,12 @@
     <Compile Include="FormaFamiliaAlta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormFamiliaBaja.Designer.vb">
+      <DependentUpon>FormFamiliaBaja.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormFamiliaBaja.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormFamilias.Designer.vb">
       <DependentUpon>FormFamilias.vb</DependentUpon>
     </Compile>
@@ -147,6 +153,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormaFamiliaAlta.resx">
       <DependentUpon>FormaFamiliaAlta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFamiliaBaja.resx">
+      <DependentUpon>FormFamiliaBaja.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFamilias.resx">
       <DependentUpon>FormFamilias.vb</DependentUpon>

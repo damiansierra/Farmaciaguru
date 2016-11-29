@@ -206,7 +206,7 @@ Partial Class FormInicio
         'AltaToolStripMenuItem1
         '
         Me.AltaToolStripMenuItem1.Name = "AltaToolStripMenuItem1"
-        Me.AltaToolStripMenuItem1.Size = New System.Drawing.Size(152, 22)
+        Me.AltaToolStripMenuItem1.Size = New System.Drawing.Size(144, 22)
         Me.AltaToolStripMenuItem1.Text = "Alta"
         '
         'BajaToolStripMenuItem1
@@ -218,7 +218,7 @@ Partial Class FormInicio
         'ModificaciónToolStripMenuItem
         '
         Me.ModificaciónToolStripMenuItem.Name = "ModificaciónToolStripMenuItem"
-        Me.ModificaciónToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ModificaciónToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.ModificaciónToolStripMenuItem.Text = "Modificación"
         '
         'ListarToolStripMenuItem4
@@ -237,7 +237,7 @@ Partial Class FormInicio
         'ListarToolStripMenuItem5
         '
         Me.ListarToolStripMenuItem5.Name = "ListarToolStripMenuItem5"
-        Me.ListarToolStripMenuItem5.Size = New System.Drawing.Size(102, 22)
+        Me.ListarToolStripMenuItem5.Size = New System.Drawing.Size(152, 22)
         Me.ListarToolStripMenuItem5.Text = "Listar"
         '
         'BitacoraToolStripMenuItem

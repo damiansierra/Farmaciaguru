@@ -41,4 +41,9 @@
         UI.FormFamilias.MdiParent = Me
         UI.FormFamilias.Show()
     End Sub
+
+    Private Sub ListarToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem5.Click
+        UI.FormPatente.MdiParent = Me
+        UI.FormPatente.MdiParent = Me
+    End Sub
 End Class

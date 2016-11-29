@@ -53,15 +53,16 @@
             '        USUARIO = bllusuario.CONSULTA(USUARIO)
 
             If COMBOUSER.Text <> "" Then
-                If bllusuario.baja(Nick) = True Then
-                    MessageBox.Show("SE ELIMINO USUARIO")
-                    COMBOUSER.Items.Clear()
-                    CARGARCOMBOUSER()
+                If BLL.Usuario.GetInstance.ValidarEliminarUsuario(BLL.Usuario.GetInstance.listarPorId(Nick)) = False Then
+                    If bllusuario.baja(Nick) = True Then
+                        MessageBox.Show("SE ELIMINO USUARIO")
+                        COMBOUSER.Items.Clear()
+                        CARGARCOMBOUSER()
 
-                    '           Dim BLLbitacora As New BLL.BITACORA
-                    '    Dim bebitacora As New BE.BITACORA With {.CRITICIDAD = "ALTA", .USUARIO = UI.Principal.Usuariologueado, .DESCRIPCION = "SE ELIMINO USUARIO " & USUARIO.USERNAME}
-                    '     BLLbitacora.ALTA(bebitacora)
-
+                        Dim BLLbitacora As New BLL.Bitacora
+                        Dim bebitacora As New BE.Bitacora With {.Criticidad = "ALTA", .nick = UI.FormInicio.Usuariologueado.Nick, .Descripcion = "SE ELIMINO USUARIO " & COMBOUSER.Text}
+                        BLLbitacora.alta(bebitacora)
+                    End If
                 Else
                     MessageBox.Show("NO SE PUEDE ELIMINAR EL USUARIO")
                 End If

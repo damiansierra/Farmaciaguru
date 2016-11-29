@@ -211,4 +211,128 @@
             MsgBox("error")
         End Try
     End Sub
+
+
+    Private Sub dgPatentes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgPatentes.CellContentClick
+        Try
+
+            If (e.RowIndex >= 0 And e.ColumnIndex = 2) Then
+                Dim value2 As Boolean = CType(dgPatentes.CurrentCell.EditedFormattedValue, Boolean)
+                If value2 = False Then
+                    If (BLL.Usuario.GetInstance.ValidarEliminarUsuarioPatente(BLL.Usuario.GetInstance.listarPorId(unUsuario), New BE.Patente With {.Idpatente = dgPatentes.Rows(e.RowIndex).Cells("patente_id").Value}) = False) Then            '                   
+                        MsgBox("No se puede quitar la Patente al usuario porque contiene patentes esenciales y quedaria sin asignar")
+                        SELECCIONUSUARIOCOMBO = COMBOUSER.SelectedItem.ToString
+
+
+                        dgFamilias.Rows.Clear()
+                        For Each FamiliaBE In BLL.Familia.GetInstance().listarTodos
+                            Dim n As Integer = dgFamilias.Rows.Add()
+                            dgFamilias.Rows.Item(n).Cells("familia_id").Value = FamiliaBE.IdFamilia
+                            dgFamilias.Rows.Item(n).Cells("dgAsignarFamilia").Value = False
+                            dgFamilias.Rows.Item(n).Cells("Nombre_Familia").Value = FamiliaBE.Nombre
+                        Next
+
+                        dgPatentes.Rows.Clear()
+                        For Each PatenteBE In BLL.PatenteBLL.GetInstance().listarTodos
+                            Dim n As Integer = dgPatentes.Rows.Add()
+                            dgPatentes.Rows.Item(n).Cells("patente_id").Value = PatenteBE.Idpatente
+                            dgPatentes.Rows.Item(n).Cells("Nombre").Value = PatenteBE.Nombre
+                            dgPatentes.Rows.Item(n).Cells("dgAsignarPatente").Value = False
+                            dgPatentes.Rows.Item(n).Cells("dgPatenteNegada").Value = False
+                        Next
+
+
+
+                        unUsuario.Nick = SELECCIONUSUARIOCOMBO
+                        Dim UsuarioBE = BLL.Usuario.GetInstance().listarPorId(unUsuario)
+
+
+                        For Each FamiliaBE In UsuarioBE.Familias
+                            For i = 0 To dgFamilias.Rows.Count - 1
+                                If dgFamilias.Rows.Item(i).Cells("familia_id").Value = FamiliaBE.IdFamilia Then
+                                    dgFamilias.Rows.Item(i).Cells("dgAsignarFamilia").Value = True
+                                End If
+                            Next
+                        Next
+
+                        For Each PatenteBE In UsuarioBE.Patentes
+                            For i = 0 To dgPatentes.Rows.Count - 1
+                                If dgPatentes.Rows.Item(i).Cells("patente_id").Value = PatenteBE.Idpatente Then
+                                    If PatenteBE.NEGADO = False Then
+                                        dgPatentes.Rows.Item(i).Cells("dgAsignarPatente").Value = True
+                                    Else
+                                        dgPatentes.Rows.Item(i).Cells("dgPatenteNegada").Value = True
+                                    End If
+                                End If
+                            Next
+                        Next
+                    End If
+                End If
+            End If
+            If (e.RowIndex >= 0 And e.ColumnIndex = 3) Then
+                Dim value3 As Boolean = CType(dgPatentes.CurrentCell.EditedFormattedValue, Boolean)
+                If value3 = True Then
+                    If (BLL.Usuario.GetInstance.ValidarEliminarUsuarioPatenteNegacion(BLL.Usuario.GetInstance.listarPorId(unUsuario), New BE.Patente With {.Idpatente = dgPatentes.Rows(e.RowIndex).Cells("patente_id").Value}) = False) Then            '                   
+                        MsgBox("No se puede negar la patente al usuario porque la patente quedaria sin asignacion")
+
+                        SELECCIONUSUARIOCOMBO = COMBOUSER.SelectedItem.ToString
+
+
+                        dgFamilias.Rows.Clear()
+                        For Each FamiliaBE In BLL.Familia.GetInstance().listarTodos
+                            Dim n As Integer = dgFamilias.Rows.Add()
+                            dgFamilias.Rows.Item(n).Cells("familia_id").Value = FamiliaBE.IdFamilia
+                            dgFamilias.Rows.Item(n).Cells("dgAsignarFamilia").Value = False
+                            dgFamilias.Rows.Item(n).Cells("Nombre_Familia").Value = FamiliaBE.Nombre
+                        Next
+
+                        dgPatentes.Rows.Clear()
+                        For Each PatenteBE In BLL.PatenteBLL.GetInstance().listarTodos
+                            Dim n As Integer = dgPatentes.Rows.Add()
+                            dgPatentes.Rows.Item(n).Cells("patente_id").Value = PatenteBE.Idpatente
+                            dgPatentes.Rows.Item(n).Cells("Nombre").Value = PatenteBE.Nombre
+                            dgPatentes.Rows.Item(n).Cells("dgAsignarPatente").Value = False
+                            dgPatentes.Rows.Item(n).Cells("dgPatenteNegada").Value = False
+                        Next
+
+
+
+                        unUsuario.Nick = SELECCIONUSUARIOCOMBO
+                        Dim UsuarioBE = BLL.Usuario.GetInstance().listarPorId(unUsuario)
+
+
+                        For Each FamiliaBE In UsuarioBE.Familias
+                            For i = 0 To dgFamilias.Rows.Count - 1
+                                If dgFamilias.Rows.Item(i).Cells("familia_id").Value = FamiliaBE.IdFamilia Then
+                                    dgFamilias.Rows.Item(i).Cells("dgAsignarFamilia").Value = True
+                                End If
+                            Next
+                        Next
+
+                        For Each PatenteBE In UsuarioBE.Patentes
+                            For i = 0 To dgPatentes.Rows.Count - 1
+                                If dgPatentes.Rows.Item(i).Cells("patente_id").Value = PatenteBE.Idpatente Then
+                                    If PatenteBE.NEGADO = False Then
+                                        dgPatentes.Rows.Item(i).Cells("dgAsignarPatente").Value = True
+                                    Else
+                                        dgPatentes.Rows.Item(i).Cells("dgPatenteNegada").Value = True
+                                    End If
+                                End If
+                            Next
+                        Next
+
+
+                    End If
+                End If
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+
+
+
+
 End Class

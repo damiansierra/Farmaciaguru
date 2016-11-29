@@ -30,7 +30,7 @@ Public Class DV
             For Each tabla In parametrizaciones.tablasDV
 
                 Dim selectDV As String = "Select * from "
-                Dim selectDVV As String = "Select DVV from DV where NOMBRE="
+                Dim selectDVV As String = "Select DVV from DV where NOMBRETABLA="
 
                 selectDV = selectDV & parametrizaciones.tablasDV(i)
                 selectDVV = selectDVV & "'" & parametrizaciones.tablasDV(i) & "'"

@@ -28,13 +28,15 @@
             End If
 
             If BLLDV.verificarDV() = False And I = 3 Then
+
+                BLLDV.RECALCULARDVS()
                 MessageBox.Show("LA BASE DE DATOS A SIDO MODIFICADA, RECALCULE LOS DIGITOS VERIFICADORES")
                 Me.Close()
                 Dim BLLUSUARIO As New BLL.Usuario
                 FormInicio.Usuariologueado = BLLUSUARIO.listarPorId(FormInicio.Usuariologueado)
-                Dim BLLbitacora As New BLL.BITACORA
+                Dim BLLbitacora As New BLL.Bitacora
                 Dim bebitacora As New BE.Bitacora With {.Criticidad = "ALTA", .nick = UI.FormInicio.Usuariologueado.Nick, .Descripcion = "FALLO EN LA INTEGRACION DE LA BASE DE DATOS"}
-                BLLbitacora.ALTA(bebitacora)
+                BLLbitacora.alta(bebitacora)
                 UI.FormInicio.Show()
                 '  UI.Principal.CAMBIARIDIOMAS()
                 '   ACTIVARFORMPRINCIPALFALLODV()

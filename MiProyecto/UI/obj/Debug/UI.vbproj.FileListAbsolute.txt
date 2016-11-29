@@ -74,3 +74,4 @@ D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormUsuarioSeguridad.resources
 D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.Login.resources
 D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.Resources.resources
 D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.vbproj.GenerateResource.Cache
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormFamiliaBaja.resources

@@ -53,4 +53,8 @@
         UI.FormFamiliaBaja.Show()
     End Sub
 
+    Private Sub BitacoraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BitacoraToolStripMenuItem.Click
+        UI.FormBitacora.MdiParent = Me
+        UI.FormBitacora.Show()
+    End Sub
 End Class

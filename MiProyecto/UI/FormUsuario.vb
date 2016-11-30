@@ -12,12 +12,12 @@
             ' Me.ValidarCampos()
             usuario.Nick = Trim(TxtNick.Text)
             'En caso de ser un usuario nuevo si guardo el Password
-            If (usuario.IdUsuario = 0) Then
-                usuario.Password = Txtpassword.Text
-            End If
+            ' If (usuario.IdUsuario = 0) Then
+            usuario.Password = Trim(Txtpassword.Text)
+            '    End If
             usuario.Nombre = Trim(TxtNombre.Text)
             usuario.Apellido = Trim(TxtApellido.Text)
-            
+
 
             Dim usuarioLogic As New BLL.Usuario
 

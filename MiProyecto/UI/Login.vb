@@ -11,7 +11,7 @@
         Dim BLLDV As New BLL.DV
         Try
 
-            Dim I As Integer = logueo(txtuser.Text, txtpass.Text)
+            Dim I As Integer = logueo(txtuser.Text, Trim(txtpass.Text))
             FormInicio.Usuariologueado.Nick = txtuser.Text
 
 

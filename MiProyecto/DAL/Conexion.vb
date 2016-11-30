@@ -23,7 +23,11 @@ Public Class Conexion
         Return _instancia
     End Function
 
+    Public Shared Function getConexionMaster() As String
 
+        obtenercadenaconexion()
+        Return "Data Source=" & servidor & "\" & instancia & ";Initial Catalog=farmacia;Integrated Security=True"
+    End Function
 
 
     Public Shared Function EjecutarSQLReader(ByVal pCommandText As String) As DataSet

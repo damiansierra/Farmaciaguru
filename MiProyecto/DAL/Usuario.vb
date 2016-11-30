@@ -27,43 +27,21 @@ Public Class Usuario
 
         'En caso de que haya sido modificado el password, el nuevo tiene que ser encriptado
         '   If (obj.PasswordModificado) Then
-        passEncriptado = Seguridad.EncriptarIrreversible(obj.Password)
+        passEncriptado = Seguridad.EncriptarIrreversible(Trim(obj.Password))
         '   End If
-
-        Dim sqlString As String
-        Dim parameters As New Dictionary(Of String, Object)
-        Dim idUsuario As Integer
-        If (obj.IdUsuario = 0) Then
-            ' idUsuario = Conexion.ObtenerUltimoId("Usuario") + 1
-            sqlString = "INSERT INTO USUARIO(Apellido, Nombre, Password, Nick, Cant_Int, Bloqueado, Baja) " & _
-                            "values(@Apellido,@Nombre,@Password,@Nick,@Cant_Int,@Bloqueado,@Baja)"
-        Else
-            idUsuario = obj.IdUsuario
-            sqlString = "UPDATE USUARIO SET Apellido = @Apellido, Nombre = @Nombre, Password = @Password, Nick = @Nick, " & _
-                "Cant_Int = @CCant_Int, Bloqueado = @Bloqueado, Baja = @Baja WHERE id = @id"
-
-        End If
-
-
-        parameters.Add("@Apellido", obj.Apellido)
-        parameters.Add("@Nombre", obj.Nombre)
-        parameters.Add("@Password", passEncriptado)
-        parameters.Add("@Nick", userEncriptado)
-        parameters.Add("@Cant_Int", obj.Cant_Int)
-        parameters.Add("@Bloqueado", obj.bloqueado)
-        parameters.Add("@Baja", obj.Baja)
-
-
         Try
+            Dim sqlString As String
+            Dim parameters As New Dictionary(Of String, Object)
+            Dim idUsuario As Integer
+            If (obj.IdUsuario = 0) Then
 
-            Dim resultQuery As Integer
+                Dim INSERT As String = "INSERT INTO USUARIO VALUES " & "('" & obj.Apellido & "','" & obj.Nombre & "','" & passEncriptado & "','" & userEncriptado & "','" & obj.Cant_Int & "','" & obj.bloqueado & "','" & obj.Baja & "')"
+                DAL.Conexion.GetInstance.Escribir(INSERT)
 
-            resultQuery = Conexion.ExecuteNonQuery(sqlString, parameters)
-            obj.IdUsuario = idUsuario
-
-            If (resultQuery <= 0) Then
-                MsgBox("Problemas con la base de datos")
             End If
+
+
+
 
         Catch ex As Exception
             MsgBox("Problemas con la base de datos")
@@ -112,16 +90,11 @@ Public Class Usuario
             dvs.RECALCULARDVS()
 
 
-            ' Dim SELECTFAM3 As String = "SELECT SUM(DVH) FROM USUARIO"
-            'Dim DVV3 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM3)
-            'Dim MODIFICARDVV3 As String = "UPDATE DV SET DVV = " & DVV3 & " WHERE NOMBRE = 'USUARIO'"
-            'DAL.Conexion.GetInstance.Escribir(MODIFICARDVV3)
+
 
             Return True
 
-            '   Else
-            '     Return False
-            '     End If
+         
 
 
 
@@ -192,7 +165,7 @@ Public Class Usuario
             dt = DAL.Conexion.GetInstance.leer(SELECTALL)
 
             For Each _ROW In dt.Rows
-                USUARIOS.Add(New BE.Usuario With {.Apellido = _ROW("APELLIDO"), .Baja = _ROW("BAJA"), .Nick = DAL.Seguridad.DesEncriptar(_ROW("NICK")), .Nombre = _ROW("NOMBRE")})
+                USUARIOS.Add(New BE.Usuario With {.IdUsuario = _ROW("IDUSUARIO"), .Apellido = _ROW("APELLIDO"), .Baja = _ROW("BAJA"), .Nick = DAL.Seguridad.DesEncriptar(_ROW("NICK")), .Nombre = _ROW("NOMBRE")})
             Next
             Return USUARIOS
 
@@ -273,15 +246,14 @@ Public Class Usuario
             Dim dt As New DataTable
             Dim i As Integer = 0
 
-            Dim PASSENCRIPTADA As String = ""
-            Dim USUARIOENCRIPTADO As String = ""
+            Dim PASSENCRIPTADA As String
+            Dim USUARIOENCRIPTADO As String
             Dim DALSEGURIDAD As New DAL.seguridad
             USUARIOENCRIPTADO = Seguridad.EncriptarReversible(Trim(USUARIO.Nick))
-            PASSENCRIPTADA = Seguridad.EncriptarIrreversible(USUARIO.Password)
+            PASSENCRIPTADA = Seguridad.EncriptarIrreversible(Trim(USUARIO.Password))
 
 
-            Dim SELECTUSER As String = "SELECT * FROM USUARIO WHERE nick = '" & USUARIOENCRIPTADO & "'"
-            ' AND password = '" & PASSENCRIPTADA & "' AND CANT_INT < 4"
+            Dim SELECTUSER As String = "SELECT * FROM USUARIO WHERE nick = '" & USUARIOENCRIPTADO & "' AND password = '" & PASSENCRIPTADA & "' AND CANT_INT < 4"
             dt = DAL.Conexion.GetInstance.leer(SELECTUSER)
             If dt.Rows.Count = 1 Then
                 '''' DEVUELVO 1 SI EL USUARIO Y CONTRASEÑA SON CORRECTOS
@@ -420,7 +392,7 @@ Public Class Usuario
 
                 Dim NUEVAPASSENCRIPTADA As String = Seguridad.EncriptarIrreversible(NUEVAPASS)
 
-                Dim UPDATE As String = "UPDATE USUARIO SET PASS= '" & NUEVAPASSENCRIPTADA & "', DVH= 1 WHERE IDUSUARIO =" & DT3.Rows(0).Item(0)
+                Dim UPDATE As String = "UPDATE USUARIO SET PASS= '" & NUEVAPASSENCRIPTADA & "', WHERE IDUSUARIO =" & DT3.Rows(0).Item(0)
                 DAL.Conexion.GetInstance.Escribir(UPDATE)
 
 
@@ -456,12 +428,12 @@ Public Class Usuario
 
         Try
 
-            If Directory.Exists("D:\IPStat\Resets") = False Then ' si no existe la carpeta se crea
-                Directory.CreateDirectory("D:\IPStat\Resets")
+            If Directory.Exists("D:\farmacia\Resets") = False Then ' si no existe la carpeta se crea
+                Directory.CreateDirectory("D:\farmacia\Resets")
             End If
 
             'Windows.Forms.Cursor.Current = Cursors.WaitCursor
-            PathArchivo = "D:\IPStat\Resets\" & USER & Format(Today.Date, "ddMMyyyy") & ".txt" ' Se determina el nombre del archivo con la fecha actual
+            PathArchivo = "D:\farmacia\Resets\" & USER & Format(Today.Date, "ddMMyyyy") & ".txt" ' Se determina el nombre del archivo con la fecha actual
 
             'verificamos si existe el archivo
 
@@ -642,7 +614,7 @@ Public Class Usuario
     Function ValidarEliminarUsuario(UsuarioBE As BE.Usuario) As Boolean
         Dim sqlString As String
         Dim sqlString2 As String
-
+        Dim value As Boolean = False
 
 
 
@@ -672,11 +644,12 @@ Public Class Usuario
                 Dim SELECTFAM As String = (sqlString)
 
                 dt = DAL.Conexion.GetInstance.leer(SELECTFAM)
-                If dt.Rows.Count > 1 Then
+                If dt.Rows.Count > 0 Then
+                    value = True
+                End If
 
 
-
-
+                If value = False Then
 
                     sqlString2 = String.Format(" select * from fampat pf ")
                     sqlString2 = sqlString2 & String.Format("	inner join usufam fu on fu.idfamilia = pf.idfamilia inner join Usuario u ")
@@ -689,19 +662,37 @@ Public Class Usuario
                     Dim SELECTFAM2 As String = (sqlString2)
                     dt2 = DAL.Conexion.GetInstance.leer(SELECTFAM2)
                     If dt2.Rows.Count > 0 Then
-                        Return True
+                        value = True
                     End If
                 End If
             Next
-            Return False
+
         Catch ex As Exception
             Throw ex
         End Try
 
+        ValidarEliminarUsuario = value
         Return ValidarEliminarUsuario
 
     End Function
 
 
+    Public Function validarultimo()
+        Try
+            Dim DT3 As DataTable = DAL.Conexion.GetInstance.leer("SELECT * FROM USUARIO")
+            Dim aver As Boolean = True
 
+            If DT3.Rows.Count = 1 Then
+                aver = False
+            End If
+
+            validarultimo = aver
+
+            Return validarultimo
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+    End Function
 End Class

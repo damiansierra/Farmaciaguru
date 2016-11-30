@@ -35,7 +35,6 @@ D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\bin\Debug\BLL.xml
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\bin\Debug\DAL.pdb
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\bin\Debug\DAL.xml
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.vbprojResolveAssemblyReference.cache
-D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.Form1.resources
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.Resources.resources
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.vbproj.GenerateResource.Cache
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormInicio.resources
@@ -75,3 +74,6 @@ D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.Login.resources
 D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.Resources.resources
 D:\damian\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.vbproj.GenerateResource.Cache
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormFamiliaBaja.resources
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormBitacora.resources
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormBackup.resources
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormRestore.resources

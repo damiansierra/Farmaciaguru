@@ -2,6 +2,14 @@
     Implements BE.ICrud(Of BE.Bitacora)
 
 
+    Private Shared _instancia As DAL.Bitacora
+    Public Shared Function GetInstance() As DAL.Bitacora
+        If _instancia Is Nothing Then
+            _instancia = New DAL.Bitacora
+        End If
+        Return _instancia
+    End Function
+
     Public Function alta(obj As BE.Bitacora) As Boolean Implements BE.ICrud(Of BE.Bitacora).alta
 
         Try
@@ -19,14 +27,6 @@
 
             Dim DALSEGURIDAD As New DAL.Seguridad
             Dim DESCRIPCIONENCRIPTADA As String = DAL.Seguridad.EncriptarReversible(obj.Descripcion)
-
-            '  If objeto.USUARIO.ID_USUARIO = 0 Then
-            ' Dim USUARIOENCRIPTADO As String = Seguridad.EncriptarReversible(obj.nick)
-            '  SELECTLOG = "SELECT IDUSUARIO FROM USUARIO WHERE USUARIO ='" & USUARIOENCRIPTADO & "'"
-            '  Dim dt3 As DataTable = DAL.Conexion.GetInstance.leer(SELECTLOG)
-            '  obj.nick = dt3.Rows(0).Item(0)
-            '  End If
-
 
 
             Dim sqlString As String
@@ -61,8 +61,6 @@
             Catch ex As Exception
                 MsgBox("Problemas con la base de datos")
             End Try
-
-
 
 
 
@@ -113,6 +111,62 @@
     End Function
 
     Public Function modificacion(obj As BE.Bitacora) As Boolean Implements BE.ICrud(Of BE.Bitacora).modificacion
+
+    End Function
+
+
+
+
+
+    Public Function ListarBitacoraPorParametros(idusuario As Integer, fechaDesde As DateTime, fechaHasta As DateTime, criticidad As String) As List(Of BE.Bitacora)
+    
+
+        
+        Try
+
+            Dim USUARIO As New BE.Usuario
+            Dim dt As New DataTable
+           
+            'Dim desde As String = fechaDesde.ToString("yyyy-MM-dd")
+            '  Dim hasta As String = fechaHasta.ToString("yyyy-MM-dd")
+            'Dim USUARIOENCRIPTADO As String = Seguridad.EncriptarReversible(obj.Nick)
+
+            Dim SELECTUSER As String = "SELECT * FROM USUARIO WHERE idusuario = '" & idusuario & "'"
+            dt = DAL.Conexion.GetInstance.leer(SELECTUSER)
+
+            Dim _ROW As DataRow = dt.Rows(0)
+
+            USUARIO.IdUsuario = _ROW("IDUSUARIO")
+            USUARIO.Apellido = _ROW("APELLIDO")
+            USUARIO.Nick = DAL.Seguridad.DesEncriptar(_ROW("NICK"))
+            USUARIO.Nombre = _ROW("NOMBRE")
+            USUARIO.Cant_Int = _ROW("CANT_INT")
+
+            Dim dt2 As New DataTable
+
+            Dim bitacoradelorto As String = "SELECT idbitacora, nick, descripcio, fechahora, criticidad FROM Bitacora " & _
+                        " WHERE ( nick =  '" & USUARIO.Nick & "') and  ( fechahora >= '" & Format(fechaDesde, "yyyy-MM-dd") & "' and fechahora <= '" & Format(fechaHasta, "yyyy-MM-dd") & "') and (criticidad = '" & criticidad & "' ) "
+
+            dt2 = DAL.Conexion.GetInstance.leer(bitacoradelorto)
+            Dim bitacoras As New List(Of BE.Bitacora)
+
+            For Each _ROW In dt2.Rows
+                Dim BitacoraBE As New BE.Bitacora
+                Dim UsuarioBE As New BE.Usuario
+                BitacoraBE.IdBitacora = CInt(_ROW("idbitacora"))
+                BitacoraBE.nick = CStr(_ROW("nick"))
+                BitacoraBE.Descripcion = Seguridad.DesEncriptar(CStr(_ROW("descripcio")))
+                BitacoraBE.FechaHora = CDate(_ROW("fechahora"))
+                BitacoraBE.Criticidad = CStr(_ROW("criticidad"))
+                bitacoras.Add(BitacoraBE)
+            Next
+
+            Return bitacoras
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
 
     End Function
 End Class

@@ -68,10 +68,23 @@
 
     Public Function baja(obj As BE.Familia) As Boolean Implements BE.ICrud(Of BE.Familia).baja
         Try
+            Dim nombreencriptado As String = Seguridad.EncriptarReversible(obj.Nombre)
 
-            DAL.Conexion.GetInstance.Escribir("DELETE FROM USUFAM WHERE IDFAMILIA = " & obj.IdFamilia)
-            DAL.Conexion.GetInstance.Escribir("DELETE FROM FAMPAT WHERE IDFAMILIA = " & obj.IdFamilia)
-            DAL.Conexion.GetInstance.Escribir("DELETE FROM FAMILIA WHERE IDFAMILIA = " & obj.IdFamilia)
+            Dim FAMILIA As New BE.Familia
+            Dim dt As New DataTable
+
+
+            Dim SELECTFAM1 As String = "SELECT * FROM FAMILIA WHERE Nombre = '" & nombreencriptado & "'"
+            dt = DAL.Conexion.GetInstance.leer(SELECTFAM1)
+
+            Dim _ROW As DataRow = dt.Rows(0)
+
+            FAMILIA.IdFamilia = _ROW("IDFAMILIA")
+            FAMILIA.Nombre = obj.Nombre
+
+            DAL.Conexion.GetInstance.Escribir("DELETE FROM USUFAM WHERE IDFAMILIA = " & FAMILIA.IdFamilia)
+            DAL.Conexion.GetInstance.Escribir("DELETE FROM FAMPAT WHERE IDFAMILIA = " & FAMILIA.IdFamilia)
+            DAL.Conexion.GetInstance.Escribir("DELETE FROM FAMILIA WHERE IDFAMILIA = " & FAMILIA.IdFamilia)
 
             Dim SELECTFAM As String = "SELECT SUM(DVH) FROM USUFAM"
             Dim DVV As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM)
@@ -254,7 +267,7 @@
         Dim sqlString As String
         Dim sqlString2 As String
 
-
+        Dim value As Boolean = False
 
 
         Try
@@ -284,8 +297,10 @@
 
                 dt = DAL.Conexion.GetInstance.leer(SELECTFAM)
                 If dt.Rows.Count > 0 Then
-                    Return True
-                Else
+                    value = True
+                End If
+
+                If value = False Then
 
 
                     sqlString2 = String.Format(" select * from fampat pf ")
@@ -298,10 +313,8 @@
 
                     Dim SELECTFAM2 As String = (sqlString2)
                     dt2 = DAL.Conexion.GetInstance.leer(SELECTFAM2)
-                    If dt2.Rows.Count > 1 Then
-                        Return True
-                    Else
-                        Return False
+                    If dt2.Rows.Count > 0 Then
+                        value = True
                     End If
                 End If
             Next
@@ -310,6 +323,7 @@
             Throw ex
         End Try
 
+        ValidarEliminarFamilia = value
 
         Return ValidarEliminarFamilia
     End Function

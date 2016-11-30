@@ -119,13 +119,13 @@
 
                 If LOGUEA = 1 Then
                     '''''''''' COMPRUEBO SI EL USUARIO QUE SE ESTA LOGUEANDO TIENE PERMISOS PARA RECALCULAR DIGITOS VERIFICADORES
-                    For Each pat As BE.PATENTE In user.PATENTES
+                    For Each pat As BE.Patente In user.Patentes
                         If pat.Idpatente = 1 And pat.NEGADO = False Then
                             LOGUEA = 3
                         End If
                     Next
 
-                    Dim dalfamilia As New DAL.FAMILIA
+                    Dim dalfamilia As New DAL.Familia
                     For Each fam As BE.Familia In user.Familias
                         fam = dalfamilia.listarPorId(fam)
                         '          If fam.Patente = False Then
@@ -199,4 +199,16 @@
             Throw ex
         End Try
     End Function
+
+
+
+
+    Function Validarultimo() As Boolean
+        Try
+            Return DAL.Usuario.GetInstance().validarultimo()
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
 End Class

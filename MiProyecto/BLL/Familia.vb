@@ -14,7 +14,15 @@
     End Function
 
     Public Function baja(obj As BE.Familia) As Boolean Implements BE.ICrud(Of BE.Familia).baja
+        Try
 
+            Dim DALFAMILIA As New DAL.Familia
+
+            Return DALFAMILIA.baja(obj)
+
+        Catch ex As Exception
+            Throw ex
+        End Try
     End Function
 
     Public Function listarPorId(obj As BE.Familia) As BE.Familia Implements BE.ICrud(Of BE.Familia).listarPorId
@@ -54,4 +62,13 @@
             Throw ex
         End Try
     End Function
+
+    Public Function ValidarEliminarFamilia(ByVal FamiliaBE As BE.Familia) As Boolean
+        Try
+            Return DAL.Familia.GetInstance.ValidarEliminarFamilia(FamiliaBE)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 End Class
+

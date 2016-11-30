@@ -1,6 +1,7 @@
 ﻿Public Class FormInicio
     Public Usuariologueado As New BE.Usuario
 
+
   
     Private Sub FormInicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         UI.Login.Hide()
@@ -44,6 +45,12 @@
 
     Private Sub ListarToolStripMenuItem5_Click(sender As Object, e As EventArgs) Handles ListarToolStripMenuItem5.Click
         UI.FormPatente.MdiParent = Me
-        UI.FormPatente.MdiParent = Me
+        UI.FormPatente.Show()
     End Sub
+
+    Private Sub BajaToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles BajaToolStripMenuItem1.Click
+        UI.FormFamiliaBaja.MdiParent = Me
+        UI.FormFamiliaBaja.Show()
+    End Sub
+
 End Class

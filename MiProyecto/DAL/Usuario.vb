@@ -34,7 +34,7 @@ Public Class Usuario
         Dim parameters As New Dictionary(Of String, Object)
         Dim idUsuario As Integer
         If (obj.IdUsuario = 0) Then
-            idUsuario = Conexion.ObtenerUltimoId("Usuario") + 1
+            ' idUsuario = Conexion.ObtenerUltimoId("Usuario") + 1
             sqlString = "INSERT INTO USUARIO(Apellido, Nombre, Password, Nick, Cant_Int, Bloqueado, Baja) " & _
                             "values(@Apellido,@Nombre,@Password,@Nick,@Cant_Int,@Bloqueado,@Baja)"
         Else
@@ -107,6 +107,10 @@ Public Class Usuario
             Dim DVV2 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM2)
             Dim MODIFICARDVV2 As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRETABLA = 'USUPAT'"
             DAL.Conexion.GetInstance.Escribir(MODIFICARDVV2)
+
+            Dim dvs As New DAL.DV
+            dvs.RECALCULARDVS()
+
 
             ' Dim SELECTFAM3 As String = "SELECT SUM(DVH) FROM USUARIO"
             'Dim DVV3 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM3)
@@ -252,6 +256,8 @@ Public Class Usuario
 
             Return True
 
+            Dim dvs As New DAL.DV
+            dvs.RECALCULARDVS()
 
 
         Catch ex As Exception
@@ -353,27 +359,7 @@ Public Class Usuario
             Dim SELECTBLOCK As Integer = DAL.Conexion.GetInstance.leerINT("SELECT CANT_INT FROM USUARIO WHERE IDUSUARIO =" & OBJETO.IdUsuario)
             Dim UPDATEBLOCK As String = "UPDATE USUARIO SET CANT_INT = " & SELECTBLOCK + 1 & " WHERE IDUSUARIO = " & OBJETO.IdUsuario
             DAL.Conexion.GetInstance.Escribir(UPDATEBLOCK)
-            '     Dim SELECTUSU As String = "SELECT * FROM USUARIO WHERE DVH = 1"
-
-            '   dt2 = DAL.Conexion.GetInstance.leer(SELECTUSU)
-
-
-
-            '   OBJETO.DVH = DV.concatenar(dt2.Rows(0), dt2.Columns.Count)
-
-
-
-            '   Dim MODIFICARDVH As String = "UPDATE USUARIO SET DVH = " & OBJETO.DVH & " WHERE ID_USUARIO = " & OBJETO.ID_USUARIO
-            '    DAL.Conexion.GetInstance.Escribir(MODIFICARDVH)
-
-
-            '   Dim SELECTDVH As String = "SELECT SUM(DVH) FROM USUARIO"
-            '    Dim DVV2 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTDVH)
-
-
-            '      Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRE = 'USUARIO'"
-            '    DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
-
+        
             Return True
 
         Catch ex As Exception
@@ -404,26 +390,6 @@ Public Class Usuario
             DAL.Conexion.GetInstance.Escribir(UPDATE)
 
 
-
-            'Dim SELECTUSU As String = "SELECT * FROM USUARIO WHERE DVH = 1"
-            '   dt2 = DAL.Conexion.GetInstance.leer(SELECTUSU)
-
-
-
-            '   OBJETO.DVH = DV.concatenar(dt2.Rows(0), dt2.Columns.Count)
-
-
-
-            '   Dim MODIFICARDVH As String = "UPDATE USUARIO SET DVH = " & OBJETO.DVH & " WHERE ID_USUARIO = " & OBJETO.ID_USUARIO
-            '    DAL.Conexion.GetInstance.Escribir(MODIFICARDVH)
-
-
-            '   Dim SELECTDVH As String = "SELECT SUM(DVH) FROM USUARIO"
-            '  Dim DVV2 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTDVH)
-
-
-            '  Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRE = 'USUARIO'"
-            ' DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
 
             Return True
         Catch ex As Exception
@@ -456,33 +422,6 @@ Public Class Usuario
 
                 Dim UPDATE As String = "UPDATE USUARIO SET PASS= '" & NUEVAPASSENCRIPTADA & "', DVH= 1 WHERE IDUSUARIO =" & DT3.Rows(0).Item(0)
                 DAL.Conexion.GetInstance.Escribir(UPDATE)
-
-
-
-                '  Dim SELECTUSU As String = "SELECT * FROM USUARIO WHERE DVH = 1"
-                ' dt2 = DAL.Conexion.GetInstance.leer(SELECTUSU)
-
-
-
-                ' Dim DVH As Integer = DV.concatenar(dt2.Rows(0), dt2.Columns.Count)
-
-
-
-                '      Dim MODIFICARDVH As String = "UPDATE USUARIO SET DVH = " & DVH & " WHERE ID_USUARIO = " & DT3.Rows(0).Item(0)
-                '       DAL.Conexion.GetInstance.Escribir(MODIFICARDVH)
-
-
-                '    Dim SELECTDVH As String = "SELECT SUM(DVH) FROM USUARIO"
-                '   Dim DVV2 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTDVH)
-
-
-                '     Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRE = 'USUARIO'"
-                '     DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
-
-
-
-
-
 
 
 
@@ -733,9 +672,11 @@ Public Class Usuario
                 Dim SELECTFAM As String = (sqlString)
 
                 dt = DAL.Conexion.GetInstance.leer(SELECTFAM)
-                If dt.Rows.Count > 0 Then
-                    Return True
-                Else
+                If dt.Rows.Count > 1 Then
+
+
+
+
 
                     sqlString2 = String.Format(" select * from fampat pf ")
                     sqlString2 = sqlString2 & String.Format("	inner join usufam fu on fu.idfamilia = pf.idfamilia inner join Usuario u ")
@@ -749,12 +690,10 @@ Public Class Usuario
                     dt2 = DAL.Conexion.GetInstance.leer(SELECTFAM2)
                     If dt2.Rows.Count > 0 Then
                         Return True
-                    Else
-                        Return False
                     End If
                 End If
             Next
-
+            Return False
         Catch ex As Exception
             Throw ex
         End Try

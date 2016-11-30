@@ -47,7 +47,7 @@ Partial Class FormaFamiliaAlta
         '
         'BtnAceptar
         '
-        Me.BtnAceptar.Location = New System.Drawing.Point(210, 157)
+        Me.BtnAceptar.Location = New System.Drawing.Point(305, 155)
         Me.BtnAceptar.Name = "BtnAceptar"
         Me.BtnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.BtnAceptar.TabIndex = 2

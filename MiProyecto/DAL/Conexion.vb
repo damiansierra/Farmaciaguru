@@ -380,12 +380,12 @@ Public Class Conexion
 
         dr = comm.ExecuteReader()
         dt.Load(dr)
-
-        Return dt
         CerrarConexion()
         dt.Dispose()
         comm.Dispose()
 
+        Return dt
+     
     End Function
 
     Public Overloads Function leer(unaCadena As String) As DataTable
@@ -397,11 +397,11 @@ Public Class Conexion
 
         dr = comm.ExecuteReader()
         dt.Load(dr)
-
-        Return dt
         CerrarConexion()
         dt.Dispose()
         comm.Dispose()
+        Return dt
+       
 
     End Function
 

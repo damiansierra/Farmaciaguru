@@ -57,6 +57,8 @@
             Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRETABLA = 'FAMPAT'"
             DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
 
+            Dim dvs As New DAL.DV
+            dvs.RECALCULARDVS()
             Return True
 
         Catch ex As Exception
@@ -65,6 +67,30 @@
     End Function
 
     Public Function baja(obj As BE.Familia) As Boolean Implements BE.ICrud(Of BE.Familia).baja
+        Try
+
+            DAL.Conexion.GetInstance.Escribir("DELETE FROM USUFAM WHERE IDFAMILIA = " & obj.IdFamilia)
+            DAL.Conexion.GetInstance.Escribir("DELETE FROM FAMPAT WHERE IDFAMILIA = " & obj.IdFamilia)
+            DAL.Conexion.GetInstance.Escribir("DELETE FROM FAMILIA WHERE IDFAMILIA = " & obj.IdFamilia)
+
+            Dim SELECTFAM As String = "SELECT SUM(DVH) FROM USUFAM"
+            Dim DVV As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM)
+            Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRE = 'USUFAM'"
+            DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
+
+            Dim SELECTFAM2 As String = "SELECT SUM(DVH) FROM FAMPAT"
+            Dim DVV2 As Integer = DAL.Conexion.GetInstance.leerINT(SELECTFAM2)
+            Dim MODIFICARDVV2 As String = "UPDATE DV SET DVV = " & DVV2 & " WHERE NOMBRE = 'FAMPAT'"
+            DAL.Conexion.GetInstance.Escribir(MODIFICARDVV2)
+
+            Dim dvs As New DAL.DV
+            dvs.RECALCULARDVS()
+            Return True
+
+
+        Catch ex As Exception
+            Throw ex
+        End Try
 
     End Function
 
@@ -144,6 +170,9 @@
             Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRETABLA = 'FAMPAT'"
             DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
 
+            Dim dvs As New DAL.DV
+            dvs.RECALCULARDVS()
+
             Return True
 
         Catch ex As Exception
@@ -216,6 +245,73 @@
 
         Return ValidarEliminarFamiliaUsuario
 
+    End Function
+
+
+
+    Public Function ValidarEliminarFamilia(FamiliaBE As BE.Familia) As Boolean
+
+        Dim sqlString As String
+        Dim sqlString2 As String
+
+
+
+
+        Try
+            Dim listpatente As New List(Of BE.Patente)
+
+            listpatente = DAL.PatenteDALL.GetInstance.listarTodos
+
+            Dim dt As New DataTable
+            Dim dt2 As New DataTable
+
+            For Each row In listpatente
+
+
+                'sqlString = String.Format("select idpatente from fampat join usufam ")
+                'sqlString = sqlString & String.Format(" on fampat.idfamilia = usufam.idfamilia ")
+                'sqlString = sqlString & String.Format(" where idpatente = " & row.Idpatente & " and fampat.idfamilia <> " & FamiliaBE.IdFamilia & " ")
+                'sqlString = sqlString & String.Format(" and usufam.idusuario <> " & UsuarioBE.IdUsuario & " ")
+                'sqlString = sqlString & String.Format(" and idusuario not in(select idusuario from usupat ")
+                'sqlString = sqlString & String.Format(" where idpatente = fampat.idpatente and ")
+                'sqlString = sqlString & String.Format(" idusuario = usufam.idusuario and negado = 1) ")
+
+
+                sqlString = String.Format(" select * from UsuPat up	inner join Usuario u on u.idusuario = up.idusuario ")
+                sqlString = sqlString & String.Format(" where up.idpatente = " & row.Idpatente & " and up.Negado = 0 ")
+                sqlString = sqlString & String.Format("	and u.bloqueado = 0	")
+                Dim SELECTFAM As String = (sqlString)
+
+                dt = DAL.Conexion.GetInstance.leer(SELECTFAM)
+                If dt.Rows.Count > 0 Then
+                    Return True
+                Else
+
+
+                    sqlString2 = String.Format(" select * from fampat pf ")
+                    sqlString2 = sqlString2 & String.Format("	inner join usufam fu on fu.idfamilia = pf.idfamilia inner join Usuario u ")
+                    sqlString2 = sqlString2 & String.Format("	on u.idusuario = fu.idusuario where  fu.idfamilia != " & FamiliaBE.IdFamilia & " ")
+                    sqlString2 = sqlString2 & String.Format("	AND pf.idpatente = " & row.Idpatente & " AND u.bloqueado = 0 ")
+                    sqlString2 = sqlString2 & String.Format(" AND pf.idpatente not in ( select up.idpatente from  UsuPat up ")
+                    sqlString2 = sqlString2 & String.Format("	where up.idusuario = u.idusuario ")
+                    sqlString2 = sqlString2 & String.Format("	AND up.negado = 1 )")
+
+                    Dim SELECTFAM2 As String = (sqlString2)
+                    dt2 = DAL.Conexion.GetInstance.leer(SELECTFAM2)
+                    If dt2.Rows.Count > 1 Then
+                        Return True
+                    Else
+                        Return False
+                    End If
+                End If
+            Next
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+
+        Return ValidarEliminarFamilia
     End Function
 
    

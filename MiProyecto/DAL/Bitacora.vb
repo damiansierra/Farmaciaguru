@@ -90,6 +90,10 @@
             Dim MODIFICARDVV As String = "UPDATE DV SET DVV = " & DVV & " WHERE NOMBRETABLA = 'BITACORA'"
             DAL.Conexion.GetInstance.Escribir(MODIFICARDVV)
 
+
+            Dim dvs As New DAL.DV
+            dvs.RECALCULARDVS()
+
             Return True
         Catch ex As Exception
             Throw ex

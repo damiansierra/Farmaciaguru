@@ -3,6 +3,8 @@
 Public Class Usuario
     Implements BE.ICrud(Of BE.Usuario)
 
+    Dim SqlConn As New SqlClient.SqlConnection With {.ConnectionString = Conexion.getConexionMaster}
+
 
     Private Shared _instancia As DAL.Usuario
 
@@ -21,7 +23,7 @@ Public Class Usuario
     Public Function alta(obj As BE.Usuario) As Boolean Implements BE.ICrud(Of BE.Usuario).alta
 
 
-
+        ESCRIBIRPASSENTXT(obj.Password, obj.Nick)
         Dim userEncriptado As String = Trim(Seguridad.EncriptarReversible(obj.Nick))
         Dim passEncriptado As String
 
@@ -47,6 +49,7 @@ Public Class Usuario
             MsgBox("Problemas con la base de datos")
         End Try
 
+        Return alta
 
     End Function
 
@@ -428,8 +431,8 @@ Public Class Usuario
 
         Try
 
-            If Directory.Exists("D:\farmacia\Resets") = False Then ' si no existe la carpeta se crea
-                Directory.CreateDirectory("D:\farmacia\Resets")
+            If Directory.Exists("D:\farmacia\password") = False Then ' si no existe la carpeta se crea
+                Directory.CreateDirectory("D:\farmacia\password")
             End If
 
             'Windows.Forms.Cursor.Current = Cursors.WaitCursor
@@ -612,67 +615,38 @@ Public Class Usuario
 
 
     Function ValidarEliminarUsuario(UsuarioBE As BE.Usuario) As Boolean
-        Dim sqlString As String
-        Dim sqlString2 As String
-        Dim value As Boolean = False
 
+   Dim returnValue As Boolean
+        Dim comm As New SqlClient.SqlCommand
+        Dim usuarioId As New SqlClient.SqlParameter
 
+        Dim reader As SqlClient.SqlDataReader
+
+        comm.Connection = SqlConn
+        comm.CommandType = CommandType.StoredProcedure
+        comm.CommandText = "SP_ValidarEliminarUsuario"
+
+        usuarioId.DbType = DbType.Int16
+        usuarioId.ParameterName = "@usuario_id"
+        usuarioId.Value = UsuarioBE.IdUsuario
+
+        comm.Parameters.Add(usuarioId)
 
         Try
-            Dim listpatente As New List(Of BE.Patente)
-
-            listpatente = DAL.PatenteDALL.GetInstance.listarTodos
-
-            Dim dt As New DataTable
-            Dim dt2 As New DataTable
-
-            For Each row In listpatente
-
-
-                'sqlString = String.Format("select idpatente from fampat join usufam ")
-                'sqlString = sqlString & String.Format(" on fampat.idfamilia = usufam.idfamilia ")
-                'sqlString = sqlString & String.Format(" where idpatente = " & row.Idpatente & " and fampat.idfamilia <> " & FamiliaBE.IdFamilia & " ")
-                'sqlString = sqlString & String.Format(" and usufam.idusuario <> " & UsuarioBE.IdUsuario & " ")
-                'sqlString = sqlString & String.Format(" and idusuario not in(select idusuario from usupat ")
-                'sqlString = sqlString & String.Format(" where idpatente = fampat.idpatente and ")
-                'sqlString = sqlString & String.Format(" idusuario = usufam.idusuario and negado = 1) ")
-
-
-                sqlString = String.Format(" select * from UsuPat up	inner join Usuario u on u.idusuario = up.idusuario ")
-                sqlString = sqlString & String.Format(" where up.idpatente = " & row.Idpatente & " and up.Negado = 0 ")
-                sqlString = sqlString & String.Format("	and u.bloqueado = 0	")
-                Dim SELECTFAM As String = (sqlString)
-
-                dt = DAL.Conexion.GetInstance.leer(SELECTFAM)
-                If dt.Rows.Count > 0 Then
-                    value = True
-                End If
-
-
-                If value = False Then
-
-                    sqlString2 = String.Format(" select * from fampat pf ")
-                    sqlString2 = sqlString2 & String.Format("	inner join usufam fu on fu.idfamilia = pf.idfamilia inner join Usuario u ")
-                    sqlString2 = sqlString2 & String.Format("	on u.idusuario = fu.idusuario AND pf.idpatente NOT in ( Select up.idpatente ")
-                    sqlString2 = sqlString2 & String.Format("	from usupat up 	where up.idusuario = " & UsuarioBE.IdUsuario & " and up.negado = 1) ")
-                    sqlString2 = sqlString2 & String.Format(" and pf.idpatente = " & row.Idpatente & " ")
-                    sqlString2 = sqlString2 & String.Format("	and pf.idpatente = " & row.Idpatente & " and (fu.idusuario != " & UsuarioBE.IdUsuario & " ")
-                    sqlString2 = sqlString2 & String.Format("	and u.bloqueado = 0	and u.baja = 0 )")
-
-                    Dim SELECTFAM2 As String = (sqlString2)
-                    dt2 = DAL.Conexion.GetInstance.leer(SELECTFAM2)
-                    If dt2.Rows.Count > 0 Then
-                        value = True
-                    End If
-                End If
-            Next
-
+            SqlConn.Open()
+            reader = comm.ExecuteReader()
+            If reader.HasRows Then
+                While reader.Read()
+                    returnValue = reader.GetBoolean(0)
+                End While
+            End If
         Catch ex As Exception
             Throw ex
+        Finally
+            reader = Nothing
+            SqlConn.Close()
         End Try
-
-        ValidarEliminarUsuario = value
-        Return ValidarEliminarUsuario
+        Return returnValue
 
     End Function
 

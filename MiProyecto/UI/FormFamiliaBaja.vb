@@ -58,7 +58,7 @@
                 Dim nombre As New BE.Familia With {.Nombre = COMBOFAM.Text}
 
                 Dim BLLFAMILIA As New BLL.Familia
-                If BLL.Familia.GetInstance.ValidarEliminarFamilia(BLL.Familia.GetInstance.listarPorId(nombre)) = True Then
+                If BLL.Familia.GetInstance.ValidarEliminarFamilia(BLL.Familia.GetInstance.listarPorId(nombre)) Then
                     If BLLFAMILIA.baja(nombre) = True Then
                         MessageBox.Show("FAMILIA ELIMINADA")
                         COMBOFAM.Items.Clear()

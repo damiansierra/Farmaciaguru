@@ -159,7 +159,9 @@
                     If BLL.Familia.GetInstance.ValidarEliminarFamiliaUsuario(New BE.Familia With {.IdFamilia = dgFamilias.Rows(e.RowIndex).Cells("familia_id").Value}, BLL.Usuario.GetInstance.listarPorId(unUsuario)) = False Then
                         MsgBox("No se puede quitar la familia al usuario porque contiene patentes esenciales y quedaria sin asignar")
                         SELECCIONUSUARIOCOMBO = COMBOUSER.SelectedItem.ToString
-
+                        Dim BLLbitacora As New BLL.Bitacora
+                        Dim bebitacora As New BE.Bitacora With {.Criticidad = "ALTA", .nick = UI.FormInicio.Usuariologueado.Nick, .Descripcion = "SE INTENTO SACARLE PATENTE ESENCIAL A UNA FAMILIA "}
+                        BLLbitacora.alta(bebitacora)
 
                         dgFamilias.Rows.Clear()
                         For Each FamiliaBE In BLL.Familia.GetInstance().listarTodos
@@ -221,6 +223,9 @@
                 If value2 = False Then
                     If (BLL.Usuario.GetInstance.ValidarEliminarUsuarioPatente(BLL.Usuario.GetInstance.listarPorId(unUsuario), New BE.Patente With {.Idpatente = dgPatentes.Rows(e.RowIndex).Cells("patente_id").Value}) = False) Then            '                   
                         MsgBox("No se puede quitar la Patente al usuario porque contiene patentes esenciales y quedaria sin asignar")
+                        Dim BLLbitacora As New BLL.Bitacora
+                        Dim bebitacora As New BE.Bitacora With {.Criticidad = "ALTA", .nick = UI.FormInicio.Usuariologueado.Nick, .Descripcion = "SE INTENTO SACARLE PATENTE ESENCIAL "}
+                        BLLbitacora.alta(bebitacora)
                         SELECCIONUSUARIOCOMBO = COMBOUSER.SelectedItem.ToString
 
 

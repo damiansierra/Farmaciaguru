@@ -3,6 +3,7 @@
     Dim FAMILIASELECCIONADA As String = ""
     Dim LISTAfamilias As New List(Of BE.Familia)
     Dim FAMILIAIDSELECCIONADA As Integer = 0
+    Public Usuariologueado As New BE.Usuario
 
     Private Sub FormFamilias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.KeyPreview = True
@@ -20,6 +21,24 @@
     End Sub
 
 
+    Private Sub DataGridViewfamilia_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridViewfamilia.CellContentClick
+        Try
+            Dim nombre As New BE.Familia With {.Nombre = Combofamilia.Text}
+
+            If (e.RowIndex >= 0 And e.ColumnIndex = 2) Then
+                If (BLL.Familia.GetInstance.ValidarEliminarFamiliaPatente(BLL.Familia.GetInstance.listarPorId(nombre), New BE.Patente With {.Idpatente = DataGridViewfamilia.Rows(e.RowIndex).Cells("IDPatente").Value}) = False) Then
+                    MsgBox("No se puede quitar la patente a la familia porque quedarian patentes esenciales sin asignar")
+                    Dim BLLbitacora As New BLL.Bitacora
+                    Dim bebitacora As New BE.Bitacora With {.Criticidad = "MEDIA", .nick = UI.FormInicio.Usuariologueado.Nick, .Descripcion = "SE TRATO DE DESASIGNAR PATENTE ESENCIAL" & DataGridViewfamilia.Rows(e.RowIndex).Cells("IDPatente").Value}
+                    BLLbitacora.alta(bebitacora)
+                    CARGARCOMBO()
+                End If
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 
 
     Private Sub Combofamilia_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Combofamilia.SelectedIndexChanged
@@ -73,9 +92,6 @@
             Next
 
           
-         
-
-
         Catch ex As Exception
             MessageBox.Show("FALLO LA CARGAR LOS ATRIBUTOS DE LA FAMILIA")
         End Try
@@ -189,6 +205,10 @@
 
             If BLLFAMILIA.modificacion(FAMILIA) = True Then
                 MessageBox.Show("SE MODIFICO LA FAMILIA SELECCIONADA")
+
+                Dim dalbitacora As New BLL.Bitacora
+                Dim bebitacora As New BE.Bitacora With {.Criticidad = "MEDIA", .nick = Usuariologueado.Nick, .Descripcion = "Se modifico la familia:" & FAMILIA.Nombre}
+                dalbitacora.alta(bebitacora)
             End If
 
             CARGARCOMBO()

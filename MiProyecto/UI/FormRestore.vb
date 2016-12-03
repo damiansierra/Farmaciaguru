@@ -12,7 +12,7 @@ Public Class FormRestore
     Private Sub frmRestore_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
             MenuUI = Me.MdiParent
-           
+
 
 
         Catch ex As Exception
@@ -20,7 +20,7 @@ Public Class FormRestore
         End Try
     End Sub
 
-  
+
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs) Handles btnAceptar.Click
         Try
@@ -57,9 +57,9 @@ Public Class FormRestore
 
     Private Sub btnCarpeta_Click(sender As Object, e As EventArgs) Handles btnCarpeta.Click
         Try
-            '           If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
-            'txtRuta.Text = FolderBrowserDialog1.SelectedPath
-            '    End If
+            If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
+                txtRuta.Text = FolderBrowserDialog1.SelectedPath
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -76,7 +76,7 @@ Public Class FormRestore
     End Function
 
     Public Sub RegistrarBitacora(evento As String, nivel As String)
-    
+
     End Sub
 
 

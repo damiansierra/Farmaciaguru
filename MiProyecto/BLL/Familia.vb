@@ -43,9 +43,7 @@
         Try
 
 
-            '  Dim dalbitacora As New DAL.BITACORA
-            '    Dim bebitacora As New BE.Bitacora With {.Criticidad = "MEDIA", .USUARIO = Usuario, .Descripcion = "Se modifico la familia:" & objeto.DESCRIPCION}
-            '     dalbitacora.ALTA(bebitacora)
+          
 
             Return DAL.Familia.GetInstance.modificacion(obj)
 
@@ -66,6 +64,14 @@
     Public Function ValidarEliminarFamilia(ByVal FamiliaBE As BE.Familia) As Boolean
         Try
             Return DAL.Familia.GetInstance.ValidarEliminarFamilia(FamiliaBE)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function ValidarEliminarFamiliaPatente(ByVal FamiliaBE As BE.Familia, ByVal PatenteBE As BE.Patente) As Boolean
+        Try
+            Return DAL.Familia.GetInstance.ValidarEliminarFamiliaPatente(FamiliaBE, PatenteBE)
         Catch ex As Exception
             Throw ex
         End Try

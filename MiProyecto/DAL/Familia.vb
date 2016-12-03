@@ -1,5 +1,6 @@
 ﻿Public Class Familia
     Implements BE.ICrud(Of BE.Familia)
+    Dim SqlConn As New SqlClient.SqlConnection With {.ConnectionString = Conexion.getConexionMaster}
 
     Private Shared _instancia As DAL.Familia
 
@@ -264,68 +265,93 @@
 
     Public Function ValidarEliminarFamilia(FamiliaBE As BE.Familia) As Boolean
 
-        Dim sqlString As String
-        Dim sqlString2 As String
+        Dim nombreencriptado As String = Seguridad.EncriptarReversible(FamiliaBE.Nombre)
 
-        Dim value As Boolean = False
+        Dim FAMILIA As New BE.Familia
+        Dim dt As New DataTable
 
+
+        Dim SELECTFAM1 As String = "SELECT * FROM FAMILIA WHERE Nombre = '" & nombreencriptado & "'"
+        dt = DAL.Conexion.GetInstance.leer(SELECTFAM1)
+
+        Dim _ROW As DataRow = dt.Rows(0)
+
+        FAMILIA.IdFamilia = _ROW("IDFAMILIA")
+        FAMILIA.Nombre = FamiliaBE.Nombre
+
+
+        DAL.Conexion.getConexionMaster()
+        Dim returnValue As Boolean = False
+        Dim comm As New SqlClient.SqlCommand
+        Dim familiaId As New SqlClient.SqlParameter
+        Dim reader As SqlClient.SqlDataReader
+
+        comm.Connection = SqlConn
+        comm.CommandType = CommandType.StoredProcedure
+        comm.CommandText = "SP_ValidarEliminarFamilia"
+
+        familiaId.DbType = DbType.Int16
+        familiaId.ParameterName = "@idfamilia"
+        familiaId.Value = FAMILIA.IdFamilia
+
+        comm.Parameters.Add(familiaId)
 
         Try
-            Dim listpatente As New List(Of BE.Patente)
-
-            listpatente = DAL.PatenteDALL.GetInstance.listarTodos
-
-            Dim dt As New DataTable
-            Dim dt2 As New DataTable
-
-            For Each row In listpatente
-
-
-                'sqlString = String.Format("select idpatente from fampat join usufam ")
-                'sqlString = sqlString & String.Format(" on fampat.idfamilia = usufam.idfamilia ")
-                'sqlString = sqlString & String.Format(" where idpatente = " & row.Idpatente & " and fampat.idfamilia <> " & FamiliaBE.IdFamilia & " ")
-                'sqlString = sqlString & String.Format(" and usufam.idusuario <> " & UsuarioBE.IdUsuario & " ")
-                'sqlString = sqlString & String.Format(" and idusuario not in(select idusuario from usupat ")
-                'sqlString = sqlString & String.Format(" where idpatente = fampat.idpatente and ")
-                'sqlString = sqlString & String.Format(" idusuario = usufam.idusuario and negado = 1) ")
-
-
-                sqlString = String.Format(" select * from UsuPat up	inner join Usuario u on u.idusuario = up.idusuario ")
-                sqlString = sqlString & String.Format(" where up.idpatente = " & row.Idpatente & " and up.Negado = 0 ")
-                sqlString = sqlString & String.Format("	and u.bloqueado = 0	")
-                Dim SELECTFAM As String = (sqlString)
-
-                dt = DAL.Conexion.GetInstance.leer(SELECTFAM)
-                If dt.Rows.Count > 0 Then
-                    value = True
-                End If
-
-                If value = False Then
-
-
-                    sqlString2 = String.Format(" select * from fampat pf ")
-                    sqlString2 = sqlString2 & String.Format("	inner join usufam fu on fu.idfamilia = pf.idfamilia inner join Usuario u ")
-                    sqlString2 = sqlString2 & String.Format("	on u.idusuario = fu.idusuario where  fu.idfamilia != " & FamiliaBE.IdFamilia & " ")
-                    sqlString2 = sqlString2 & String.Format("	AND pf.idpatente = " & row.Idpatente & " AND u.bloqueado = 0 ")
-                    sqlString2 = sqlString2 & String.Format(" AND pf.idpatente not in ( select up.idpatente from  UsuPat up ")
-                    sqlString2 = sqlString2 & String.Format("	where up.idusuario = u.idusuario ")
-                    sqlString2 = sqlString2 & String.Format("	AND up.negado = 1 )")
-
-                    Dim SELECTFAM2 As String = (sqlString2)
-                    dt2 = DAL.Conexion.GetInstance.leer(SELECTFAM2)
-                    If dt2.Rows.Count > 0 Then
-                        value = True
-                    End If
-                End If
-            Next
-
+            SqlConn.Open()
+            reader = comm.ExecuteReader()
+            If reader.HasRows Then
+                While reader.Read()
+                    returnValue = reader.GetBoolean(0)
+                End While
+            End If
         Catch ex As Exception
             Throw ex
+        Finally
+            reader = Nothing
+            SqlConn.Close()
         End Try
+        Return returnValue
+    End Function
 
-        ValidarEliminarFamilia = value
 
-        Return ValidarEliminarFamilia
+    Function ValidarEliminarFamiliaPatente(FamiliaBE As BE.Familia, PatenteBE As BE.Patente) As Boolean
+        Dim returnValue As Boolean
+        Dim comm As New SqlClient.SqlCommand
+        Dim familiaId As New SqlClient.SqlParameter
+        Dim patenteId As New SqlClient.SqlParameter
+
+        Dim reader As SqlClient.SqlDataReader
+
+        comm.Connection = sqlConn
+        comm.CommandType = CommandType.StoredProcedure
+        comm.CommandText = "SP_ValidarEliminarFamiliaPatente"
+
+        familiaId.DbType = DbType.Int16
+        familiaId.ParameterName = "@familia_id"
+        familiaId.Value = FamiliaBE.IdFamilia
+
+        patenteId.DbType = DbType.Int16
+        patenteId.ParameterName = "@patente_id"
+        patenteId.Value = PatenteBE.Idpatente
+
+        comm.Parameters.Add(familiaId)
+        comm.Parameters.Add(patenteId)
+
+        Try
+            sqlConn.Open()
+            reader = comm.ExecuteReader()
+            If reader.HasRows Then
+                While reader.Read()
+                    returnValue = reader.GetBoolean(0)
+                End While
+            End If
+        Catch ex As Exception
+            Throw ex
+        Finally
+            reader = Nothing
+            sqlConn.Close()
+        End Try
+        Return returnValue
     End Function
 
    

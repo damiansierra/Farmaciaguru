@@ -7,6 +7,10 @@
         UI.Login.Hide()
         Me.Location = Screen.PrimaryScreen.WorkingArea.Location
         Me.Size = Screen.PrimaryScreen.WorkingArea.Size
+        Dim BLLbitacora As New BLL.Bitacora
+        Dim bebitacora As New BE.Bitacora With {.Criticidad = "BAJA", .nick = Usuariologueado.Nick, .Descripcion = "Usuario Logueado"}
+        BLLbitacora.alta(bebitacora)
+
     End Sub
 
    

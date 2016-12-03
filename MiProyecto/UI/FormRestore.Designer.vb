@@ -27,6 +27,7 @@ Partial Class FormRestore
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtRuta = New System.Windows.Forms.TextBox()
         Me.btnAceptar = New System.Windows.Forms.Button()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         Me.SuspendLayout()
         '
         'btnCarpeta
@@ -95,4 +96,5 @@ Partial Class FormRestore
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents txtRuta As System.Windows.Forms.TextBox
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
+    Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
 End Class

@@ -14,7 +14,9 @@
             '      MsgBox(lenguajeBLL.Traducir("OperacionExitosa"), MsgBoxStyle.Information, Me.Text)
             Me.DialogResult = Windows.Forms.DialogResult.OK
             Me.TxtNombre.Clear()
-
+            Dim BLLbitacora As New BLL.Bitacora
+            Dim bebitacora As New BE.Bitacora With {.Criticidad = "ALTA", .nick = UI.FormInicio.Usuariologueado.Nick, .Descripcion = "SE CREO FAMILIA " & Familia.Nombre}
+            BLLbitacora.alta(bebitacora)
 
       Catch ex As Exception
             MsgBox("Problemas con la base de datos")

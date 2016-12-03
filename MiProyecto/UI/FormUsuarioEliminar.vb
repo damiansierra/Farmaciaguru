@@ -53,7 +53,7 @@
             '        USUARIO = bllusuario.CONSULTA(USUARIO)
 
             If COMBOUSER.Text <> "" Then
-                If BLL.Usuario.GetInstance.ValidarEliminarUsuario(BLL.Usuario.GetInstance.listarPorId(Nick)) = True Then
+                If BLL.Usuario.GetInstance.ValidarEliminarUsuario(BLL.Usuario.GetInstance.listarPorId(Nick)) Then
                     If BLL.Usuario.GetInstance.Validarultimo() = True Then
                         If bllusuario.baja(Nick) = True Then
                             MessageBox.Show("SE ELIMINO USUARIO")

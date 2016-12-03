@@ -10,6 +10,7 @@ Public Class Conexion
     Public comm As New SqlClient.SqlCommand
 
 
+
     Private Sub New()
     End Sub
 

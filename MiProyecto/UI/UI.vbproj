@@ -76,6 +76,12 @@
     <Compile Include="FormaFamiliaAlta.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormAltaProductos.Designer.vb">
+      <DependentUpon>FormAltaProductos.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormAltaProductos.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormBackup.Designer.vb">
       <DependentUpon>FormBackup.vb</DependentUpon>
     </Compile>
@@ -104,6 +110,12 @@
       <DependentUpon>FormInicio.vb</DependentUpon>
     </Compile>
     <Compile Include="FormInicio.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLaboratoriosAlta.Designer.vb">
+      <DependentUpon>FormLaboratoriosAlta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormLaboratoriosAlta.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormPatente.Designer.vb">
@@ -162,6 +174,9 @@
     <EmbeddedResource Include="FormaFamiliaAlta.resx">
       <DependentUpon>FormaFamiliaAlta.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormAltaProductos.resx">
+      <DependentUpon>FormAltaProductos.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBackup.resx">
       <DependentUpon>FormBackup.vb</DependentUpon>
     </EmbeddedResource>
@@ -176,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormInicio.resx">
       <DependentUpon>FormInicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLaboratoriosAlta.resx">
+      <DependentUpon>FormLaboratoriosAlta.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPatente.resx">
       <DependentUpon>FormPatente.vb</DependentUpon>

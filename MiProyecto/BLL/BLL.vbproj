@@ -66,6 +66,7 @@
     <Compile Include="Bitacora.vb" />
     <Compile Include="DV.vb" />
     <Compile Include="Familia.vb" />
+    <Compile Include="Laboratorio.vb" />
     <Compile Include="MiClaseBLL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -83,6 +84,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="PatenteBLL.vb" />
+    <Compile Include="Producto.vb" />
     <Compile Include="Usuario.vb" />
   </ItemGroup>
   <ItemGroup>

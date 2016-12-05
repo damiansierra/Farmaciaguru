@@ -32,9 +32,9 @@ Public Class Usuario
         passEncriptado = Seguridad.EncriptarIrreversible(Trim(obj.Password))
         '   End If
         Try
-            Dim sqlString As String
+
             Dim parameters As New Dictionary(Of String, Object)
-            Dim idUsuario As Integer
+
             If (obj.IdUsuario = 0) Then
 
                 Dim INSERT As String = "INSERT INTO USUARIO VALUES " & "('" & obj.Apellido & "','" & obj.Nombre & "','" & passEncriptado & "','" & userEncriptado & "','" & obj.Cant_Int & "','" & obj.bloqueado & "','" & obj.Baja & "')"
@@ -616,7 +616,7 @@ Public Class Usuario
 
     Function ValidarEliminarUsuario(UsuarioBE As BE.Usuario) As Boolean
 
-   Dim returnValue As Boolean
+        Dim returnValue As Boolean
         Dim comm As New SqlClient.SqlCommand
         Dim usuarioId As New SqlClient.SqlParameter
 

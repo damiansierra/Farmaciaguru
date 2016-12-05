@@ -77,3 +77,5 @@ D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormFamiliaBaja
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormBitacora.resources
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormBackup.resources
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormRestore.resources
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormLaboratoriosAlta.resources
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormAltaProductos.resources

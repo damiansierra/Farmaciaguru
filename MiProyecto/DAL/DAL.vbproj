@@ -67,6 +67,7 @@
     <Compile Include="Conexion.vb" />
     <Compile Include="DV.vb" />
     <Compile Include="Familia.vb" />
+    <Compile Include="Laboratorio.vb" />
     <Compile Include="MiClaseDAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -85,6 +86,7 @@
     </Compile>
     <Compile Include="Parametrizaciones.vb" />
     <Compile Include="PatenteDALL.vb" />
+    <Compile Include="Producto.vb" />
     <Compile Include="Seguridad.vb" />
     <Compile Include="SERVICIOS.vb" />
     <Compile Include="Usuario.vb" />

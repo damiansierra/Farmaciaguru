@@ -154,7 +154,8 @@
         FormInicio.ListarToolStripMenuItem4.Visible = False
         FormInicio.ListarToolStripMenuItem5.Visible = False
         FormInicio.AsignarPermisosToolStripMenuItem.Visible = False
-
+        FormInicio.LaboratorioToolStripMenuItem.Visible = False
+        FormInicio.ProductoToolStripMenuItem.Visible = False
 
         'Principal.GestionarPerfilesToolStripMenuItem.Visible = False
         'Principal.gestiondeperfiles.Visible = False
@@ -215,6 +216,8 @@
             FormInicio.ProductosToolStripMenuItem.Visible = True
             FormInicio.IngresarToolStripMenuItem.Visible = True
             FormInicio.ListarToolStripMenuItem.Visible = True
+            FormInicio.LaboratorioToolStripMenuItem.Visible = True
+            FormInicio.ProductoToolStripMenuItem.Visible = True
         End If
         If patente.nombre = "Backup" Then
             FormInicio.SeguridadToolStripMenuItem.Visible = True
@@ -257,7 +260,5 @@
 
 
 
-    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-    End Sub
+  
 End Class

@@ -68,6 +68,7 @@
     <Compile Include="DVH.vb" />
     <Compile Include="DVV.vb" />
     <Compile Include="Familia.vb" />
+    <Compile Include="Laboratorio.vb" />
     <Compile Include="MiClaseBE.vb" />
     <Compile Include="ICrud.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -86,6 +87,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Patente.vb" />
+    <Compile Include="Producto.vb" />
     <Compile Include="Usuario.vb" />
   </ItemGroup>
   <ItemGroup>

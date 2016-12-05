@@ -61,4 +61,15 @@
         UI.FormBitacora.MdiParent = Me
         UI.FormBitacora.Show()
     End Sub
+
+   
+    Private Sub LaboratorioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LaboratorioToolStripMenuItem.Click
+        UI.FormLaboratoriosAlta.MdiParent = Me
+        UI.FormLaboratoriosAlta.Show()
+    End Sub
+
+    Private Sub ProductoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductoToolStripMenuItem.Click
+        UI.FormAltaProductos.MdiParent = Me
+        UI.FormAltaProductos.Show()
+    End Sub
 End Class

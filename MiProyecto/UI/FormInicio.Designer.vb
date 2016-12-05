@@ -27,6 +27,8 @@ Partial Class FormInicio
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ProductosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IngresarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LaboratorioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ListarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ClientesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.IngresarToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
@@ -86,14 +88,27 @@ Partial Class FormInicio
         '
         'IngresarToolStripMenuItem
         '
+        Me.IngresarToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.LaboratorioToolStripMenuItem, Me.ProductoToolStripMenuItem})
         Me.IngresarToolStripMenuItem.Name = "IngresarToolStripMenuItem"
-        Me.IngresarToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
+        Me.IngresarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.IngresarToolStripMenuItem.Text = "Ingresar"
+        '
+        'LaboratorioToolStripMenuItem
+        '
+        Me.LaboratorioToolStripMenuItem.Name = "LaboratorioToolStripMenuItem"
+        Me.LaboratorioToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LaboratorioToolStripMenuItem.Text = "Laboratorio"
+        '
+        'ProductoToolStripMenuItem
+        '
+        Me.ProductoToolStripMenuItem.Name = "ProductoToolStripMenuItem"
+        Me.ProductoToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.ProductoToolStripMenuItem.Text = "Producto"
         '
         'ListarToolStripMenuItem
         '
         Me.ListarToolStripMenuItem.Name = "ListarToolStripMenuItem"
-        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(116, 22)
+        Me.ListarToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
         Me.ListarToolStripMenuItem.Text = "Listar"
         '
         'ClientesToolStripMenuItem
@@ -292,4 +307,6 @@ End Sub
     Friend WithEvents ModificaciónToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListarToolStripMenuItem4 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ListarToolStripMenuItem5 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LaboratorioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ProductoToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

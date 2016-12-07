@@ -8,7 +8,15 @@
     Private Sub FormFamilias_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.KeyPreview = True
         AddHandler Me.KeyUp, AddressOf KeyUpHandler
-        '   CAMBIARIDIOMAS()
+        If UI.Login.idioma = "2" Then
+          
+            Me.btnconfirmarmodificaciones.Text = "Confirm"
+            Me.IDPatente.HeaderText = "ID"
+            Me.Nombre.HeaderText = "Name"
+            Me.Agregada.HeaderText = "ADDED"
+        End If
+
+
 
         Try
             CARGARCOMBO()

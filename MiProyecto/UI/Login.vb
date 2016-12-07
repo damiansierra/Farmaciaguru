@@ -1,7 +1,8 @@
 ﻿Public Class Login
 
   
-  
+    Public idioma As Integer
+
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Me.Close()
         UI.FormInicio.Close()
@@ -254,4 +255,17 @@
 
 
   
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        ComboBox1.Items.Add("Ingles")
+        ComboBox1.Items.Add("Español")
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        If ComboBox1.SelectedItem.ToString() = "Ingles" Then
+            idioma = 2
+        End If
+
+    End Sub
+
 End Class

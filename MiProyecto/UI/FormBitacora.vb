@@ -47,6 +47,28 @@
 
     Private Sub frmBitacora_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
+            If UI.Login.idioma = "2" Then
+
+                ' Me.dtpFechaDesde = New System.Windows.Forms.DateTimePicker()
+                '  Me.dtpFechaHasta = New System.Windows.Forms.DateTimePicker()
+                Me.btnlimpiar.Text = "Clear"
+                Me.btnCancelar.Text = "Cancel"
+                Me.btnExportar.Text = "Export"
+                Me.btnbuscar.Text = "Search"
+                Me.lblCriticidad.Text = "Severity"
+                Me.lblUsuario.Text = "User"
+                Me.lblFechaDesde.Text = "From"
+                Me.lblFechaHasta.Text = "To"
+                Me.id.HeaderText = "id"
+                Me.usuario.HeaderText = "User"
+                Me.descripcion.HeaderText = "Description"
+                Me.fecha_hora.HeaderText = "Datetime"
+                Me.Criticidad.HeaderText = "Severity"
+                Me.Label2.Text = "Sort"
+                Me.Button2.Text = "ASc"
+                Me.Button3.Text = "Desc"
+                
+            End If
             UI.FormInicio = Me.MdiParent
             '   TraduccionBLL = New BLL.Traduccion(MenuUI.GetIdioma)
             Dim PatenteBE As New BE.Patente
@@ -100,4 +122,11 @@
     End Sub
 
     
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        dgBitacora.Sort(fecha_hora, System.ComponentModel.ListSortDirection.Ascending)
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        dgBitacora.Sort(fecha_hora, System.ComponentModel.ListSortDirection.Descending)
+    End Sub
 End Class

@@ -25,6 +25,11 @@
     End Sub
 
     Private Sub FormaFamiliaAlta_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If UI.Login.idioma = "2" Then
+            Me.Label1.Text = "Family name"
+            Me.BtnAceptar.Text = "Acept"
+        End If
+
         Dim Familia As New BE.Familia
         If (Familia Is Nothing AndAlso Familia.IdFamilia <> 0) Then
             Me.TxtNombre.Text = Familia.Nombre
@@ -35,9 +40,11 @@
 
     Private Sub ValidarCampos()
         If String.IsNullOrEmpty(Me.txtNombre.Text) Then
-
-            MsgBox("Debe ingresar un Nombre")
-
+            If UI.Login.idioma = "2" Then
+                MsgBox("You must complete a name")
+            Else
+                MsgBox("Debe ingresar un Nombre")
+            End If
         End If
     End Sub
 End Class

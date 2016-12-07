@@ -11,17 +11,37 @@
             Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedToolWindow
             Me.StartPosition = FormStartPosition.CenterScreen
 
+           
 
-            '  CAMBIARIDIOMAS()
 
 
             COMBOUSER.Items.Clear()
             COMBOUSER.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
             CARGARCOMBOUSER()
 
+            Dim toolTip1 As New ToolTip()
 
+            ' Set up the delays for the ToolTip.
+            toolTip1.AutoPopDelay = 5000
+            toolTip1.InitialDelay = 1000
+            toolTip1.ReshowDelay = 500
+            ' Force the ToolTip text to be displayed whether or not the form is active.
+            toolTip1.ShowAlways = True
 
+            ' Set up the ToolTip text for the Button and Checkbox.
+            toolTip1.SetToolTip(Me.btnconfirmarmodificaciones, "Confirmar Asignar permisos")
 
+            If UI.Login.idioma = "2" Then
+                Me.btnconfirmarmodificaciones.Text = "Confirm"
+                Me.Label1.Text = "Select"
+                Me.Label3.Text = "Patent"
+                Me.familia_id.HeaderText = "ID_FAMILY"
+                Me.Nombre_Familia.HeaderText = "Name Family"
+                Me.patente_id.HeaderText = "ID_PATENT"
+                Me.Nombre.HeaderText = "NAME"
+
+                toolTip1.SetToolTip(Me.btnconfirmarmodificaciones, "Confirm Asing permissions")
+            End If
 
         Catch ex As Exception
 
@@ -340,4 +360,7 @@
 
 
 
+    Private Sub ToolTip1_Popup(sender As Object, e As PopupEventArgs) Handles ToolTip1.Popup
+        ToolTip1.SetToolTip(Me.btnconfirmarmodificaciones, "Confirmar los permisos de patente")
+    End Sub
 End Class

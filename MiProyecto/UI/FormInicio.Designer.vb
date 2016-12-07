@@ -59,15 +59,17 @@ Partial Class FormInicio
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.ProductosToolStripMenuItem, Me.VentasToolStripMenuItem, Me.SeguridadToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(423, 24)
+        Me.MenuStrip1.Padding = New System.Windows.Forms.Padding(8, 3, 0, 3)
+        Me.MenuStrip1.Size = New System.Drawing.Size(564, 31)
         Me.MenuStrip1.TabIndex = 0
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'InicioToolStripMenuItem
         '
         Me.InicioToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SalirToolStripMenuItem})
+        Me.InicioToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
-        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(48, 20)
+        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(59, 25)
         Me.InicioToolStripMenuItem.Text = "Inicio"
         '
         'SalirToolStripMenuItem
@@ -79,8 +81,9 @@ Partial Class FormInicio
         'ProductosToolStripMenuItem
         '
         Me.ProductosToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.IngresarToolStripMenuItem, Me.ListarToolStripMenuItem})
+        Me.ProductosToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ProductosToolStripMenuItem.Name = "ProductosToolStripMenuItem"
-        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(73, 20)
+        Me.ProductosToolStripMenuItem.Size = New System.Drawing.Size(92, 25)
         Me.ProductosToolStripMenuItem.Text = "Productos"
         '
         'IngresarToolStripMenuItem
@@ -111,8 +114,9 @@ Partial Class FormInicio
         'VentasToolStripMenuItem
         '
         Me.VentasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.OrdenesDeCompraToolStripMenuItem, Me.PedidosToolStripMenuItem, Me.ListarToolStripMenuItem2})
+        Me.VentasToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.VentasToolStripMenuItem.Name = "VentasToolStripMenuItem"
-        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.VentasToolStripMenuItem.Size = New System.Drawing.Size(68, 25)
         Me.VentasToolStripMenuItem.Text = "Ventas"
         '
         'OrdenesDeCompraToolStripMenuItem
@@ -136,8 +140,9 @@ Partial Class FormInicio
         'SeguridadToolStripMenuItem
         '
         Me.SeguridadToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GenerarBackupToolStripMenuItem, Me.RestoreToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.FamiliasToolStripMenuItem, Me.PatentesToolStripMenuItem, Me.BitacoraToolStripMenuItem})
+        Me.SeguridadToolStripMenuItem.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.SeguridadToolStripMenuItem.Name = "SeguridadToolStripMenuItem"
-        Me.SeguridadToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
+        Me.SeguridadToolStripMenuItem.Size = New System.Drawing.Size(93, 25)
         Me.SeguridadToolStripMenuItem.Text = "Seguridad"
         '
         'GenerarBackupToolStripMenuItem
@@ -241,12 +246,14 @@ Partial Class FormInicio
         '
         'FormInicio
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(423, 261)
+        Me.ClientSize = New System.Drawing.Size(564, 322)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "FormInicio"
         Me.Text = "Inicio"
         Me.MenuStrip1.ResumeLayout(false)

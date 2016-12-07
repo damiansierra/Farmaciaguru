@@ -59,10 +59,9 @@
     End Sub
 
     Private Sub btnRegistrar_Click(sender As Object, e As EventArgs)
-        '   Dim VentaRegistrar As New frmVentasMod
-        '  If VentaRegistrar.ShowDialog(Me) = Windows.Forms.DialogResult.OK Then
+      
         ListarVentas()
-        '   End If
+
     End Sub
 
 
@@ -80,5 +79,9 @@
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         dgVentas.Sort(Fecha_Venta, System.ComponentModel.ListSortDirection.Descending)
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
     End Sub
 End Class

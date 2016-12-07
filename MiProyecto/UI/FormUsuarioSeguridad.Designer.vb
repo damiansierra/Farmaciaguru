@@ -22,20 +22,22 @@ Partial Class FormUsuarioSeguridad
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.COMBOUSER = New System.Windows.Forms.ComboBox()
         Me.dgFamilias = New System.Windows.Forms.DataGridView()
+        Me.familia_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Nombre_Familia = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dgAsignarFamilia = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.txtfamilia = New System.Windows.Forms.Label()
         Me.btnconfirmarmodificaciones = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgPatentes = New System.Windows.Forms.DataGridView()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.familia_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Nombre_Familia = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dgAsignarFamilia = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.patente_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dgAsignarPatente = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.dgPatenteNegada = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         CType(Me.dgFamilias, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgPatentes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -56,6 +58,21 @@ Partial Class FormUsuarioSeguridad
         Me.dgFamilias.Name = "dgFamilias"
         Me.dgFamilias.Size = New System.Drawing.Size(344, 251)
         Me.dgFamilias.TabIndex = 1
+        '
+        'familia_id
+        '
+        Me.familia_id.HeaderText = "ID Familia"
+        Me.familia_id.Name = "familia_id"
+        '
+        'Nombre_Familia
+        '
+        Me.Nombre_Familia.HeaderText = "Nombre"
+        Me.Nombre_Familia.Name = "Nombre_Familia"
+        '
+        'dgAsignarFamilia
+        '
+        Me.dgAsignarFamilia.HeaderText = "Asignar"
+        Me.dgAsignarFamilia.Name = "dgAsignarFamilia"
         '
         'txtfamilia
         '
@@ -96,31 +113,6 @@ Partial Class FormUsuarioSeguridad
         Me.dgPatentes.Size = New System.Drawing.Size(444, 251)
         Me.dgPatentes.TabIndex = 5
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(394, 93)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(74, 20)
-        Me.Label3.TabIndex = 7
-        Me.Label3.Text = "Pantente"
-        '
-        'familia_id
-        '
-        Me.familia_id.HeaderText = "ID Familia"
-        Me.familia_id.Name = "familia_id"
-        '
-        'Nombre_Familia
-        '
-        Me.Nombre_Familia.HeaderText = "Nombre"
-        Me.Nombre_Familia.Name = "Nombre_Familia"
-        '
-        'dgAsignarFamilia
-        '
-        Me.dgAsignarFamilia.HeaderText = "Asignar"
-        Me.dgAsignarFamilia.Name = "dgAsignarFamilia"
-        '
         'patente_id
         '
         Me.patente_id.HeaderText = "ID Patente"
@@ -140,6 +132,21 @@ Partial Class FormUsuarioSeguridad
         '
         Me.dgPatenteNegada.HeaderText = "Negar"
         Me.dgPatenteNegada.Name = "dgPatenteNegada"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(394, 93)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(74, 20)
+        Me.Label3.TabIndex = 7
+        Me.Label3.Text = "Pantente"
+        '
+        'ToolTip1
+        '
+        Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.ToolTip1.ToolTipTitle = "Something"
         '
         'FormUsuarioSeguridad
         '
@@ -175,4 +182,5 @@ Partial Class FormUsuarioSeguridad
     Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dgAsignarPatente As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents dgPatenteNegada As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
 End Class

@@ -40,6 +40,9 @@ Partial Class FormBitacora
         Me.descripcion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.fecha_hora = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Criticidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         CType(Me.dgBitacora, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -196,11 +199,43 @@ Partial Class FormBitacora
         Me.Criticidad.Name = "Criticidad"
         Me.Criticidad.ReadOnly = True
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(77, 483)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(96, 13)
+        Me.Label2.TabIndex = 140
+        Me.Label2.Text = "Ordenar por Fecha"
+        '
+        'Button2
+        '
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.Button2.Location = New System.Drawing.Point(183, 509)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(97, 27)
+        Me.Button2.TabIndex = 139
+        Me.Button2.Text = "Descendente"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(183, 476)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(97, 27)
+        Me.Button3.TabIndex = 138
+        Me.Button3.Text = "Ascendente"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'FormBitacora
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(973, 552)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.dgBitacora)
         Me.Controls.Add(Me.cmbCriticidad)
         Me.Controls.Add(Me.cmbUsuario)
@@ -218,6 +253,7 @@ Partial Class FormBitacora
         Me.Text = "FormBitacora"
         CType(Me.dgBitacora, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents cmbCriticidad As System.Windows.Forms.ComboBox
@@ -238,4 +274,7 @@ Partial Class FormBitacora
     Friend WithEvents descripcion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents fecha_hora As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Criticidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
 End Class

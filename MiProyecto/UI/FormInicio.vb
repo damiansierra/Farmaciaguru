@@ -4,6 +4,39 @@
 
   
     Private Sub FormInicio_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If UI.Login.idioma = 2 Then
+
+            Me.InicioToolStripMenuItem.Text = "Start"
+            Me.SalirToolStripMenuItem.Text = "Logout"
+            Me.ProductosToolStripMenuItem.Text = "Products"
+            Me.IngresarToolStripMenuItem.Text = "Add"
+            Me.LaboratorioToolStripMenuItem.Text = "Laboratory"
+            Me.ProductoToolStripMenuItem.Text = "Product"
+            Me.ListarToolStripMenuItem.Text = "Listing"
+            Me.VentasToolStripMenuItem.Text = "Sells"
+            Me.OrdenesDeCompraToolStripMenuItem.Text = "Sells History"
+            Me.PedidosToolStripMenuItem.Text = "Order"
+            Me.ListarToolStripMenuItem2.Text = "Listing"
+            Me.SeguridadToolStripMenuItem.Text = "Security"
+            Me.GenerarBackupToolStripMenuItem.Text = "Backup"
+            Me.RestoreToolStripMenuItem.Text = "Restore"
+            Me.UsuariosToolStripMenuItem.Text = "Users"
+            Me.AltaToolStripMenuItem.Text = "Add"
+            Me.BajaToolStripMenuItem.Text = "Delete"
+            Me.ModificacionToolStripMenuItem.Text = "Modify"
+            Me.ListarToolStripMenuItem3.Text = "Listing"
+            Me.AsignarPermisosToolStripMenuItem.Text = "Assign Security"
+            Me.FamiliasToolStripMenuItem.Text = "Family"
+            Me.AltaToolStripMenuItem1.Text = "Add"
+            Me.BajaToolStripMenuItem1.Text = "Delete"
+            Me.ModificaciónToolStripMenuItem.Text = "Modify"
+            Me.ListarToolStripMenuItem4.Text = "Listing"
+            Me.PatentesToolStripMenuItem.Text = "Patents"
+            Me.ListarToolStripMenuItem5.Text = "Listing"
+            Me.BitacoraToolStripMenuItem.Text = "Binnacle"
+            
+
+        End If
         UI.Login.Hide()
         Me.Location = Screen.PrimaryScreen.WorkingArea.Location
         Me.Size = Screen.PrimaryScreen.WorkingArea.Size

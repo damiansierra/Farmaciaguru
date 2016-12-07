@@ -62,6 +62,17 @@
 
 
     Private Sub FormAltaProductos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        If UI.Login.idioma = "2" Then
+
+            Me.lblDescripcion.Text = "Details"
+            Me.lblCantidad.Text = "Quantity"
+            Me.lblPrecio.Text = "Price"
+            Me.btnAceptar.Text = "Acepts"
+            Me.Label1.Text = "Pharma"
+            Me.Label2.Text = "Name"
+        End If
+
+
         Try
             Dim listalab As New List(Of BE.Laboratorio)
             cmbLaboratorio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
@@ -76,4 +87,8 @@
             MsgBox(ex.Message)
         End Try
     End Sub
+
+  
+
+  
 End Class

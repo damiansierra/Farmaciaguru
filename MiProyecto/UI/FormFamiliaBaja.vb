@@ -5,7 +5,10 @@
     Public Usuariologueado As New BE.Usuario
 
     Private Sub FormFamiliaBaja_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        If UI.Login.idioma = "2" Then
+            Me.Label1.Text = "Family"
+            Me.Button1.Text = "Delete"
+        End If
         Try
             Me.FormBorderStyle = Windows.Forms.FormBorderStyle.FixedToolWindow
             Me.StartPosition = FormStartPosition.CenterScreen

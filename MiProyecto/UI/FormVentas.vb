@@ -21,7 +21,19 @@
            
             txtNroVenta.Text = BLL.Ticket.GetInstance.ObtenerMaxId() + 1
 
-
+            If UI.Login.idioma = "2" Then
+                Me.Label9.Text = ""
+                Me.idrenglon.HeaderText = "IDSUBTICKET"
+                Me.Nombre.HeaderText = "NAME"
+                Me.Cantidad.HeaderText = "Quantity"
+                Me.Precio.HeaderText = "Price"
+                Me.btnAceptar.Text = "Acept"
+                Me.btnAgregarMedicamento.Text = "Add product"
+                Me.Label5.Text = "Price"
+                Me.Label4.Text = "Quantity"
+                Me.Label3.Text = "Product"
+                Me.Label8.Text = "Available"
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

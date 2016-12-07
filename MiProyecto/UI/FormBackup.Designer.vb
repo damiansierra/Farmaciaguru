@@ -28,6 +28,7 @@ Partial Class FormBackup
         Me.btnAceptar = New System.Windows.Forms.Button()
         Me.lblruta = New System.Windows.Forms.Label()
         Me.lblCantidad = New System.Windows.Forms.Label()
+        Me.FolderBrowserDialog1 = New System.Windows.Forms.FolderBrowserDialog()
         CType(Me.nudValor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -113,4 +114,5 @@ Partial Class FormBackup
     Friend WithEvents btnAceptar As System.Windows.Forms.Button
     Friend WithEvents lblruta As System.Windows.Forms.Label
     Friend WithEvents lblCantidad As System.Windows.Forms.Label
+    Friend WithEvents FolderBrowserDialog1 As System.Windows.Forms.FolderBrowserDialog
 End Class

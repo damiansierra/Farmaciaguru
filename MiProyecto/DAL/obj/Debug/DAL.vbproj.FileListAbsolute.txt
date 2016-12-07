@@ -34,3 +34,4 @@ D:\damian\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.vbproj.GenerateResource.Cach
 D:\damian\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.dll
 D:\damian\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.xml
 D:\damian\Farmaciaguru\MiProyecto\DAL\obj\Debug\DAL.pdb
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\DAL\bin\Debug\SevenZipSharp.dll

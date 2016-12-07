@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+
 Public Class FormBackup
 
     Dim MenuUI As UI.FormInicio
@@ -53,7 +54,7 @@ Public Class FormBackup
     End Function
 
     Public Sub RegistrarBitacora(evento As String, nivel As String)
-        
+
     End Sub
 
     Private Sub btnAceptar_Click(sender As Object, e As EventArgs)
@@ -67,14 +68,30 @@ Public Class FormBackup
     End Sub
 
     Private Sub btnCarpeta_Click(sender As Object, e As EventArgs)
-        '    Try
-        '      If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
-        'txtruta.Text = FolderBrowserDialog1.SelectedPath
-        '       End If
-        '  Catch ex As Exception
-        '        MsgBox(ex.Message)
-        '   End Try
-        '  End Sub
+     
     End Sub
 
+    Private Sub FormBackup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub btnCarpeta_Click_1(sender As Object, e As EventArgs) Handles btnCarpeta.Click
+        Try
+            If FolderBrowserDialog1.ShowDialog() = DialogResult.OK Then
+                txtruta.Text = FolderBrowserDialog1.SelectedPath
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
+    Private Sub btnAceptar_Click_1(sender As Object, e As EventArgs) Handles btnAceptar.Click
+        Try
+            If Validar() Then
+                DescargarRar()
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
 End Class

@@ -83,4 +83,9 @@
         UI.FormVentasTicket.MdiParent = Me
         UI.FormVentasTicket.Show()
     End Sub
+
+    Private Sub GenerarBackupToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GenerarBackupToolStripMenuItem.Click
+        UI.FormBackup.MdiParent = Me
+        UI.FormBackup.Show()
+    End Sub
 End Class

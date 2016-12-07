@@ -81,3 +81,4 @@ D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormLaboratorio
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormAltaProductos.resources
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormVentas.resources
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormVentasTicket.resources
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\bin\Debug\SevenZipSharp.dll

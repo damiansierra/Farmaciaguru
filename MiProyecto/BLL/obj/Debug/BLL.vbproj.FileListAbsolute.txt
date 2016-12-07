@@ -43,3 +43,4 @@ D:\damian\Farmaciaguru\MiProyecto\BLL\obj\Debug\BLL.vbproj.GenerateResource.Cach
 D:\damian\Farmaciaguru\MiProyecto\BLL\obj\Debug\BLL.dll
 D:\damian\Farmaciaguru\MiProyecto\BLL\obj\Debug\BLL.xml
 D:\damian\Farmaciaguru\MiProyecto\BLL\obj\Debug\BLL.pdb
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\BLL\bin\Debug\SevenZipSharp.dll

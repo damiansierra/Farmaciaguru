@@ -20,19 +20,19 @@ Public Class Backup
         Directory.CreateDirectory(tempDir)
         File.Move(BackupBE.ubicacion, tempDir & "\" & inputFileName)
         Try
-            '        SevenZipExtractor.SetLibraryPath(CompressDLL)
-            '        Dim Compressor As SevenZipCompressor = New SevenZipCompressor()
-            '        Compressor.ArchiveFormat = OutArchiveFormat.SevenZip
-            '        Compressor.CompressionMode = CompressionMode.Create
-            '        Compressor.CompressionMethod = CompressionMethod.Default
-            '        Compressor.DirectoryStructure = False
-            '        Compressor.CompressionLevel = CompressionLevel.Normal
-            '       Compressor.VolumeSize = CInt(BackupBE.tamano)
-            '       Compressor.CompressDirectory(tempDir, BackupBE.Ubicacion + ".dbk", True)
+            SevenZipExtractor.SetLibraryPath(CompressDLL)
+            Dim Compressor As SevenZipCompressor = New SevenZipCompressor()
+            Compressor.ArchiveFormat = OutArchiveFormat.SevenZip
+            Compressor.CompressionMode = CompressionMode.Create
+            Compressor.CompressionMethod = CompressionMethod.Default
+            Compressor.DirectoryStructure = False
+            Compressor.CompressionLevel = CompressionLevel.Normal
+            Compressor.VolumeSize = CInt(BackupBE.Tamano)
+            Compressor.CompressDirectory(tempDir, BackupBE.Ubicacion + ".dbk", True)
         Catch ex As Exception
             File.Move(tempDir & "\" & inputFileName, BackupBE.ubicacion)
             Directory.Delete(tempDir, True)
-            '       Throw New BLLException(ex.Message)
+            ' Throw New BLLException(ex.Message)
         End Try
         Directory.Delete(tempDir, True)
     End Sub
@@ -57,20 +57,20 @@ Public Class Backup
     End Function
 
     Public Sub ImportarRar(ByVal BackupBE As BE.Backup)
-        '    SevenZipExtractor.SetLibraryPath(CompressDLL)
+        SevenZipExtractor.SetLibraryPath(CompressDLL)
         Dim dirInputFile = Path.GetDirectoryName(BackupBE.archivo)
         Dim inputFileName = Path.GetFileName(BackupBE.archivo)
         Dim outputFileName = dirInputFile & "\" & inputFileName
         Dim compressedFileName = BackupBE.archivo & ".001"
-        '   Dim extractor As New SevenZipExtractor(compressedFileName)
+        Dim extractor As New SevenZipExtractor(compressedFileName)
         Dim fileStream As FileStream = File.OpenWrite(Path.Combine(dirInputFile, outputFileName.Substring(0, outputFileName.Length - 4)))
-        '      For Each File In extractor.ArchiveFileNames
-        '       extractor.ExtractFile(File, fileStream)
-        '    Next
+        For Each File In extractor.ArchiveFileNames
+            extractor.ExtractFile(File, fileStream)
+        Next
         fileStream.Close()
         BackupBE.Archivo = fileStream.Name
         BackupDAL.CrearRestore(BackupBE)
-        '     extractor.Dispose()
+        extractor.Dispose()
         System.IO.File.Delete(fileStream.Name)
     End Sub
 

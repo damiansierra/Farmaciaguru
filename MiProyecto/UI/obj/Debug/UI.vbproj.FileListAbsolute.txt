@@ -80,3 +80,4 @@ D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormRestore.res
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormLaboratoriosAlta.resources
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormAltaProductos.resources
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormVentas.resources
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormVentasTicket.resources

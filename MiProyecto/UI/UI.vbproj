@@ -154,6 +154,12 @@
     <Compile Include="FormVentas.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="FormVentasTicket.Designer.vb">
+      <DependentUpon>FormVentasTicket.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormVentasTicket.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login.Designer.vb">
       <DependentUpon>Login.vb</DependentUpon>
     </Compile>
@@ -218,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormVentas.resx">
       <DependentUpon>FormVentas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormVentasTicket.resx">
+      <DependentUpon>FormVentasTicket.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.vb</DependentUpon>

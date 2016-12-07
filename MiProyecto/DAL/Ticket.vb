@@ -120,4 +120,57 @@
 
         Return dt.Rows(0).Item(0)
     End Function
+
+    Public Function ListarTicketPorParametros(idusuario As Integer, fechaDesde As DateTime, fechaHasta As DateTime) As List(Of BE.Ticket)
+
+
+        Try
+
+            Dim USUARIO As New BE.Usuario
+            Dim dt As New DataTable
+
+            'Dim desde As String = fechaDesde.ToString("yyyy-MM-dd")
+            '  Dim hasta As String = fechaHasta.ToString("yyyy-MM-dd")
+            'Dim USUARIOENCRIPTADO As String = Seguridad.EncriptarReversible(obj.Nick)
+
+            Dim SELECTUSER As String = "SELECT * FROM USUARIO WHERE idusuario = '" & idusuario & "'"
+            dt = DAL.Conexion.GetInstance.leer(SELECTUSER)
+
+            Dim _ROW As DataRow = dt.Rows(0)
+
+            USUARIO.IdUsuario = _ROW("IDUSUARIO")
+            USUARIO.Apellido = _ROW("APELLIDO")
+            USUARIO.Nick = DAL.Seguridad.DesEncriptar(_ROW("NICK"))
+            USUARIO.Nombre = _ROW("NOMBRE")
+            USUARIO.Cant_Int = _ROW("CANT_INT")
+
+            Dim dt2 As New DataTable
+
+            Dim ticketor As String = "SELECT idticket, idusuario, fechahora, totalventa FROM TICKET " & _
+                        " WHERE ( idusuario =  '" & USUARIO.IdUsuario & "') " ' and  ( fechahora >= '" & Format(fechaDesde, "yyyy-MM-dd") & "' and fechahora <= '" & Format(fechaHasta, "yyyy-MM-dd") & "') "
+
+            dt2 = DAL.Conexion.GetInstance.leer(ticketor)
+            Dim tickets As New List(Of BE.Ticket)
+
+            For Each _ROW In dt2.Rows
+                Dim ticketbe As New BE.Ticket
+                Dim UsuarioBE As New BE.Usuario
+                ticketbe.idticket = CInt(_ROW("idticket"))
+                ticketbe.idusuario = CInt(_ROW("idusuario"))
+                ticketbe.fechahora = CDate(_ROW("fechahora"))
+                ticketbe.totalventa = CInt(_ROW("totalventa"))
+                tickets.Add(ticketbe)
+            Next
+
+            Return tickets
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+
+
+
+
+    End Function
+
 End Class

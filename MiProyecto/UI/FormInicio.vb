@@ -78,4 +78,9 @@
         UI.FormVentas.Show()
 
     End Sub
+
+    Private Sub OrdenesDeCompraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles OrdenesDeCompraToolStripMenuItem.Click
+        UI.FormVentasTicket.MdiParent = Me
+        UI.FormVentasTicket.Show()
+    End Sub
 End Class

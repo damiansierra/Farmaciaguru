@@ -49,4 +49,12 @@
             Throw ex
         End Try
     End Function
+
+    Public Function ListarTicketPorParametros(idusuario As Integer, fechaDesde As DateTime, fechaHasta As DateTime) As List(Of BE.Ticket)
+        Try
+            Return DAL.Ticket.GetInstance.ListarTicketPorParametros(idusuario, fechaDesde, fechaHasta)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
 End Class

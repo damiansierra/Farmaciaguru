@@ -134,8 +134,8 @@ Public Class Usuario
 
             Dim LISTADEPATENTES As New List(Of BE.Patente)
             USUARIO.Patentes = LISTADEPATENTES
-            For Each _ROW In dt2.Rows
-                USUARIO.Patentes.Add(New BE.Patente With {.Idpatente = _ROW("IDPATENTE"), .Nombre = _ROW("NOMBRE"), .NEGADO = _ROW("NEGADO")})
+            For Each _ROW2 In dt2.Rows
+                USUARIO.Patentes.Add(New BE.Patente With {.Idpatente = _ROW2("IDPATENTE"), .Nombre = _ROW2("NOMBRE"), .NEGADO = _ROW2("NEGADO")})
             Next
 
             Dim dt3 As New DataTable
@@ -145,8 +145,8 @@ Public Class Usuario
             Dim LISTADEFAMILIAS As New List(Of BE.Familia)
             USUARIO.Familias = LISTADEFAMILIAS
 
-            For Each _ROW In dt3.Rows
-                USUARIO.Familias.Add(New BE.Familia With {.IdFamilia = _ROW("IDFAMILIA"), .Nombre = Seguridad.DesEncriptar(_ROW("NOMBRE"))})
+            For Each _ROW3 In dt3.Rows
+                USUARIO.Familias.Add(New BE.Familia With {.IdFamilia = _ROW3("IDFAMILIA"), .Nombre = Seguridad.DesEncriptar(_ROW3("NOMBRE"))})
             Next
 
             Return USUARIO

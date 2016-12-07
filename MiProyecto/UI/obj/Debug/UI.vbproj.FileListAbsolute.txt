@@ -79,3 +79,4 @@ D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormBackup.reso
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormRestore.resources
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormLaboratoriosAlta.resources
 D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormAltaProductos.resources
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormVentas.resources

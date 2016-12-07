@@ -88,6 +88,8 @@
     </Compile>
     <Compile Include="Patente.vb" />
     <Compile Include="Producto.vb" />
+    <Compile Include="RenglonTicket.vb" />
+    <Compile Include="Ticket.vb" />
     <Compile Include="Usuario.vb" />
   </ItemGroup>
   <ItemGroup>

@@ -89,6 +89,7 @@
     <Compile Include="Producto.vb" />
     <Compile Include="Seguridad.vb" />
     <Compile Include="SERVICIOS.vb" />
+    <Compile Include="Ticket.vb" />
     <Compile Include="Usuario.vb" />
   </ItemGroup>
   <ItemGroup>

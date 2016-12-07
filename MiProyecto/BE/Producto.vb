@@ -8,7 +8,7 @@
     Public Property Precio_Actual As String
     Public Property stock As String
 
-    Public Property laboratorio As Laboratorio
+    Public Property laboratorio As BE.Laboratorio
     Public DVH As Integer
 
 

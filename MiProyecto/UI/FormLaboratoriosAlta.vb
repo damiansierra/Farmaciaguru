@@ -8,7 +8,7 @@
 
             laboratorio.Nombre = Trim(TxtNombre.Text)
        
-            laboratorio.Dirección = Trim(TxtDireccion.Text)
+            laboratorio.Direccion = Trim(TxtDireccion.Text)
             laboratorio.telefono = Trim(TxtTelefono.Text)
 
 

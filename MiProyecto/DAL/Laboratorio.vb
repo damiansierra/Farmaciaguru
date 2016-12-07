@@ -25,7 +25,7 @@
 
             If (obj.IdLaboratorio = 0) Then
 
-                Dim INSERT As String = "INSERT INTO LABORATORIO VALUES " & "('" & obj.Nombre & "','" & obj.Dirección & "','" & obj.telefono & "')"
+                Dim INSERT As String = "INSERT INTO LABORATORIO VALUES " & "('" & obj.Nombre & "','" & obj.Direccion & "','" & obj.telefono & "')"
                 DAL.Conexion.GetInstance.Escribir(INSERT)
 
             End If
@@ -56,7 +56,7 @@
 
             Dim LISTALABORATORIOS As New List(Of BE.Laboratorio)
             For Each _ROW In dt.Rows
-                LISTALABORATORIOS.Add(New BE.Laboratorio With {.IdLaboratorio = _ROW("IDLABORATORIO"), .Nombre = _ROW("Nombre"), .Dirección = _ROW("DIRECCION"), .telefono = _ROW("telefono")})
+                LISTALABORATORIOS.Add(New BE.Laboratorio With {.IdLaboratorio = _ROW("IDLABORATORIO"), .Nombre = _ROW("Nombre"), .Direccion = _ROW("DIRECCION"), .telefono = _ROW("telefono")})
             Next
 
             Return LISTALABORATORIOS

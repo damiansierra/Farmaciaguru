@@ -132,8 +132,8 @@
 
             Dim LISTADEPATENTES As New List(Of BE.Patente)
             FAMILIA.Patente = LISTADEPATENTES
-            For Each _ROW In dt2.Rows
-                FAMILIA.Patente.Add(New BE.Patente With {.Idpatente = _ROW("IDPATENTE"), .Nombre = _ROW("Nombre")})
+            For Each _ROW2 In dt2.Rows
+                FAMILIA.Patente.Add(New BE.Patente With {.Idpatente = _ROW2("IDPATENTE"), .Nombre = _ROW2("Nombre")})
             Next
 
 

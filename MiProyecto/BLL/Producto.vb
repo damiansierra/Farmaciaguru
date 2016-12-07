@@ -19,11 +19,11 @@
     End Function
 
     Public Function listarPorId(obj As BE.Producto) As BE.Producto Implements BE.ICrud(Of BE.Producto).listarPorId
-
+        Return DAL.Producto.GetInstance.listarPorId(obj)
     End Function
 
     Public Function listarTodos() As List(Of BE.Producto) Implements BE.ICrud(Of BE.Producto).listarTodos
-
+        Return DAL.Producto.GetInstance.listarTodos
     End Function
 
     Public Function modificacion(obj As BE.Producto) As Boolean Implements BE.ICrud(Of BE.Producto).modificacion

@@ -33,6 +33,61 @@
 
     Public Function modificacion(obj As BE.Ticket) As Boolean Implements BE.ICrud(Of BE.Ticket).modificacion
 
+        Try
+            Dim ticket As New BE.Ticket
+
+            Dim sinstock As Integer = 0
+
+            Dim dt As New DataTable
+
+            Dim productos As New BE.Producto
+
+            Dim INSERT As String = "INSERT INTO  TICKET VALUES " & "('" & obj.idticket & "','" & obj.idusuario & "','" & obj.fechahora & "','" & obj.totalventa & "')"
+            DAL.Conexion.GetInstance.Escribir(INSERT)
+          
+
+
+
+            For Each REG In obj.renglonticket
+
+                Dim SELECTPROD As String = "SELECT * FROM PRODUCTO WHERE IDPRODUCTO = '" & REG.producto.IdProducto & "'"
+                dt = DAL.Conexion.GetInstance.leer(SELECTPROD)
+
+                Dim _ROW As DataRow = dt.Rows(0)
+
+                productos.stock = _ROW("STOCK")
+                productos.Nombre = Seguridad.DesEncriptar(_ROW("NOMBRE"))
+
+
+
+                Dim val1 As Integer = 0
+                Int32.TryParse(productos.stock, val1)
+
+                Dim val2 As Integer = 0
+                Int32.TryParse(REG.cantidad, val2)
+
+                If val2 < val1 Then
+
+                    productos.stock = val1 - val2
+                    Dim UPDATEARSTOCK As String = "UPDATE PRODUCTO SET STOCK = " & productos.stock & " WHERE IDPRODUCTO = '" & REG.producto.IdProducto & "'"
+                    DAL.Conexion.GetInstance.Escribir(UPDATEARSTOCK)
+
+                    Dim INSERTRENGLON As String = "INSERT INTO  RENGLONTICKET VALUES " & "('" & REG.idrenglon & "','" & REG.ticket.idticket & "','" & REG.producto.IdProducto & "','" & REG.cantidad & "','" & REG.precio_historico & "')"
+                    DAL.Conexion.GetInstance.Escribir(INSERTRENGLON)
+
+                Else
+                    sinstock = sinstock + REG.cantidad
+                End If
+
+                If sinstock > 0 Then
+                    MsgBox("La cantidad de " & sinstock & " de " & productos.Nombre & " no se vendio")
+                    sinstock = 0
+                End If
+            Next
+        Catch ex As Exception
+            Throw ex
+        End Try
+
     End Function
 
     Function ObtenerMaxId() As Integer

@@ -30,6 +30,7 @@
     End Function
 
     Public Function modificacion(obj As BE.Ticket) As Boolean Implements BE.ICrud(Of BE.Ticket).modificacion
+        Return DAL.Ticket.GetInstance.modificacion(obj)
 
     End Function
 

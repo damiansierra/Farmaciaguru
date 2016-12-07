@@ -19,7 +19,7 @@
 
             txtFechaHora.Text = DateTime.Now
            
-            txtNroVenta.Text = BLL.Ticket.GetInstance.ObtenerMaxId()
+            txtNroVenta.Text = BLL.Ticket.GetInstance.ObtenerMaxId() + 1
 
 
         Catch ex As Exception
@@ -142,5 +142,10 @@
         ticker.totalventa = txtImporteTotal.Text
         BLL.Ticket.GetInstance.modificacion(ticker)
 
+        Dim BLLbitacora As New BLL.Bitacora
+        Dim bebitacora As New BE.Bitacora With {.Criticidad = "Media", .nick = UI.FormInicio.Usuariologueado.Nick, .Descripcion = "Nuevo Ticket creado" & ticker.idticket}
+        BLLbitacora.alta(bebitacora)
+
+        Me.Close()
     End Sub
 End Class

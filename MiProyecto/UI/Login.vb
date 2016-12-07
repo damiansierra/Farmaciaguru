@@ -130,9 +130,6 @@
         FormInicio.ProductosToolStripMenuItem.Visible = False
         FormInicio.IngresarToolStripMenuItem.Visible = False
         FormInicio.ListarToolStripMenuItem.Visible = False
-        FormInicio.ClientesToolStripMenuItem.Visible = False
-        FormInicio.IngresarToolStripMenuItem1.Visible = False
-        FormInicio.ListarToolStripMenuItem1.Visible = False
         FormInicio.VentasToolStripMenuItem.Visible = False
         FormInicio.OrdenesDeCompraToolStripMenuItem.Visible = False
         FormInicio.PedidosToolStripMenuItem.Visible = False
@@ -199,11 +196,7 @@
             FormInicio.ListarToolStripMenuItem5.Visible = True
             FormInicio.AsignarPermisosToolStripMenuItem.Visible = True
         End If
-        If patente.nombre = "Clientes" Then
-            FormInicio.ClientesToolStripMenuItem.Visible = True
-            FormInicio.IngresarToolStripMenuItem1.Visible = True
-            FormInicio.ListarToolStripMenuItem1.Visible = True
-        End If
+   
 
         ''''''CU 7
         If patente.nombre = "Ventas" Then

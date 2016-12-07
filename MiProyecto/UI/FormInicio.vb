@@ -72,4 +72,10 @@
         UI.FormAltaProductos.MdiParent = Me
         UI.FormAltaProductos.Show()
     End Sub
+
+    Private Sub PedidosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PedidosToolStripMenuItem.Click
+        UI.FormVentas.MdiParent = Me
+        UI.FormVentas.Show()
+
+    End Sub
 End Class

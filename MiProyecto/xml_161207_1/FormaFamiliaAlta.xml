@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form Name="FormaFamiliaAlta" Text="FormaFamiliaAlta" WindowSize="419, 241" ClientAreaOffset="8, 31" BorderStyle="2" HasMap="True" PicFileName="images\FormaFamiliaAlta.png" HtmlFileName="FormaFamiliaAlta.htm" SourceProjectType="VB.NET" SourceProjectName="UI" OriginalClassName="VB.NET" HWND="1837528">
+  <Body>
+    <Controls>
+      <Label Name="Label1" Caption="Nombre Familia" Bookmark="Label1" Description="" ClassName="Label" TabIndex="0" HotSpot="20,119,139,139" />
+      <TextBox Name="TxtNombre" Caption="Nombre Familia" Bookmark="Label1" Description="" ClassName="TextBox" TabIndex="1" HotSpot="158,116,388,142" />
+      <Button Name="BtnAceptar" Caption="Aceptar" Bookmark="BtnAceptar" Description="" ClassName="Button" TabIndex="2" HotSpot="313,186,388,209" />
+    </Controls>
+  </Body>
+</Form>

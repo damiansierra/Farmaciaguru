@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form Name="FormInicio" Text="Inicio" WindowSize="580, 361" ClientAreaOffset="8, 31" BorderStyle="2" HasMap="True" PicFileName="images\FormInicio.png" HtmlFileName="FormInicio.htm" SourceProjectType="VB.NET" SourceProjectName="UI" OriginalClassName="VB.NET" HWND="594874">
+  <Menus>
+    <MenuStrip Name="MenuStrip1" Caption="MenuStrip1" Bookmark="MenuStrip1">
+      <ToolStripControls>
+        <ToolStripMenuItem Name="InicioToolStripMenuItem" Caption="Inicio" Bookmark="Inicio">
+          <ToolStripControls>
+            <ToolStripMenuItem Name="SalirToolStripMenuItem" Caption="Salir" Bookmark="Salir" />
+          </ToolStripControls>
+        </ToolStripMenuItem>
+        <ToolStripMenuItem Name="ProductosToolStripMenuItem" Caption="Productos" Bookmark="Productos">
+          <ToolStripControls>
+            <ToolStripMenuItem Name="IngresarToolStripMenuItem" Caption="Ingresar" Bookmark="Ingresar">
+              <ToolStripControls>
+                <ToolStripMenuItem Name="LaboratorioToolStripMenuItem" Caption="Laboratorio" Bookmark="Laboratorio" />
+                <ToolStripMenuItem Name="ProductoToolStripMenuItem" Caption="Producto" Bookmark="Producto" />
+              </ToolStripControls>
+            </ToolStripMenuItem>
+            <ToolStripMenuItem Name="ListarToolStripMenuItem" Caption="Listar" Bookmark="Listar" />
+          </ToolStripControls>
+        </ToolStripMenuItem>
+        <ToolStripMenuItem Name="VentasToolStripMenuItem" Caption="Ventas" Bookmark="Ventas">
+          <ToolStripControls>
+            <ToolStripMenuItem Name="OrdenesDeCompraToolStripMenuItem" Caption="Ordenes de Compra" Bookmark="Ordenes de Compra" />
+            <ToolStripMenuItem Name="PedidosToolStripMenuItem" Caption="Pedidos" Bookmark="Pedidos" />
+            <ToolStripMenuItem Name="ListarToolStripMenuItem2" Caption="Listar" Bookmark="Listar" />
+          </ToolStripControls>
+        </ToolStripMenuItem>
+        <ToolStripMenuItem Name="SeguridadToolStripMenuItem" Caption="Seguridad" Bookmark="Seguridad">
+          <ToolStripControls>
+            <ToolStripMenuItem Name="GenerarBackupToolStripMenuItem" Caption="Generar Backup" Bookmark="Generar Backup" />
+            <ToolStripMenuItem Name="RestoreToolStripMenuItem" Caption="Restore" Bookmark="Restore" />
+            <ToolStripMenuItem Name="UsuariosToolStripMenuItem" Caption="Usuarios" Bookmark="Usuarios">
+              <ToolStripControls>
+                <ToolStripMenuItem Name="AltaToolStripMenuItem" Caption="Alta" Bookmark="Alta" />
+                <ToolStripMenuItem Name="BajaToolStripMenuItem" Caption="Baja" Bookmark="Baja" />
+                <ToolStripMenuItem Name="ModificacionToolStripMenuItem" Caption="Modificacion" Bookmark="Modificacion" />
+                <ToolStripMenuItem Name="ListarToolStripMenuItem3" Caption="Listar" Bookmark="Listar" />
+                <ToolStripMenuItem Name="AsignarPermisosToolStripMenuItem" Caption="Asignar Permisos" Bookmark="Asignar Permisos" />
+              </ToolStripControls>
+            </ToolStripMenuItem>
+            <ToolStripMenuItem Name="FamiliasToolStripMenuItem" Caption="Familias" Bookmark="Familias">
+              <ToolStripControls>
+                <ToolStripMenuItem Name="AltaToolStripMenuItem1" Caption="Alta" Bookmark="Alta" />
+                <ToolStripMenuItem Name="BajaToolStripMenuItem1" Caption="Baja" Bookmark="Baja" />
+                <ToolStripMenuItem Name="ModificaciónToolStripMenuItem" Caption="Modificación" Bookmark="Modificación" />
+                <ToolStripMenuItem Name="ListarToolStripMenuItem4" Caption="Listar" Bookmark="Listar" />
+              </ToolStripControls>
+            </ToolStripMenuItem>
+            <ToolStripMenuItem Name="PatentesToolStripMenuItem" Caption="Patentes" Bookmark="Patentes">
+              <ToolStripControls>
+                <ToolStripMenuItem Name="ListarToolStripMenuItem5" Caption="Listar" Bookmark="Listar" />
+              </ToolStripControls>
+            </ToolStripMenuItem>
+            <ToolStripMenuItem Name="BitacoraToolStripMenuItem" Caption="Bitacora" Bookmark="Bitacora" />
+          </ToolStripControls>
+        </ToolStripMenuItem>
+      </ToolStripControls>
+    </MenuStrip>
+  </Menus>
+  <Body>
+    <Controls>
+      <MdiClient Name="63619,8216635_1" Caption="63619,8216635_1" Bookmark="63619,8216635_1" Description="" ClassName="MdiClient" TabIndex="1" HotSpot="8,62,572,353" />
+    </Controls>
+  </Body>
+</Form>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form Name="Login" Text="Login" WindowSize="488, 307" ClientAreaOffset="8, 31" BorderStyle="2" HasMap="True" PicFileName="images\Login.png" HtmlFileName="Login.htm" SourceProjectType="VB.NET" SourceProjectName="UI" OriginalClassName="VB.NET" HWND="1445394">
+  <Body>
+    <Controls>
+      <Label Name="Label1" Caption="Usuario" Bookmark="Label1" Description="" ClassName="Label" TabIndex="0" HotSpot="70,77,130,95" />
+      <Label Name="Label2" Caption="Contraseña" Bookmark="Label2" Description="" ClassName="Label" TabIndex="1" HotSpot="70,122,155,140" />
+      <Label Name="Label3" Caption="Idioma" Bookmark="Label3" Description="" ClassName="Label" TabIndex="2" HotSpot="70,173,122,191" />
+      <TextBox Name="txtuser" Caption="Usuario" Bookmark="Label1" Description="" ClassName="TextBox" TabIndex="3" HotSpot="211,74,425,98" />
+      <TextBox Name="txtpass" Caption="Contraseña" Bookmark="Label2" Description="" ClassName="TextBox" TabIndex="4" HotSpot="211,116,425,140" />
+      <ComboBox Name="ComboBox1" Caption="Idioma" Bookmark="Label3" Description="" ClassName="ComboBox" TabIndex="5" HotSpot="211,169,425,195" />
+      <Button Name="Button1" Caption="Aceptar" Bookmark="Button1" Description="" ClassName="Button" TabIndex="6" HotSpot="211,239,307,270" />
+      <Button Name="Button2" Caption="Cancelar" Bookmark="Button2" Description="" ClassName="Button" TabIndex="7" HotSpot="329,239,425,270" />
+    </Controls>
+  </Body>
+</Form>

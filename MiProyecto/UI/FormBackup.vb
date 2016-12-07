@@ -68,12 +68,12 @@ Public Class FormBackup
     End Sub
 
     Private Sub btnCarpeta_Click(sender As Object, e As EventArgs)
-     
+
     End Sub
 
     Private Sub FormBackup_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         If UI.Login.idioma = "2" Then
-            
+
             Me.btnAceptar.text = "Acept"
             Me.lblCantidad.Text = "Parts"
         End If

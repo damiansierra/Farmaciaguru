@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form Name="FormVentas" Text="FormVentas" WindowSize="702, 634" ClientAreaOffset="8, 31" BorderStyle="2" HasMap="True" PicFileName="images\FormVentas.png" HtmlFileName="FormVentas.htm" SourceProjectType="VB.NET" SourceProjectName="UI" OriginalClassName="VB.NET" HWND="1380082">
+  <Body>
+    <Controls>
+      <ComboBox Name="cmbMedicamento" Caption="Producto" Bookmark="Label3" Description="" ClassName="ComboBox" TabIndex="122" HotSpot="132,79,357,105" />
+      <Label Name="Label3" Caption="Producto" Bookmark="Label3" Description="" ClassName="Label" TabIndex="126" HotSpot="18,81,126,105" />
+      <Label Name="Label4" Caption="Cantidad" Bookmark="Label4" Description="" ClassName="Label" TabIndex="127" HotSpot="432,85,495,105" />
+      <Label Name="Label5" Caption="Precio" Bookmark="Label5" Description="" ClassName="Label" TabIndex="128" HotSpot="144,116,240,137" />
+      <Button Name="btnAgregarMedicamento" Caption="Agregar" Bookmark="btnAgregarMedicamento" Description="" ClassName="Button" TabIndex="131" HotSpot="481,127,604,154" />
+      <Button Name="btnAceptar" Caption="Aceptar" Bookmark="btnAceptar" Description="" ClassName="Button" TabIndex="133" HotSpot="481,552,608,579" />
+      <DataGridView Name="dgMedicamentosPorVenta" Caption="Medicamentos Por Venta" Bookmark="dgMedicamentosPorVenta" Description="" ClassName="DataGridView" TabIndex="137" PicFileName="images\dgMedicamentosPorVenta.png" HotSpot="62,183,608,508">
+        <Controls>
+          <DataGridViewTextBoxColumn Name="idrenglon" Caption="Nro" Bookmark="idrenglon" Description="" ClassName="DataGridViewTextBoxColumn" TabIndex="0" HotSpot="41,0,177,21" />
+          <DataGridViewTextBoxColumn Name="Nombre" Caption="Nombre" Bookmark="Nombre" Description="" ClassName="DataGridViewTextBoxColumn" TabIndex="1" HotSpot="177,0,313,21" />
+          <DataGridViewTextBoxColumn Name="Cantidad" Caption="Cantidad" Bookmark="Cantidad" Description="" ClassName="DataGridViewTextBoxColumn" TabIndex="2" HotSpot="313,0,448,21" />
+          <DataGridViewTextBoxColumn Name="Precio" Caption="Precio Individual" Bookmark="Precio" Description="" ClassName="DataGridViewTextBoxColumn" TabIndex="3" HotSpot="448,0,584,21" />
+        </Controls>
+      </DataGridView>
+      <Label Name="Label9" Caption="Precio Total" Bookmark="Label9" Description="" ClassName="Label" TabIndex="138" HotSpot="383,519,471,537" />
+      <TextBox Name="txtImporteTotal" Caption="Precio Total" Bookmark="Label9" Description="" ClassName="TextBox" TabIndex="139" HotSpot="481,513,608,537" />
+      <NumericUpDown Name="txtCantidad" Caption="Cantidad" Bookmark="txtCantidad" Description="" ClassName="NumericUpDown" TabIndex="140" HotSpot="514,82,604,106" />
+      <TextBox Name="txtPrecioLista" Caption="Precio" Bookmark="Label5" Description="" ClassName="TextBox" TabIndex="141" HotSpot="246,113,357,137" />
+      <Label Name="Label8" Caption="Disponible" Bookmark="Label8" Description="" ClassName="Label" TabIndex="142" HotSpot="157,148,240,169" />
+      <TextBox Name="txtDisponible" Caption="Disponible" Bookmark="Label8" Description="" ClassName="TextBox" TabIndex="143" HotSpot="246,145,357,169" />
+      <TextBox Name="txtFechaHora" Caption="Fecha Hora" Bookmark="txtFechaHora" Description="" ClassName="TextBox" TabIndex="144" HotSpot="214,514,377,538" />
+      <TextBox Name="txtNroVenta" Caption="Ticket" Bookmark="Label1" Description="" ClassName="TextBox" TabIndex="145" HotSpot="119,515,208,539" />
+      <Label Name="Label1" Caption="Ticket" Bookmark="Label1" Description="" ClassName="Label" TabIndex="147" HotSpot="20,517,98,537" />
+    </Controls>
+  </Body>
+</Form>

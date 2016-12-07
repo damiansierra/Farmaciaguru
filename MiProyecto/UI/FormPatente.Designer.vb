@@ -26,6 +26,7 @@ Partial Class FormPatente
         Me.id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DVH = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HelpProviderHG = New System.Windows.Forms.HelpProvider()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -33,8 +34,11 @@ Partial Class FormPatente
         '
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.Nombre, Me.DVH})
+        Me.HelpProviderHG.SetHelpKeyword(Me.DataGridView1, "FormPatente.htm#DataGridView1")
+        Me.HelpProviderHG.SetHelpNavigator(Me.DataGridView1, System.Windows.Forms.HelpNavigator.Topic)
         Me.DataGridView1.Location = New System.Drawing.Point(74, 42)
         Me.DataGridView1.Name = "DataGridView1"
+        Me.HelpProviderHG.SetShowHelp(Me.DataGridView1, True)
         Me.DataGridView1.Size = New System.Drawing.Size(427, 307)
         Me.DataGridView1.TabIndex = 0
         '
@@ -54,13 +58,20 @@ Partial Class FormPatente
         Me.DVH.Name = "DVH"
         Me.DVH.ReadOnly = True
         '
+        'HelpProviderHG
+        '
+        Me.HelpProviderHG.HelpNamespace = "MiProyecto.chm"
+        '
         'FormPatente
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(586, 376)
         Me.Controls.Add(Me.DataGridView1)
+        Me.HelpProviderHG.SetHelpKeyword(Me, "FormPatente.htm")
+        Me.HelpProviderHG.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.Topic)
         Me.Name = "FormPatente"
+        Me.HelpProviderHG.SetShowHelp(Me, True)
         Me.Text = "FormPatente"
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -70,4 +81,5 @@ Partial Class FormPatente
     Friend WithEvents id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DVH As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents HelpProviderHG As System.Windows.Forms.HelpProvider
 End Class

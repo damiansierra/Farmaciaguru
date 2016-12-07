@@ -30,6 +30,7 @@ Partial Class Login
         Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.HelpProviderHG = New System.Windows.Forms.HelpProvider()
         Me.SuspendLayout()
         '
         'Label1
@@ -65,17 +66,23 @@ Partial Class Login
         'txtuser
         '
         Me.txtuser.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.txtuser, "Login.htm#Label1")
+        Me.HelpProviderHG.SetHelpNavigator(Me.txtuser, System.Windows.Forms.HelpNavigator.Topic)
         Me.txtuser.Location = New System.Drawing.Point(203, 43)
         Me.txtuser.Name = "txtuser"
+        Me.HelpProviderHG.SetShowHelp(Me.txtuser, True)
         Me.txtuser.Size = New System.Drawing.Size(214, 24)
         Me.txtuser.TabIndex = 3
         '
         'txtpass
         '
         Me.txtpass.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.txtpass, "Login.htm#Label2")
+        Me.HelpProviderHG.SetHelpNavigator(Me.txtpass, System.Windows.Forms.HelpNavigator.Topic)
         Me.txtpass.Location = New System.Drawing.Point(203, 85)
         Me.txtpass.Name = "txtpass"
         Me.txtpass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
+        Me.HelpProviderHG.SetShowHelp(Me.txtpass, True)
         Me.txtpass.Size = New System.Drawing.Size(214, 24)
         Me.txtpass.TabIndex = 4
         '
@@ -83,16 +90,22 @@ Partial Class Login
         '
         Me.ComboBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ComboBox1.FormattingEnabled = True
+        Me.HelpProviderHG.SetHelpKeyword(Me.ComboBox1, "Login.htm#Label3")
+        Me.HelpProviderHG.SetHelpNavigator(Me.ComboBox1, System.Windows.Forms.HelpNavigator.Topic)
         Me.ComboBox1.Location = New System.Drawing.Point(203, 138)
         Me.ComboBox1.Name = "ComboBox1"
+        Me.HelpProviderHG.SetShowHelp(Me.ComboBox1, True)
         Me.ComboBox1.Size = New System.Drawing.Size(214, 26)
         Me.ComboBox1.TabIndex = 5
         '
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.Button1, "Login.htm#Button1")
+        Me.HelpProviderHG.SetHelpNavigator(Me.Button1, System.Windows.Forms.HelpNavigator.Topic)
         Me.Button1.Location = New System.Drawing.Point(203, 208)
         Me.Button1.Name = "Button1"
+        Me.HelpProviderHG.SetShowHelp(Me.Button1, True)
         Me.Button1.Size = New System.Drawing.Size(96, 31)
         Me.Button1.TabIndex = 6
         Me.Button1.Text = "Aceptar"
@@ -101,12 +114,19 @@ Partial Class Login
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.Button2, "Login.htm#Button2")
+        Me.HelpProviderHG.SetHelpNavigator(Me.Button2, System.Windows.Forms.HelpNavigator.Topic)
         Me.Button2.Location = New System.Drawing.Point(321, 208)
         Me.Button2.Name = "Button2"
+        Me.HelpProviderHG.SetShowHelp(Me.Button2, True)
         Me.Button2.Size = New System.Drawing.Size(96, 31)
         Me.Button2.TabIndex = 7
         Me.Button2.Text = "Cancelar"
         Me.Button2.UseVisualStyleBackColor = True
+        '
+        'HelpProviderHG
+        '
+        Me.HelpProviderHG.HelpNamespace = "MiProyecto.chm"
         '
         'Login
         '
@@ -121,7 +141,10 @@ Partial Class Login
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
+        Me.HelpProviderHG.SetHelpKeyword(Me, "Login.htm")
+        Me.HelpProviderHG.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.Topic)
         Me.Name = "Login"
+        Me.HelpProviderHG.SetShowHelp(Me, True)
         Me.Text = "Login"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -135,4 +158,5 @@ Partial Class Login
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents HelpProviderHG As System.Windows.Forms.HelpProvider
 End Class

@@ -121,4 +121,9 @@
         UI.FormBackup.MdiParent = Me
         UI.FormBackup.Show()
     End Sub
+
+    Private Sub RestoreToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RestoreToolStripMenuItem.Click
+        UI.FormRestore.MdiParent = Me
+        UI.FormRestore.Show()
+    End Sub
 End Class

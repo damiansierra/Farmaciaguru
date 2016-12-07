@@ -33,22 +33,29 @@ Partial Class FormAltaProductos
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Textnombre = New System.Windows.Forms.TextBox()
+        Me.HelpProviderHG = New System.Windows.Forms.HelpProvider()
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'txtDescripcion
         '
         Me.txtDescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.txtDescripcion, "FormAltaProductos.htm#lblDescripcion")
+        Me.HelpProviderHG.SetHelpNavigator(Me.txtDescripcion, System.Windows.Forms.HelpNavigator.Topic)
         Me.txtDescripcion.Location = New System.Drawing.Point(190, 61)
         Me.txtDescripcion.Name = "txtDescripcion"
+        Me.HelpProviderHG.SetShowHelp(Me.txtDescripcion, True)
         Me.txtDescripcion.Size = New System.Drawing.Size(226, 24)
         Me.txtDescripcion.TabIndex = 2
         '
         'txtPrecio
         '
         Me.txtPrecio.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.txtPrecio, "FormAltaProductos.htm#lblPrecio")
+        Me.HelpProviderHG.SetHelpNavigator(Me.txtPrecio, System.Windows.Forms.HelpNavigator.Topic)
         Me.txtPrecio.Location = New System.Drawing.Point(190, 179)
         Me.txtPrecio.Name = "txtPrecio"
+        Me.HelpProviderHG.SetShowHelp(Me.txtPrecio, True)
         Me.txtPrecio.Size = New System.Drawing.Size(93, 24)
         Me.txtPrecio.TabIndex = 5
         Me.txtPrecio.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -89,8 +96,11 @@ Partial Class FormAltaProductos
         'btnAceptar
         '
         Me.btnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.btnAceptar, "FormAltaProductos.htm#btnAceptar")
+        Me.HelpProviderHG.SetHelpNavigator(Me.btnAceptar, System.Windows.Forms.HelpNavigator.Topic)
         Me.btnAceptar.Location = New System.Drawing.Point(289, 237)
         Me.btnAceptar.Name = "btnAceptar"
+        Me.HelpProviderHG.SetShowHelp(Me.btnAceptar, True)
         Me.btnAceptar.Size = New System.Drawing.Size(127, 27)
         Me.btnAceptar.TabIndex = 6
         Me.btnAceptar.Text = "&Aceptar"
@@ -98,11 +108,14 @@ Partial Class FormAltaProductos
         'txtCantidad
         '
         Me.txtCantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.txtCantidad, "FormAltaProductos.htm#txtCantidad")
+        Me.HelpProviderHG.SetHelpNavigator(Me.txtCantidad, System.Windows.Forms.HelpNavigator.Topic)
         Me.txtCantidad.Location = New System.Drawing.Point(190, 140)
         Me.txtCantidad.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCantidad.Maximum = New Decimal(New Integer() {32767, 0, 0, 0})
         Me.txtCantidad.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.txtCantidad.Name = "txtCantidad"
+        Me.HelpProviderHG.SetShowHelp(Me.txtCantidad, True)
         Me.txtCantidad.Size = New System.Drawing.Size(94, 24)
         Me.txtCantidad.TabIndex = 4
         Me.txtCantidad.Value = New Decimal(New Integer() {1, 0, 0, 0})
@@ -112,8 +125,11 @@ Partial Class FormAltaProductos
         Me.cmbLaboratorio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbLaboratorio.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbLaboratorio.FormattingEnabled = True
+        Me.HelpProviderHG.SetHelpKeyword(Me.cmbLaboratorio, "FormAltaProductos.htm#Label1")
+        Me.HelpProviderHG.SetHelpNavigator(Me.cmbLaboratorio, System.Windows.Forms.HelpNavigator.Topic)
         Me.cmbLaboratorio.Location = New System.Drawing.Point(190, 99)
         Me.cmbLaboratorio.Name = "cmbLaboratorio"
+        Me.HelpProviderHG.SetShowHelp(Me.cmbLaboratorio, True)
         Me.cmbLaboratorio.Size = New System.Drawing.Size(226, 26)
         Me.cmbLaboratorio.TabIndex = 3
         '
@@ -142,10 +158,17 @@ Partial Class FormAltaProductos
         'Textnombre
         '
         Me.Textnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.Textnombre, "FormAltaProductos.htm#Label2")
+        Me.HelpProviderHG.SetHelpNavigator(Me.Textnombre, System.Windows.Forms.HelpNavigator.Topic)
         Me.Textnombre.Location = New System.Drawing.Point(190, 30)
         Me.Textnombre.Name = "Textnombre"
+        Me.HelpProviderHG.SetShowHelp(Me.Textnombre, True)
         Me.Textnombre.Size = New System.Drawing.Size(226, 24)
         Me.Textnombre.TabIndex = 1
+        '
+        'HelpProviderHG
+        '
+        Me.HelpProviderHG.HelpNamespace = "MiProyecto.chm"
         '
         'FormAltaProductos
         '
@@ -163,7 +186,10 @@ Partial Class FormAltaProductos
         Me.Controls.Add(Me.lblDescripcion)
         Me.Controls.Add(Me.txtPrecio)
         Me.Controls.Add(Me.txtDescripcion)
+        Me.HelpProviderHG.SetHelpKeyword(Me, "FormAltaProductos.htm")
+        Me.HelpProviderHG.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.Topic)
         Me.Name = "FormAltaProductos"
+        Me.HelpProviderHG.SetShowHelp(Me, True)
         Me.Text = "FormAltaProductos"
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -181,4 +207,5 @@ Partial Class FormAltaProductos
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Textnombre As System.Windows.Forms.TextBox
+    Friend WithEvents HelpProviderHG As System.Windows.Forms.HelpProvider
 End Class

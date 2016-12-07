@@ -1,0 +1,456 @@
+﻿<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<!-- Sitemap 1.0 -->
+<!-- Put Java help object tag here -->
+</HEAD>
+<BODY>
+<UL>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="...">
+            <param name="Name" value="FormBackup">
+            <param name="Local" value="FormBackup.htm">
+            <param name="Name" value="FormRestore">
+            <param name="Local" value="FormRestore.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="63619&#44;8216635_1">
+            <param name="Name" value="Inicio">
+            <param name="Local" value="FormInicio.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Aceptar">
+            <param name="Name" value="FormaFamiliaAlta">
+            <param name="Local" value="FormaFamiliaAlta.htm">
+            <param name="Name" value="FormAltaProductos">
+            <param name="Local" value="FormAltaProductos.htm">
+            <param name="Name" value="FormBackup">
+            <param name="Local" value="FormBackup.htm">
+            <param name="Name" value="FormLaboratoriosAlta">
+            <param name="Local" value="FormLaboratoriosAlta.htm">
+            <param name="Name" value="FormRestore">
+            <param name="Local" value="FormRestore.htm">
+            <param name="Name" value="FormUsuario">
+            <param name="Local" value="FormUsuario.htm">
+            <param name="Name" value="FormVentas">
+            <param name="Local" value="FormVentas.htm">
+            <param name="Name" value="Login">
+            <param name="Local" value="Login.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Agregar">
+            <param name="Name" value="FormFamilias">
+            <param name="Local" value="FormFamilias.htm">
+            <param name="Name" value="FormVentas">
+            <param name="Local" value="FormVentas.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Apellido">
+            <param name="Name" value="FormUsuario">
+            <param name="Local" value="FormUsuario.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Archivo">
+            <param name="Name" value="FormRestore">
+            <param name="Local" value="FormRestore.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Ascendente">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Asignar">
+            <param name="Name" value="FormFamilias">
+            <param name="Local" value="FormFamilias.htm">
+            <param name="Name" value="FormUsuarioSeguridad">
+            <param name="Local" value="FormUsuarioSeguridad.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Bitacora">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Buscar">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Cancelar">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+            <param name="Name" value="Login">
+            <param name="Local" value="Login.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Cantidad">
+            <param name="Name" value="FormAltaProductos">
+            <param name="Local" value="FormAltaProductos.htm">
+            <param name="Name" value="FormVentas">
+            <param name="Local" value="FormVentas.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Cantidad de partes">
+            <param name="Name" value="FormBackup">
+            <param name="Local" value="FormBackup.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Confirmar">
+            <param name="Name" value="FormUsuarioSeguridad">
+            <param name="Local" value="FormUsuarioSeguridad.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Contrase&#241;a">
+            <param name="Name" value="Login">
+            <param name="Local" value="Login.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Criticidad">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Data Grid View1">
+            <param name="Name" value="FormPatente">
+            <param name="Local" value="FormPatente.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Data Grid Viewfamilia">
+            <param name="Name" value="FormFamilias">
+            <param name="Local" value="FormFamilias.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Descendente">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Descripcion">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Descripci&#243;n">
+            <param name="Name" value="FormAltaProductos">
+            <param name="Local" value="FormAltaProductos.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Desde">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Direcci&#243;n">
+            <param name="Name" value="FormLaboratoriosAlta">
+            <param name="Local" value="FormLaboratoriosAlta.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Disponible">
+            <param name="Name" value="FormVentas">
+            <param name="Local" value="FormVentas.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="DVH">
+            <param name="Name" value="FormPatente">
+            <param name="Local" value="FormPatente.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Eliminar">
+            <param name="Name" value="FormFamiliaBaja">
+            <param name="Local" value="FormFamiliaBaja.htm">
+            <param name="Name" value="FormUsuarioEliminar">
+            <param name="Local" value="FormUsuarioEliminar.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Exportar">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Familia">
+            <param name="Name" value="FormFamiliaBaja">
+            <param name="Local" value="FormFamiliaBaja.htm">
+            <param name="Name" value="FormFamilias">
+            <param name="Local" value="FormFamilias.htm">
+            <param name="Name" value="FormUsuarioSeguridad">
+            <param name="Local" value="FormUsuarioSeguridad.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Familias">
+            <param name="Name" value="FormUsuarioSeguridad">
+            <param name="Local" value="FormUsuarioSeguridad.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Fecha Hora">
+            <param name="Name" value="FormVentas">
+            <param name="Local" value="FormVentas.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Fecha y Hora">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="FormaFamiliaAlta">
+            <param name="Local" value="FormaFamiliaAlta.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="FormAltaProductos">
+            <param name="Local" value="FormAltaProductos.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="FormBackup">
+            <param name="Local" value="FormBackup.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="FormFamiliaBaja">
+            <param name="Local" value="FormFamiliaBaja.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="FormFamilias">
+            <param name="Local" value="FormFamilias.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="FormLaboratoriosAlta">
+            <param name="Local" value="FormLaboratoriosAlta.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="FormPatente">
+            <param name="Local" value="FormPatente.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="FormRestore">
+            <param name="Local" value="FormRestore.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="FormUsuario">
+            <param name="Local" value="FormUsuario.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="FormUsuarioEliminar">
+            <param name="Local" value="FormUsuarioEliminar.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="FormUsuarioSeguridad">
+            <param name="Local" value="FormUsuarioSeguridad.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="FormVentas">
+            <param name="Local" value="FormVentas.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Hasta">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Id">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+            <param name="Name" value="FormPatente">
+            <param name="Local" value="FormPatente.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="ID Familia">
+            <param name="Name" value="FormUsuarioSeguridad">
+            <param name="Local" value="FormUsuarioSeguridad.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="ID Patente">
+            <param name="Name" value="FormUsuarioSeguridad">
+            <param name="Local" value="FormUsuarioSeguridad.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Idioma">
+            <param name="Name" value="Login">
+            <param name="Local" value="Login.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="IDPatente">
+            <param name="Name" value="FormFamilias">
+            <param name="Local" value="FormFamilias.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="IDVendedor">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Importe Total">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Inicio">
+            <param name="Local" value="FormInicio.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Laboratorio">
+            <param name="Name" value="FormAltaProductos">
+            <param name="Local" value="FormAltaProductos.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Limpiar">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Login">
+            <param name="Local" value="Login.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Medicamentos Por Venta">
+            <param name="Name" value="FormVentas">
+            <param name="Local" value="FormVentas.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Negar">
+            <param name="Name" value="FormUsuarioSeguridad">
+            <param name="Local" value="FormUsuarioSeguridad.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Nick">
+            <param name="Name" value="FormUsuario">
+            <param name="Local" value="FormUsuario.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Nombre">
+            <param name="Name" value="FormAltaProductos">
+            <param name="Local" value="FormAltaProductos.htm">
+            <param name="Name" value="FormFamilias">
+            <param name="Local" value="FormFamilias.htm">
+            <param name="Name" value="FormLaboratoriosAlta">
+            <param name="Local" value="FormLaboratoriosAlta.htm">
+            <param name="Name" value="FormPatente">
+            <param name="Local" value="FormPatente.htm">
+            <param name="Name" value="FormUsuario">
+            <param name="Local" value="FormUsuario.htm">
+            <param name="Name" value="FormUsuarioSeguridad">
+            <param name="Local" value="FormUsuarioSeguridad.htm">
+            <param name="Name" value="FormVentas">
+            <param name="Local" value="FormVentas.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Nombre Familia">
+            <param name="Name" value="FormaFamiliaAlta">
+            <param name="Local" value="FormaFamiliaAlta.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Nro">
+            <param name="Name" value="FormVentas">
+            <param name="Local" value="FormVentas.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="NroVenta">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Ordenar por Fecha">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Pantente">
+            <param name="Name" value="FormUsuarioSeguridad">
+            <param name="Local" value="FormUsuarioSeguridad.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Patentes">
+            <param name="Name" value="FormUsuarioSeguridad">
+            <param name="Local" value="FormUsuarioSeguridad.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Path">
+            <param name="Name" value="FormBackup">
+            <param name="Local" value="FormBackup.htm">
+            <param name="Name" value="FormRestore">
+            <param name="Local" value="FormRestore.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Precio">
+            <param name="Name" value="FormAltaProductos">
+            <param name="Local" value="FormAltaProductos.htm">
+            <param name="Name" value="FormVentas">
+            <param name="Local" value="FormVentas.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Precio Individual">
+            <param name="Name" value="FormVentas">
+            <param name="Local" value="FormVentas.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Precio Total">
+            <param name="Name" value="FormVentas">
+            <param name="Local" value="FormVentas.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Producto">
+            <param name="Name" value="FormVentas">
+            <param name="Local" value="FormVentas.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Seleccione un Usuario">
+            <param name="Name" value="FormUsuarioSeguridad">
+            <param name="Local" value="FormUsuarioSeguridad.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Telefono">
+            <param name="Name" value="FormLaboratoriosAlta">
+            <param name="Local" value="FormLaboratoriosAlta.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Ticket">
+            <param name="Name" value="FormVentas">
+            <param name="Local" value="FormVentas.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Usuario">
+            <param name="Name" value="FormBitacora">
+            <param name="Local" value="FormBitacora.htm">
+            <param name="Name" value="FormUsuarioEliminar">
+            <param name="Local" value="FormUsuarioEliminar.htm">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+            <param name="Name" value="Login">
+            <param name="Local" value="Login.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Valor">
+            <param name="Name" value="FormBackup">
+            <param name="Local" value="FormBackup.htm">
+        </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+            <param name="Name" value="Ventas">
+            <param name="Name" value="FormVentasTicket">
+            <param name="Local" value="FormVentasTicket.htm">
+        </OBJECT>
+</UL></BODY>
+</HTML>

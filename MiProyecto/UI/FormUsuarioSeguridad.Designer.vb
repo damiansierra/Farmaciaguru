@@ -38,6 +38,7 @@ Partial Class FormUsuarioSeguridad
         Me.dgPatenteNegada = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.HelpProviderHG = New System.Windows.Forms.HelpProvider()
         CType(Me.dgFamilias, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgPatentes, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -45,8 +46,11 @@ Partial Class FormUsuarioSeguridad
         'COMBOUSER
         '
         Me.COMBOUSER.FormattingEnabled = True
+        Me.HelpProviderHG.SetHelpKeyword(Me.COMBOUSER, "FormUsuarioSeguridad.htm#Label1")
+        Me.HelpProviderHG.SetHelpNavigator(Me.COMBOUSER, System.Windows.Forms.HelpNavigator.Topic)
         Me.COMBOUSER.Location = New System.Drawing.Point(192, 41)
         Me.COMBOUSER.Name = "COMBOUSER"
+        Me.HelpProviderHG.SetShowHelp(Me.COMBOUSER, True)
         Me.COMBOUSER.Size = New System.Drawing.Size(204, 21)
         Me.COMBOUSER.TabIndex = 0
         '
@@ -54,8 +58,11 @@ Partial Class FormUsuarioSeguridad
         '
         Me.dgFamilias.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgFamilias.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.familia_id, Me.Nombre_Familia, Me.dgAsignarFamilia})
+        Me.HelpProviderHG.SetHelpKeyword(Me.dgFamilias, "FormUsuarioSeguridad.htm#dgFamilias")
+        Me.HelpProviderHG.SetHelpNavigator(Me.dgFamilias, System.Windows.Forms.HelpNavigator.Topic)
         Me.dgFamilias.Location = New System.Drawing.Point(22, 116)
         Me.dgFamilias.Name = "dgFamilias"
+        Me.HelpProviderHG.SetShowHelp(Me.dgFamilias, True)
         Me.dgFamilias.Size = New System.Drawing.Size(344, 251)
         Me.dgFamilias.TabIndex = 1
         '
@@ -87,8 +94,11 @@ Partial Class FormUsuarioSeguridad
         'btnconfirmarmodificaciones
         '
         Me.btnconfirmarmodificaciones.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.btnconfirmarmodificaciones, "FormUsuarioSeguridad.htm#btnconfirmarmodificaciones")
+        Me.HelpProviderHG.SetHelpNavigator(Me.btnconfirmarmodificaciones, System.Windows.Forms.HelpNavigator.Topic)
         Me.btnconfirmarmodificaciones.Location = New System.Drawing.Point(741, 401)
         Me.btnconfirmarmodificaciones.Name = "btnconfirmarmodificaciones"
+        Me.HelpProviderHG.SetShowHelp(Me.btnconfirmarmodificaciones, True)
         Me.btnconfirmarmodificaciones.Size = New System.Drawing.Size(101, 37)
         Me.btnconfirmarmodificaciones.TabIndex = 3
         Me.btnconfirmarmodificaciones.Text = "Confirmar"
@@ -108,8 +118,11 @@ Partial Class FormUsuarioSeguridad
         '
         Me.dgPatentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgPatentes.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.patente_id, Me.Nombre, Me.dgAsignarPatente, Me.dgPatenteNegada})
+        Me.HelpProviderHG.SetHelpKeyword(Me.dgPatentes, "FormUsuarioSeguridad.htm#dgPatentes")
+        Me.HelpProviderHG.SetHelpNavigator(Me.dgPatentes, System.Windows.Forms.HelpNavigator.Topic)
         Me.dgPatentes.Location = New System.Drawing.Point(398, 116)
         Me.dgPatentes.Name = "dgPatentes"
+        Me.HelpProviderHG.SetShowHelp(Me.dgPatentes, True)
         Me.dgPatentes.Size = New System.Drawing.Size(444, 251)
         Me.dgPatentes.TabIndex = 5
         '
@@ -148,6 +161,10 @@ Partial Class FormUsuarioSeguridad
         Me.ToolTip1.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         Me.ToolTip1.ToolTipTitle = "Something"
         '
+        'HelpProviderHG
+        '
+        Me.HelpProviderHG.HelpNamespace = "MiProyecto.chm"
+        '
         'FormUsuarioSeguridad
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -160,7 +177,10 @@ Partial Class FormUsuarioSeguridad
         Me.Controls.Add(Me.txtfamilia)
         Me.Controls.Add(Me.dgFamilias)
         Me.Controls.Add(Me.COMBOUSER)
+        Me.HelpProviderHG.SetHelpKeyword(Me, "FormUsuarioSeguridad.htm")
+        Me.HelpProviderHG.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.Topic)
         Me.Name = "FormUsuarioSeguridad"
+        Me.HelpProviderHG.SetShowHelp(Me, True)
         Me.Text = "FormUsuarioSeguridad"
         CType(Me.dgFamilias, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgPatentes, System.ComponentModel.ISupportInitialize).EndInit()
@@ -183,4 +203,5 @@ Partial Class FormUsuarioSeguridad
     Friend WithEvents dgAsignarPatente As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents dgPatenteNegada As System.Windows.Forms.DataGridViewCheckBoxColumn
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
+    Friend WithEvents HelpProviderHG As System.Windows.Forms.HelpProvider
 End Class

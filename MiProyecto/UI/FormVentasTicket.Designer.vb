@@ -39,6 +39,7 @@ Partial Class FormVentasTicket
         Me.Cliente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Fecha_Venta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Total = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HelpProviderHG = New System.Windows.Forms.HelpProvider()
         CType(Me.dgVentas, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -54,8 +55,11 @@ Partial Class FormVentasTicket
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.HelpProviderHG.SetHelpKeyword(Me.Button2, "FormVentasTicket.htm#Button2")
+        Me.HelpProviderHG.SetHelpNavigator(Me.Button2, System.Windows.Forms.HelpNavigator.Topic)
         Me.Button2.Location = New System.Drawing.Point(163, 438)
         Me.Button2.Name = "Button2"
+        Me.HelpProviderHG.SetShowHelp(Me.Button2, True)
         Me.Button2.Size = New System.Drawing.Size(97, 27)
         Me.Button2.TabIndex = 136
         Me.Button2.Text = "Descendente"
@@ -64,8 +68,11 @@ Partial Class FormVentasTicket
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.Button3, "FormVentasTicket.htm#Button3")
+        Me.HelpProviderHG.SetHelpNavigator(Me.Button3, System.Windows.Forms.HelpNavigator.Topic)
         Me.Button3.Location = New System.Drawing.Point(163, 405)
         Me.Button3.Name = "Button3"
+        Me.HelpProviderHG.SetShowHelp(Me.Button3, True)
         Me.Button3.Size = New System.Drawing.Size(97, 27)
         Me.Button3.TabIndex = 135
         Me.Button3.Text = "Ascendente"
@@ -75,8 +82,11 @@ Partial Class FormVentasTicket
         '
         Me.cmbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbUsuario.FormattingEnabled = True
+        Me.HelpProviderHG.SetHelpKeyword(Me.cmbUsuario, "FormVentasTicket.htm#lblUsuario")
+        Me.HelpProviderHG.SetHelpNavigator(Me.cmbUsuario, System.Windows.Forms.HelpNavigator.Topic)
         Me.cmbUsuario.Location = New System.Drawing.Point(131, 33)
         Me.cmbUsuario.Name = "cmbUsuario"
+        Me.HelpProviderHG.SetShowHelp(Me.cmbUsuario, True)
         Me.cmbUsuario.Size = New System.Drawing.Size(240, 21)
         Me.cmbUsuario.TabIndex = 134
         '
@@ -110,23 +120,32 @@ Partial Class FormVentasTicket
         'dtpFechaDesde
         '
         Me.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.HelpProviderHG.SetHelpKeyword(Me.dtpFechaDesde, "FormVentasTicket.htm#Label1")
+        Me.HelpProviderHG.SetHelpNavigator(Me.dtpFechaDesde, System.Windows.Forms.HelpNavigator.Topic)
         Me.dtpFechaDesde.Location = New System.Drawing.Point(452, 34)
         Me.dtpFechaDesde.Name = "dtpFechaDesde"
+        Me.HelpProviderHG.SetShowHelp(Me.dtpFechaDesde, True)
         Me.dtpFechaDesde.Size = New System.Drawing.Size(128, 20)
         Me.dtpFechaDesde.TabIndex = 130
         '
         'dtpFechaHasta
         '
         Me.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.HelpProviderHG.SetHelpKeyword(Me.dtpFechaHasta, "FormVentasTicket.htm#lblFechaHasta")
+        Me.HelpProviderHG.SetHelpNavigator(Me.dtpFechaHasta, System.Windows.Forms.HelpNavigator.Topic)
         Me.dtpFechaHasta.Location = New System.Drawing.Point(668, 37)
         Me.dtpFechaHasta.Name = "dtpFechaHasta"
+        Me.HelpProviderHG.SetShowHelp(Me.dtpFechaHasta, True)
         Me.dtpFechaHasta.Size = New System.Drawing.Size(130, 20)
         Me.dtpFechaHasta.TabIndex = 129
         '
         'btnExportar
         '
+        Me.HelpProviderHG.SetHelpKeyword(Me.btnExportar, "FormVentasTicket.htm#btnExportar")
+        Me.HelpProviderHG.SetHelpNavigator(Me.btnExportar, System.Windows.Forms.HelpNavigator.Topic)
         Me.btnExportar.Location = New System.Drawing.Point(658, 405)
         Me.btnExportar.Name = "btnExportar"
+        Me.HelpProviderHG.SetShowHelp(Me.btnExportar, True)
         Me.btnExportar.Size = New System.Drawing.Size(127, 27)
         Me.btnExportar.TabIndex = 127
         Me.btnExportar.Text = "&Exportar"
@@ -134,8 +153,11 @@ Partial Class FormVentasTicket
         '
         'btnlimpiar
         '
+        Me.HelpProviderHG.SetHelpKeyword(Me.btnlimpiar, "FormVentasTicket.htm#btnlimpiar")
+        Me.HelpProviderHG.SetHelpNavigator(Me.btnlimpiar, System.Windows.Forms.HelpNavigator.Topic)
         Me.btnlimpiar.Location = New System.Drawing.Point(510, 405)
         Me.btnlimpiar.Name = "btnlimpiar"
+        Me.HelpProviderHG.SetShowHelp(Me.btnlimpiar, True)
         Me.btnlimpiar.Size = New System.Drawing.Size(127, 27)
         Me.btnlimpiar.TabIndex = 128
         Me.btnlimpiar.Text = "&Limpiar"
@@ -143,8 +165,11 @@ Partial Class FormVentasTicket
         '
         'btnbuscar
         '
+        Me.HelpProviderHG.SetHelpKeyword(Me.btnbuscar, "FormVentasTicket.htm#btnbuscar")
+        Me.HelpProviderHG.SetHelpNavigator(Me.btnbuscar, System.Windows.Forms.HelpNavigator.Topic)
         Me.btnbuscar.Location = New System.Drawing.Point(368, 405)
         Me.btnbuscar.Name = "btnbuscar"
+        Me.HelpProviderHG.SetShowHelp(Me.btnbuscar, True)
         Me.btnbuscar.Size = New System.Drawing.Size(127, 27)
         Me.btnbuscar.TabIndex = 126
         Me.btnbuscar.Text = "&Buscar"
@@ -157,10 +182,13 @@ Partial Class FormVentasTicket
         Me.dgVentas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgVentas.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.NroVenta, Me.Cliente, Me.Fecha_Venta, Me.Total})
+        Me.HelpProviderHG.SetHelpKeyword(Me.dgVentas, "FormVentasTicket.htm#dgVentas")
+        Me.HelpProviderHG.SetHelpNavigator(Me.dgVentas, System.Windows.Forms.HelpNavigator.Topic)
         Me.dgVentas.Location = New System.Drawing.Point(60, 94)
         Me.dgVentas.Name = "dgVentas"
         Me.dgVentas.ReadOnly = True
         Me.dgVentas.RowHeadersVisible = False
+        Me.HelpProviderHG.SetShowHelp(Me.dgVentas, True)
         Me.dgVentas.Size = New System.Drawing.Size(725, 298)
         Me.dgVentas.TabIndex = 125
         '
@@ -191,6 +219,10 @@ Partial Class FormVentasTicket
         Me.Total.Name = "Total"
         Me.Total.ReadOnly = True
         '
+        'HelpProviderHG
+        '
+        Me.HelpProviderHG.HelpNamespace = "MiProyecto.chm"
+        '
         'FormVentasTicket
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -209,7 +241,10 @@ Partial Class FormVentasTicket
         Me.Controls.Add(Me.btnlimpiar)
         Me.Controls.Add(Me.btnbuscar)
         Me.Controls.Add(Me.dgVentas)
+        Me.HelpProviderHG.SetHelpKeyword(Me, "FormVentasTicket.htm")
+        Me.HelpProviderHG.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.Topic)
         Me.Name = "FormVentasTicket"
+        Me.HelpProviderHG.SetShowHelp(Me, True)
         Me.Text = "FormVentasTicket"
         CType(Me.dgVentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -233,4 +268,5 @@ Partial Class FormVentasTicket
     Friend WithEvents Cliente As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Fecha_Venta As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Total As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents HelpProviderHG As System.Windows.Forms.HelpProvider
 End Class

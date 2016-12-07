@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form Name="FormFamilias" Text="FormFamilias" WindowSize="488, 480" ClientAreaOffset="8, 31" BorderStyle="2" HasMap="True" PicFileName="images\FormFamilias.png" HtmlFileName="FormFamilias.htm" SourceProjectType="VB.NET" SourceProjectName="UI" OriginalClassName="VB.NET" HWND="3740626">
+  <Body>
+    <Controls>
+      <ComboBox Name="Combofamilia" Caption="Familia" Bookmark="txtfamilia" Description="" ClassName="ComboBox" TabIndex="0" HotSpot="174,57,413,85" />
+      <Label Name="txtfamilia" Caption="Familia" Bookmark="txtfamilia" Description="" ClassName="Label" TabIndex="8" HotSpot="75,60,134,80" />
+      <DataGridView Name="DataGridViewfamilia" Caption="Data Grid Viewfamilia" Bookmark="DataGridViewfamilia" Description="" ClassName="DataGridView" TabIndex="9" PicFileName="images\DataGridViewfamilia.png" HotSpot="50,117,439,424">
+        <Controls>
+          <DataGridViewTextBoxColumn Name="IDPatente" Caption="IDPatente" Bookmark="IDPatente" Description="" ClassName="DataGridViewTextBoxColumn" TabIndex="0" HotSpot="41,0,141,21" />
+          <DataGridViewTextBoxColumn Name="Nombre" Caption="Nombre" Bookmark="Nombre" Description="" ClassName="DataGridViewTextBoxColumn" TabIndex="1" HotSpot="141,0,241,21" />
+          <DataGridViewCheckBoxColumn Name="Agregada" Caption="Agregar" Bookmark="Agregada" Description="" ClassName="DataGridViewCheckBoxColumn" TabIndex="2" HotSpot="241,0,341,21" />
+        </Controls>
+      </DataGridView>
+      <Button Name="btnconfirmarmodificaciones" Caption="Asignar" Bookmark="btnconfirmarmodificaciones" Description="" ClassName="Button" TabIndex="12" HotSpot="319,437,452,460" />
+    </Controls>
+  </Body>
+</Form>

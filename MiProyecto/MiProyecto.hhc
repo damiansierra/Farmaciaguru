@@ -1,0 +1,81 @@
+﻿<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+<!-- Put Java help object tag here -->
+</head>
+<body>
+<ul>
+<li> <object type="text/sitemap">
+        <param name="Name" value="Forms">
+        <param name="Local" value="forms.htm">
+    </object>
+    <ul>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="FormaFamiliaAlta">
+                <param name="Local" value="FormaFamiliaAlta.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="FormAltaProductos">
+                <param name="Local" value="FormAltaProductos.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="FormBackup">
+                <param name="Local" value="FormBackup.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="FormBitacora">
+                <param name="Local" value="FormBitacora.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="FormFamiliaBaja">
+                <param name="Local" value="FormFamiliaBaja.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="FormFamilias">
+                <param name="Local" value="FormFamilias.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="Inicio">
+                <param name="Local" value="FormInicio.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="FormLaboratoriosAlta">
+                <param name="Local" value="FormLaboratoriosAlta.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="FormPatente">
+                <param name="Local" value="FormPatente.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="FormRestore">
+                <param name="Local" value="FormRestore.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="FormUsuario">
+                <param name="Local" value="FormUsuario.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="FormUsuarioEliminar">
+                <param name="Local" value="FormUsuarioEliminar.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="FormUsuarioSeguridad">
+                <param name="Local" value="FormUsuarioSeguridad.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="FormVentas">
+                <param name="Local" value="FormVentas.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="FormVentasTicket">
+                <param name="Local" value="FormVentasTicket.htm">
+            </object>
+        <li> <object type="text/sitemap">
+                <param name="Name" value="Login">
+                <param name="Local" value="Login.htm">
+            </object>
+    </li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></li></ul>
+</li></ul></body>
+</html>

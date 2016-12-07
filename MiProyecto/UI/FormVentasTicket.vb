@@ -6,6 +6,23 @@
 
     Private Sub frmVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         MenuUI = Me.MdiParent
+
+        If UI.Login.idioma = "2" Then
+            Me.Label2.Text = ""
+            Me.Button2.Text = ""
+            Me.Button3.Text = ""
+            Me.lblUsuario.Text = "User"
+            Me.lblFechaHasta.Text = "to"
+            Me.Label1.Text = ""
+            Me.btnExportar.Text = "Export"
+            Me.btnlimpiar.Text = "Clear"
+            Me.btnbuscar.Text = "Search"
+
+            Me.NroVenta.HeaderText = "NumberSell"
+            Me.Cliente.HeaderText = "User"
+            Me.Fecha_Venta.HeaderText = "DateSell"
+           
+        End If
         Try
             Dim myList As New Dictionary(Of Integer, String)
             For Each UsuarioBE In BLL.Usuario.GetInstance.listarTodos()

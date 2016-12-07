@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form Name="FormFamiliaBaja" Text="FormFamiliaBaja" WindowSize="497, 282" ClientAreaOffset="8, 31" BorderStyle="2" HasMap="True" PicFileName="images\FormFamiliaBaja.png" HtmlFileName="FormFamiliaBaja.htm" SourceProjectType="VB.NET" SourceProjectName="UI" OriginalClassName="VB.NET" HWND="3148508">
+  <Body>
+    <Controls>
+      <ComboBox Name="COMBOFAM" Caption="Familia" Bookmark="Label1" Description="" ClassName="ComboBox" TabIndex="0" HotSpot="182,125,429,151" />
+      <Label Name="Label1" Caption="Familia" Bookmark="Label1" Description="" ClassName="Label" TabIndex="1" HotSpot="96,128,151,146" />
+      <Button Name="Button1" Caption="Eliminar" Bookmark="Button1" Description="" ClassName="Button" TabIndex="2" HotSpot="340,207,429,244" />
+    </Controls>
+  </Body>
+</Form>

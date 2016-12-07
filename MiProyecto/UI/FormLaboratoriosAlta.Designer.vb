@@ -29,19 +29,26 @@ Partial Class FormLaboratoriosAlta
         Me.TxtTelefono = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnAceptar = New System.Windows.Forms.Button()
+        Me.HelpProviderHG = New System.Windows.Forms.HelpProvider()
         Me.SuspendLayout()
         '
         'TxtDireccion
         '
+        Me.HelpProviderHG.SetHelpKeyword(Me.TxtDireccion, "FormLaboratoriosAlta.htm#Label3")
+        Me.HelpProviderHG.SetHelpNavigator(Me.TxtDireccion, System.Windows.Forms.HelpNavigator.Topic)
         Me.TxtDireccion.Location = New System.Drawing.Point(171, 104)
         Me.TxtDireccion.Name = "TxtDireccion"
+        Me.HelpProviderHG.SetShowHelp(Me.TxtDireccion, True)
         Me.TxtDireccion.Size = New System.Drawing.Size(149, 20)
         Me.TxtDireccion.TabIndex = 13
         '
         'TxtNombre
         '
+        Me.HelpProviderHG.SetHelpKeyword(Me.TxtNombre, "FormLaboratoriosAlta.htm#Label2")
+        Me.HelpProviderHG.SetHelpNavigator(Me.TxtNombre, System.Windows.Forms.HelpNavigator.Topic)
         Me.TxtNombre.Location = New System.Drawing.Point(171, 62)
         Me.TxtNombre.Name = "TxtNombre"
+        Me.HelpProviderHG.SetShowHelp(Me.TxtNombre, True)
         Me.TxtNombre.Size = New System.Drawing.Size(149, 20)
         Me.TxtNombre.TabIndex = 12
         '
@@ -67,8 +74,11 @@ Partial Class FormLaboratoriosAlta
         '
         'TxtTelefono
         '
+        Me.HelpProviderHG.SetHelpKeyword(Me.TxtTelefono, "FormLaboratoriosAlta.htm#Label1")
+        Me.HelpProviderHG.SetHelpNavigator(Me.TxtTelefono, System.Windows.Forms.HelpNavigator.Topic)
         Me.TxtTelefono.Location = New System.Drawing.Point(171, 144)
         Me.TxtTelefono.Name = "TxtTelefono"
+        Me.HelpProviderHG.SetShowHelp(Me.TxtTelefono, True)
         Me.TxtTelefono.Size = New System.Drawing.Size(149, 20)
         Me.TxtTelefono.TabIndex = 15
         '
@@ -84,12 +94,19 @@ Partial Class FormLaboratoriosAlta
         '
         'BtnAceptar
         '
+        Me.HelpProviderHG.SetHelpKeyword(Me.BtnAceptar, "FormLaboratoriosAlta.htm#BtnAceptar")
+        Me.HelpProviderHG.SetHelpNavigator(Me.BtnAceptar, System.Windows.Forms.HelpNavigator.Topic)
         Me.BtnAceptar.Location = New System.Drawing.Point(245, 216)
         Me.BtnAceptar.Name = "BtnAceptar"
+        Me.HelpProviderHG.SetShowHelp(Me.BtnAceptar, True)
         Me.BtnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.BtnAceptar.TabIndex = 16
         Me.BtnAceptar.Text = "Aceptar"
         Me.BtnAceptar.UseVisualStyleBackColor = True
+        '
+        'HelpProviderHG
+        '
+        Me.HelpProviderHG.HelpNamespace = "MiProyecto.chm"
         '
         'FormLaboratoriosAlta
         '
@@ -103,7 +120,10 @@ Partial Class FormLaboratoriosAlta
         Me.Controls.Add(Me.TxtNombre)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
+        Me.HelpProviderHG.SetHelpKeyword(Me, "FormLaboratoriosAlta.htm")
+        Me.HelpProviderHG.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.Topic)
         Me.Name = "FormLaboratoriosAlta"
+        Me.HelpProviderHG.SetShowHelp(Me, True)
         Me.Text = "FormLaboratoriosAlta"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -116,4 +136,5 @@ Partial Class FormLaboratoriosAlta
     Friend WithEvents TxtTelefono As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents BtnAceptar As System.Windows.Forms.Button
+    Friend WithEvents HelpProviderHG As System.Windows.Forms.HelpProvider
 End Class

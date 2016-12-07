@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form Name="FormBackup" Text="FormBackup" WindowSize="502, 300" ClientAreaOffset="8, 31" BorderStyle="2" HasMap="True" PicFileName="images\FormBackup.png" HtmlFileName="FormBackup.htm" SourceProjectType="VB.NET" SourceProjectName="UI" OriginalClassName="VB.NET" HWND="855494">
+  <Body>
+    <Controls>
+      <TextBox Name="txtruta" Caption="Path" Bookmark="lblruta" Description="" ClassName="TextBox" TabIndex="18" HotSpot="126,105,414,125" />
+      <Label Name="lblruta" Caption="Path" Bookmark="lblruta" Description="" ClassName="Label" TabIndex="19" HotSpot="65,105,110,122" />
+      <Label Name="lblCantidad" Caption="Cantidad de partes" Bookmark="lblCantidad" Description="" ClassName="Label" TabIndex="20" HotSpot="280,151,348,182" />
+      <Button Name="btnCarpeta" Caption="..." Bookmark="btnCarpeta" Description="" ClassName="Button" TabIndex="21" HotSpot="420,103,449,126" />
+      <Button Name="btnAceptar" Caption="Aceptar" Bookmark="btnAceptar" Description="" ClassName="Button" TabIndex="22" HotSpot="322,192,449,219" />
+      <NumericUpDown Name="nudValor" Caption="Valor" Bookmark="nudValor" Description="" ClassName="NumericUpDown" TabIndex="24" HotSpot="372,151,449,171" />
+    </Controls>
+  </Body>
+</Form>

@@ -25,14 +25,18 @@ Partial Class FormUsuarioEliminar
         Me.COMBOUSER = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.HelpProviderHG = New System.Windows.Forms.HelpProvider()
         Me.SuspendLayout()
         '
         'COMBOUSER
         '
         Me.COMBOUSER.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.COMBOUSER.FormattingEnabled = True
+        Me.HelpProviderHG.SetHelpKeyword(Me.COMBOUSER, "FormUsuarioEliminar.htm#Label1")
+        Me.HelpProviderHG.SetHelpNavigator(Me.COMBOUSER, System.Windows.Forms.HelpNavigator.Topic)
         Me.COMBOUSER.Location = New System.Drawing.Point(164, 81)
         Me.COMBOUSER.Name = "COMBOUSER"
+        Me.HelpProviderHG.SetShowHelp(Me.COMBOUSER, True)
         Me.COMBOUSER.Size = New System.Drawing.Size(173, 28)
         Me.COMBOUSER.TabIndex = 0
         '
@@ -49,12 +53,19 @@ Partial Class FormUsuarioEliminar
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.Button1, "FormUsuarioEliminar.htm#Button1")
+        Me.HelpProviderHG.SetHelpNavigator(Me.Button1, System.Windows.Forms.HelpNavigator.Topic)
         Me.Button1.Location = New System.Drawing.Point(232, 173)
         Me.Button1.Name = "Button1"
+        Me.HelpProviderHG.SetShowHelp(Me.Button1, True)
         Me.Button1.Size = New System.Drawing.Size(105, 38)
         Me.Button1.TabIndex = 2
         Me.Button1.Text = "Eliminar"
         Me.Button1.UseVisualStyleBackColor = True
+        '
+        'HelpProviderHG
+        '
+        Me.HelpProviderHG.HelpNamespace = "MiProyecto.chm"
         '
         'FormUsuarioEliminar
         '
@@ -64,7 +75,10 @@ Partial Class FormUsuarioEliminar
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.COMBOUSER)
+        Me.HelpProviderHG.SetHelpKeyword(Me, "FormUsuarioEliminar.htm")
+        Me.HelpProviderHG.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.Topic)
         Me.Name = "FormUsuarioEliminar"
+        Me.HelpProviderHG.SetShowHelp(Me, True)
         Me.Text = "FormUsuarioEliminar"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -73,4 +87,5 @@ Partial Class FormUsuarioEliminar
     Friend WithEvents COMBOUSER As System.Windows.Forms.ComboBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents HelpProviderHG As System.Windows.Forms.HelpProvider
 End Class

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form Name="FormUsuarioSeguridad" Text="FormUsuarioSeguridad" WindowSize="908, 535" ClientAreaOffset="8, 31" BorderStyle="2" HasMap="True" PicFileName="images\FormUsuarioSeguridad.png" HtmlFileName="FormUsuarioSeguridad.htm" SourceProjectType="VB.NET" SourceProjectName="UI" OriginalClassName="VB.NET" HWND="2101132">
+  <Body>
+    <Controls>
+      <ComboBox Name="COMBOUSER" Caption="Seleccione un Usuario" Bookmark="Label1" Description="" ClassName="ComboBox" TabIndex="0" HotSpot="200,72,404,93" />
+      <DataGridView Name="dgFamilias" Caption="Familias" Bookmark="dgFamilias" Description="" ClassName="DataGridView" TabIndex="1" PicFileName="images\dgFamilias.png" HotSpot="30,147,374,398">
+        <Controls>
+          <DataGridViewTextBoxColumn Name="familia_id" Caption="ID Familia" Bookmark="familia_id" Description="" ClassName="DataGridViewTextBoxColumn" TabIndex="0" HotSpot="41,0,141,21" />
+          <DataGridViewTextBoxColumn Name="Nombre_Familia" Caption="Nombre" Bookmark="Nombre_Familia" Description="" ClassName="DataGridViewTextBoxColumn" TabIndex="1" HotSpot="141,0,241,21" />
+          <DataGridViewCheckBoxColumn Name="dgAsignarFamilia" Caption="Asignar" Bookmark="dgAsignarFamilia" Description="" ClassName="DataGridViewCheckBoxColumn" TabIndex="2" HotSpot="241,0,341,21" />
+        </Controls>
+      </DataGridView>
+      <Label Name="txtfamilia" Caption="Familia" Bookmark="txtfamilia" Description="" ClassName="Label" TabIndex="2" HotSpot="26,124,85,144" />
+      <Button Name="btnconfirmarmodificaciones" Caption="Confirmar" Bookmark="btnconfirmarmodificaciones" Description="" ClassName="Button" TabIndex="3" HotSpot="749,432,850,469" />
+      <Label Name="Label1" Caption="Seleccione un Usuario" Bookmark="Label1" Description="" ClassName="Label" TabIndex="4" HotSpot="26,73,194,93" />
+      <DataGridView Name="dgPatentes" Caption="Patentes" Bookmark="dgPatentes" Description="" ClassName="DataGridView" TabIndex="5" PicFileName="images\dgPatentes.png" HotSpot="406,147,850,398">
+        <Controls>
+          <DataGridViewTextBoxColumn Name="patente_id" Caption="ID Patente" Bookmark="patente_id" Description="" ClassName="DataGridViewTextBoxColumn" TabIndex="0" HotSpot="41,0,141,21" />
+          <DataGridViewTextBoxColumn Name="Nombre" Caption="Nombre" Bookmark="Nombre" Description="" ClassName="DataGridViewTextBoxColumn" TabIndex="1" HotSpot="141,0,241,21" />
+          <DataGridViewCheckBoxColumn Name="dgAsignarPatente" Caption="Asignar" Bookmark="dgAsignarPatente" Description="" ClassName="DataGridViewCheckBoxColumn" TabIndex="2" HotSpot="241,0,341,21" />
+          <DataGridViewCheckBoxColumn Name="dgPatenteNegada" Caption="Negar" Bookmark="dgPatenteNegada" Description="" ClassName="DataGridViewCheckBoxColumn" TabIndex="3" HotSpot="341,0,441,21" />
+        </Controls>
+      </DataGridView>
+      <Label Name="Label3" Caption="Pantente" Bookmark="Label3" Description="" ClassName="Label" TabIndex="7" HotSpot="402,124,476,144" />
+    </Controls>
+  </Body>
+</Form>

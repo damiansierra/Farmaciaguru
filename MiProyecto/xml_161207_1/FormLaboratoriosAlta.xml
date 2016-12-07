@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form Name="FormLaboratoriosAlta" Text="FormLaboratoriosAlta" WindowSize="401, 300" ClientAreaOffset="8, 31" BorderStyle="2" HasMap="True" PicFileName="images\FormLaboratoriosAlta.png" HtmlFileName="FormLaboratoriosAlta.htm" SourceProjectType="VB.NET" SourceProjectName="UI" OriginalClassName="VB.NET" HWND="1248936">
+  <Body>
+    <Controls>
+      <Label Name="Label2" Caption="Nombre" Bookmark="Label2" Description="" ClassName="Label" TabIndex="9" HotSpot="73,91,138,111" />
+      <Label Name="Label3" Caption="Dirección" Bookmark="Label3" Description="" ClassName="Label" TabIndex="10" HotSpot="73,135,148,155" />
+      <TextBox Name="TxtNombre" Caption="Nombre" Bookmark="Label2" Description="" ClassName="TextBox" TabIndex="12" HotSpot="179,93,328,113" />
+      <TextBox Name="TxtDireccion" Caption="Dirección" Bookmark="Label3" Description="" ClassName="TextBox" TabIndex="13" HotSpot="179,135,328,155" />
+      <Label Name="Label1" Caption="Telefono" Bookmark="Label1" Description="" ClassName="Label" TabIndex="14" HotSpot="73,175,144,195" />
+      <TextBox Name="TxtTelefono" Caption="Telefono" Bookmark="Label1" Description="" ClassName="TextBox" TabIndex="15" HotSpot="179,175,328,195" />
+      <Button Name="BtnAceptar" Caption="Aceptar" Bookmark="BtnAceptar" Description="" ClassName="Button" TabIndex="16" HotSpot="253,247,328,270" />
+    </Controls>
+  </Body>
+</Form>

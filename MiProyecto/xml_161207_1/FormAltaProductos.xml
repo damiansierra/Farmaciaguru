@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form Name="FormAltaProductos" Text="FormAltaProductos" WindowSize="545, 327" ClientAreaOffset="8, 31" BorderStyle="2" HasMap="True" PicFileName="images\FormAltaProductos.png" HtmlFileName="FormAltaProductos.htm" SourceProjectType="VB.NET" SourceProjectName="UI" OriginalClassName="VB.NET" HWND="1246450">
+  <Body>
+    <Controls>
+      <TextBox Name="Textnombre" Caption="Nombre" Bookmark="Label2" Description="" ClassName="TextBox" TabIndex="1" HotSpot="198,61,424,85" />
+      <TextBox Name="txtDescripcion" Caption="Descripción" Bookmark="lblDescripcion" Description="" ClassName="TextBox" TabIndex="2" HotSpot="198,92,424,116" />
+      <ComboBox Name="cmbLaboratorio" Caption="Laboratorio" Bookmark="Label1" Description="" ClassName="ComboBox" TabIndex="3" HotSpot="198,130,424,156" />
+      <NumericUpDown Name="txtCantidad" Caption="Cantidad" Bookmark="txtCantidad" Description="" ClassName="NumericUpDown" TabIndex="4" HotSpot="198,171,292,195" />
+      <TextBox Name="txtPrecio" Caption="Precio" Bookmark="lblPrecio" Description="" ClassName="TextBox" TabIndex="5" HotSpot="198,210,291,234" />
+      <Button Name="btnAceptar" Caption="Aceptar" Bookmark="btnAceptar" Description="" ClassName="Button" TabIndex="6" HotSpot="297,268,424,295" />
+      <Label Name="lblPrecio" Caption="Precio" Bookmark="lblPrecio" Description="" ClassName="Label" TabIndex="121" HotSpot="105,213,156,231" />
+      <Label Name="lblCantidad" Caption="Cantidad" Bookmark="lblCantidad" Description="" ClassName="Label" TabIndex="122" HotSpot="105,173,171,191" />
+      <Label Name="lblDescripcion" Caption="Descripción" Bookmark="lblDescripcion" Description="" ClassName="Label" TabIndex="124" HotSpot="105,95,192,113" />
+      <Label Name="Label1" Caption="Laboratorio" Bookmark="Label1" Description="" ClassName="Label" TabIndex="130" HotSpot="105,138,189,156" />
+      <Label Name="Label2" Caption="Nombre" Bookmark="Label2" Description="" ClassName="Label" TabIndex="132" HotSpot="105,64,167,82" />
+    </Controls>
+  </Body>
+</Form>

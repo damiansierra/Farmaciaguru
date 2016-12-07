@@ -25,6 +25,7 @@ Partial Class FormaFamiliaAlta
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.BtnAceptar = New System.Windows.Forms.Button()
+        Me.HelpProviderHG = New System.Windows.Forms.HelpProvider()
         Me.SuspendLayout()
         '
         'Label1
@@ -40,19 +41,29 @@ Partial Class FormaFamiliaAlta
         'TxtNombre
         '
         Me.TxtNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.TxtNombre, "FormaFamiliaAlta.htm#Label1")
+        Me.HelpProviderHG.SetHelpNavigator(Me.TxtNombre, System.Windows.Forms.HelpNavigator.Topic)
         Me.TxtNombre.Location = New System.Drawing.Point(150, 85)
         Me.TxtNombre.Name = "TxtNombre"
+        Me.HelpProviderHG.SetShowHelp(Me.TxtNombre, True)
         Me.TxtNombre.Size = New System.Drawing.Size(230, 26)
         Me.TxtNombre.TabIndex = 1
         '
         'BtnAceptar
         '
+        Me.HelpProviderHG.SetHelpKeyword(Me.BtnAceptar, "FormaFamiliaAlta.htm#BtnAceptar")
+        Me.HelpProviderHG.SetHelpNavigator(Me.BtnAceptar, System.Windows.Forms.HelpNavigator.Topic)
         Me.BtnAceptar.Location = New System.Drawing.Point(305, 155)
         Me.BtnAceptar.Name = "BtnAceptar"
+        Me.HelpProviderHG.SetShowHelp(Me.BtnAceptar, True)
         Me.BtnAceptar.Size = New System.Drawing.Size(75, 23)
         Me.BtnAceptar.TabIndex = 2
         Me.BtnAceptar.Text = "Aceptar"
         Me.BtnAceptar.UseVisualStyleBackColor = True
+        '
+        'HelpProviderHG
+        '
+        Me.HelpProviderHG.HelpNamespace = "MiProyecto.chm"
         '
         'FormaFamiliaAlta
         '
@@ -62,7 +73,10 @@ Partial Class FormaFamiliaAlta
         Me.Controls.Add(Me.BtnAceptar)
         Me.Controls.Add(Me.TxtNombre)
         Me.Controls.Add(Me.Label1)
+        Me.HelpProviderHG.SetHelpKeyword(Me, "FormaFamiliaAlta.htm")
+        Me.HelpProviderHG.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.Topic)
         Me.Name = "FormaFamiliaAlta"
+        Me.HelpProviderHG.SetShowHelp(Me, True)
         Me.Text = "FormaFamiliaAlta"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -71,4 +85,5 @@ Partial Class FormaFamiliaAlta
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents TxtNombre As System.Windows.Forms.TextBox
     Friend WithEvents BtnAceptar As System.Windows.Forms.Button
+    Friend WithEvents HelpProviderHG As System.Windows.Forms.HelpProvider
 End Class

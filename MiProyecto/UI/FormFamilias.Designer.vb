@@ -25,10 +25,11 @@ Partial Class FormFamilias
         Me.Combofamilia = New System.Windows.Forms.ComboBox()
         Me.txtfamilia = New System.Windows.Forms.Label()
         Me.DataGridViewfamilia = New System.Windows.Forms.DataGridView()
-        Me.btnconfirmarmodificaciones = New System.Windows.Forms.Button()
         Me.IDPatente = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Agregada = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.btnconfirmarmodificaciones = New System.Windows.Forms.Button()
+        Me.HelpProviderHG = New System.Windows.Forms.HelpProvider()
         CType(Me.DataGridViewfamilia, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -36,8 +37,11 @@ Partial Class FormFamilias
         '
         Me.Combofamilia.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Combofamilia.FormattingEnabled = True
+        Me.HelpProviderHG.SetHelpKeyword(Me.Combofamilia, "FormFamilias.htm#txtfamilia")
+        Me.HelpProviderHG.SetHelpNavigator(Me.Combofamilia, System.Windows.Forms.HelpNavigator.Topic)
         Me.Combofamilia.Location = New System.Drawing.Point(166, 26)
         Me.Combofamilia.Name = "Combofamilia"
+        Me.HelpProviderHG.SetShowHelp(Me.Combofamilia, True)
         Me.Combofamilia.Size = New System.Drawing.Size(239, 28)
         Me.Combofamilia.TabIndex = 0
         '
@@ -55,19 +59,13 @@ Partial Class FormFamilias
         '
         Me.DataGridViewfamilia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridViewfamilia.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IDPatente, Me.Nombre, Me.Agregada})
+        Me.HelpProviderHG.SetHelpKeyword(Me.DataGridViewfamilia, "FormFamilias.htm#DataGridViewfamilia")
+        Me.HelpProviderHG.SetHelpNavigator(Me.DataGridViewfamilia, System.Windows.Forms.HelpNavigator.Topic)
         Me.DataGridViewfamilia.Location = New System.Drawing.Point(42, 86)
         Me.DataGridViewfamilia.Name = "DataGridViewfamilia"
+        Me.HelpProviderHG.SetShowHelp(Me.DataGridViewfamilia, True)
         Me.DataGridViewfamilia.Size = New System.Drawing.Size(389, 307)
         Me.DataGridViewfamilia.TabIndex = 9
-        '
-        'btnconfirmarmodificaciones
-        '
-        Me.btnconfirmarmodificaciones.Location = New System.Drawing.Point(311, 406)
-        Me.btnconfirmarmodificaciones.Name = "btnconfirmarmodificaciones"
-        Me.btnconfirmarmodificaciones.Size = New System.Drawing.Size(133, 23)
-        Me.btnconfirmarmodificaciones.TabIndex = 12
-        Me.btnconfirmarmodificaciones.Text = "Asignar"
-        Me.btnconfirmarmodificaciones.UseVisualStyleBackColor = True
         '
         'IDPatente
         '
@@ -84,6 +82,22 @@ Partial Class FormFamilias
         Me.Agregada.HeaderText = "Agregar"
         Me.Agregada.Name = "Agregada"
         '
+        'btnconfirmarmodificaciones
+        '
+        Me.HelpProviderHG.SetHelpKeyword(Me.btnconfirmarmodificaciones, "FormFamilias.htm#btnconfirmarmodificaciones")
+        Me.HelpProviderHG.SetHelpNavigator(Me.btnconfirmarmodificaciones, System.Windows.Forms.HelpNavigator.Topic)
+        Me.btnconfirmarmodificaciones.Location = New System.Drawing.Point(311, 406)
+        Me.btnconfirmarmodificaciones.Name = "btnconfirmarmodificaciones"
+        Me.HelpProviderHG.SetShowHelp(Me.btnconfirmarmodificaciones, True)
+        Me.btnconfirmarmodificaciones.Size = New System.Drawing.Size(133, 23)
+        Me.btnconfirmarmodificaciones.TabIndex = 12
+        Me.btnconfirmarmodificaciones.Text = "Asignar"
+        Me.btnconfirmarmodificaciones.UseVisualStyleBackColor = True
+        '
+        'HelpProviderHG
+        '
+        Me.HelpProviderHG.HelpNamespace = "MiProyecto.chm"
+        '
         'FormFamilias
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -93,7 +107,10 @@ Partial Class FormFamilias
         Me.Controls.Add(Me.DataGridViewfamilia)
         Me.Controls.Add(Me.txtfamilia)
         Me.Controls.Add(Me.Combofamilia)
+        Me.HelpProviderHG.SetHelpKeyword(Me, "FormFamilias.htm")
+        Me.HelpProviderHG.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.Topic)
         Me.Name = "FormFamilias"
+        Me.HelpProviderHG.SetShowHelp(Me, True)
         Me.Text = "FormFamilias"
         CType(Me.DataGridViewfamilia, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -107,4 +124,5 @@ Partial Class FormFamilias
     Friend WithEvents IDPatente As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Agregada As System.Windows.Forms.DataGridViewCheckBoxColumn
+    Friend WithEvents HelpProviderHG As System.Windows.Forms.HelpProvider
 End Class

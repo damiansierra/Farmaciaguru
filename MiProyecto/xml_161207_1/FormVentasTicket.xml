@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form Name="FormVentasTicket" Text="FormVentasTicket" WindowSize="862, 541" ClientAreaOffset="8, 31" BorderStyle="2" HasMap="True" PicFileName="images\FormVentasTicket.png" HtmlFileName="FormVentasTicket.htm" SourceProjectType="VB.NET" SourceProjectName="UI" OriginalClassName="VB.NET" HWND="1314216">
+  <Body>
+    <Controls>
+      <DataGridView Name="dgVentas" Caption="Ventas" Bookmark="dgVentas" Description="" ClassName="DataGridView" TabIndex="125" PicFileName="images\dgVentas.png" HotSpot="68,125,793,423">
+        <Controls>
+          <DataGridViewTextBoxColumn Name="NroVenta" Caption="NroVenta" Bookmark="NroVenta" Description="" ClassName="DataGridViewTextBoxColumn" TabIndex="0" HotSpot="41,0,154,21" />
+          <DataGridViewTextBoxColumn Name="Cliente" Caption="IDVendedor" Bookmark="Cliente" Description="" ClassName="DataGridViewTextBoxColumn" TabIndex="1" HotSpot="154,0,379,21" />
+          <DataGridViewTextBoxColumn Name="Fecha_Venta" Caption="Fecha y Hora" Bookmark="Fecha_Venta" Description="" ClassName="DataGridViewTextBoxColumn" TabIndex="2" HotSpot="379,0,583,21" />
+          <DataGridViewTextBoxColumn Name="Total" Caption="Importe Total" Bookmark="Total" Description="" ClassName="DataGridViewTextBoxColumn" TabIndex="3" HotSpot="583,0,763,21" />
+        </Controls>
+      </DataGridView>
+      <Button Name="btnbuscar" Caption="Buscar" Bookmark="btnbuscar" Description="" ClassName="Button" TabIndex="126" HotSpot="376,436,503,463" />
+      <Button Name="btnExportar" Caption="Exportar" Bookmark="btnExportar" Description="" ClassName="Button" TabIndex="127" HotSpot="666,436,793,463" />
+      <Button Name="btnlimpiar" Caption="Limpiar" Bookmark="btnlimpiar" Description="" ClassName="Button" TabIndex="128" HotSpot="518,436,645,463" />
+      <DateTimePicker Name="dtpFechaHasta" Caption="Hasta" Bookmark="lblFechaHasta" Description="" ClassName="DateTimePicker" TabIndex="129" HotSpot="676,68,806,88" />
+      <DateTimePicker Name="dtpFechaDesde" Caption="Desde" Bookmark="Label1" Description="" ClassName="DateTimePicker" TabIndex="130" HotSpot="460,65,588,85" />
+      <Label Name="Label1" Caption="Desde" Bookmark="Label1" Description="" ClassName="Label" TabIndex="131" HotSpot="385,64,460,82" />
+      <Label Name="lblFechaHasta" Caption="Hasta" Bookmark="lblFechaHasta" Description="" ClassName="Label" TabIndex="132" HotSpot="601,68,670,85" />
+      <Label Name="lblUsuario" Caption="Usuario" Bookmark="lblUsuario" Description="" ClassName="Label" TabIndex="133" HotSpot="66,66,133,83" />
+      <ComboBox Name="cmbUsuario" Caption="Usuario" Bookmark="lblUsuario" Description="" ClassName="ComboBox" TabIndex="134" HotSpot="139,64,379,85" />
+      <Button Name="Button3" Caption="Ascendente" Bookmark="Button3" Description="" ClassName="Button" TabIndex="135" HotSpot="171,436,268,463" />
+      <Button Name="Button2" Caption="Descendente" Bookmark="Button2" Description="" ClassName="Button" TabIndex="136" HotSpot="171,469,268,496" />
+      <Label Name="Label2" Caption="Ordenar por Fecha" Bookmark="Label2" Description="" ClassName="Label" TabIndex="137" HotSpot="65,443,161,456" />
+    </Controls>
+  </Body>
+</Form>

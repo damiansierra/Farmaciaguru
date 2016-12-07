@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form Name="FormRestore" Text="FormRestore" WindowSize="662, 361" ClientAreaOffset="8, 31" BorderStyle="2" HasMap="True" PicFileName="images\FormRestore.png" HtmlFileName="FormRestore.htm" SourceProjectType="VB.NET" SourceProjectName="UI" OriginalClassName="VB.NET" HWND="2361060">
+  <Body>
+    <Controls>
+      <Button Name="btnAceptar" Caption="Aceptar" Bookmark="btnAceptar" Description="" ClassName="Button" TabIndex="31" HotSpot="438,273,565,300" />
+      <TextBox Name="txtRuta" Caption="Path" Bookmark="Label1" Description="" ClassName="TextBox" TabIndex="33" HotSpot="139,89,526,109" />
+      <Label Name="Label1" Caption="Path" Bookmark="Label1" Description="" ClassName="Label" TabIndex="34" HotSpot="98,90,132,107" />
+      <ListBox Name="lstArchivo" Caption="Archivo" Bookmark="lstArchivo" Description="" ClassName="ListBox" TabIndex="35" HotSpot="139,124,565,258" />
+      <Button Name="btnCarpeta" Caption="..." Bookmark="btnCarpeta" Description="" ClassName="Button" TabIndex="36" HotSpot="532,89,565,109" />
+    </Controls>
+  </Body>
+</Form>

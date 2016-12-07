@@ -43,6 +43,7 @@ Partial Class FormBitacora
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
+        Me.HelpProviderHG = New System.Windows.Forms.HelpProvider()
         CType(Me.dgBitacora, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -50,8 +51,11 @@ Partial Class FormBitacora
         '
         Me.cmbCriticidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbCriticidad.FormattingEnabled = True
+        Me.HelpProviderHG.SetHelpKeyword(Me.cmbCriticidad, "FormBitacora.htm#lblCriticidad")
+        Me.HelpProviderHG.SetHelpNavigator(Me.cmbCriticidad, System.Windows.Forms.HelpNavigator.Topic)
         Me.cmbCriticidad.Location = New System.Drawing.Point(564, 33)
         Me.cmbCriticidad.Name = "cmbCriticidad"
+        Me.HelpProviderHG.SetShowHelp(Me.cmbCriticidad, True)
         Me.cmbCriticidad.Size = New System.Drawing.Size(362, 21)
         Me.cmbCriticidad.TabIndex = 41
         '
@@ -59,31 +63,43 @@ Partial Class FormBitacora
         '
         Me.cmbUsuario.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbUsuario.FormattingEnabled = True
+        Me.HelpProviderHG.SetHelpKeyword(Me.cmbUsuario, "FormBitacora.htm#lblUsuario")
+        Me.HelpProviderHG.SetHelpNavigator(Me.cmbUsuario, System.Windows.Forms.HelpNavigator.Topic)
         Me.cmbUsuario.Location = New System.Drawing.Point(118, 34)
         Me.cmbUsuario.Name = "cmbUsuario"
+        Me.HelpProviderHG.SetShowHelp(Me.cmbUsuario, True)
         Me.cmbUsuario.Size = New System.Drawing.Size(311, 21)
         Me.cmbUsuario.TabIndex = 42
         '
         'dtpFechaDesde
         '
         Me.dtpFechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.HelpProviderHG.SetHelpKeyword(Me.dtpFechaDesde, "FormBitacora.htm#lblFechaDesde")
+        Me.HelpProviderHG.SetHelpNavigator(Me.dtpFechaDesde, System.Windows.Forms.HelpNavigator.Topic)
         Me.dtpFechaDesde.Location = New System.Drawing.Point(564, 67)
         Me.dtpFechaDesde.Name = "dtpFechaDesde"
+        Me.HelpProviderHG.SetShowHelp(Me.dtpFechaDesde, True)
         Me.dtpFechaDesde.Size = New System.Drawing.Size(138, 20)
         Me.dtpFechaDesde.TabIndex = 40
         '
         'dtpFechaHasta
         '
         Me.dtpFechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.HelpProviderHG.SetHelpKeyword(Me.dtpFechaHasta, "FormBitacora.htm#lblFechaHasta")
+        Me.HelpProviderHG.SetHelpNavigator(Me.dtpFechaHasta, System.Windows.Forms.HelpNavigator.Topic)
         Me.dtpFechaHasta.Location = New System.Drawing.Point(785, 69)
         Me.dtpFechaHasta.Name = "dtpFechaHasta"
+        Me.HelpProviderHG.SetShowHelp(Me.dtpFechaHasta, True)
         Me.dtpFechaHasta.Size = New System.Drawing.Size(139, 20)
         Me.dtpFechaHasta.TabIndex = 39
         '
         'btnlimpiar
         '
+        Me.HelpProviderHG.SetHelpKeyword(Me.btnlimpiar, "FormBitacora.htm#btnlimpiar")
+        Me.HelpProviderHG.SetHelpNavigator(Me.btnlimpiar, System.Windows.Forms.HelpNavigator.Topic)
         Me.btnlimpiar.Location = New System.Drawing.Point(495, 476)
         Me.btnlimpiar.Name = "btnlimpiar"
+        Me.HelpProviderHG.SetShowHelp(Me.btnlimpiar, True)
         Me.btnlimpiar.Size = New System.Drawing.Size(127, 27)
         Me.btnlimpiar.TabIndex = 34
         Me.btnlimpiar.Text = "&Limpiar"
@@ -91,8 +107,11 @@ Partial Class FormBitacora
         '
         'btnCancelar
         '
+        Me.HelpProviderHG.SetHelpKeyword(Me.btnCancelar, "FormBitacora.htm#btnCancelar")
+        Me.HelpProviderHG.SetHelpNavigator(Me.btnCancelar, System.Windows.Forms.HelpNavigator.Topic)
         Me.btnCancelar.Location = New System.Drawing.Point(807, 476)
         Me.btnCancelar.Name = "btnCancelar"
+        Me.HelpProviderHG.SetShowHelp(Me.btnCancelar, True)
         Me.btnCancelar.Size = New System.Drawing.Size(127, 27)
         Me.btnCancelar.TabIndex = 31
         Me.btnCancelar.Text = "&Cancelar"
@@ -100,8 +119,11 @@ Partial Class FormBitacora
         '
         'btnExportar
         '
+        Me.HelpProviderHG.SetHelpKeyword(Me.btnExportar, "FormBitacora.htm#btnExportar")
+        Me.HelpProviderHG.SetHelpNavigator(Me.btnExportar, System.Windows.Forms.HelpNavigator.Topic)
         Me.btnExportar.Location = New System.Drawing.Point(648, 476)
         Me.btnExportar.Name = "btnExportar"
+        Me.HelpProviderHG.SetShowHelp(Me.btnExportar, True)
         Me.btnExportar.Size = New System.Drawing.Size(127, 27)
         Me.btnExportar.TabIndex = 32
         Me.btnExportar.Text = "&Exportar"
@@ -109,8 +131,11 @@ Partial Class FormBitacora
         '
         'btnbuscar
         '
+        Me.HelpProviderHG.SetHelpKeyword(Me.btnbuscar, "FormBitacora.htm#btnbuscar")
+        Me.HelpProviderHG.SetHelpNavigator(Me.btnbuscar, System.Windows.Forms.HelpNavigator.Topic)
         Me.btnbuscar.Location = New System.Drawing.Point(302, 476)
         Me.btnbuscar.Name = "btnbuscar"
+        Me.HelpProviderHG.SetShowHelp(Me.btnbuscar, True)
         Me.btnbuscar.Size = New System.Drawing.Size(127, 27)
         Me.btnbuscar.TabIndex = 33
         Me.btnbuscar.Text = "&Buscar"
@@ -159,10 +184,13 @@ Partial Class FormBitacora
         Me.dgBitacora.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgBitacora.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgBitacora.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.usuario, Me.descripcion, Me.fecha_hora, Me.Criticidad})
+        Me.HelpProviderHG.SetHelpKeyword(Me.dgBitacora, "FormBitacora.htm#dgBitacora")
+        Me.HelpProviderHG.SetHelpNavigator(Me.dgBitacora, System.Windows.Forms.HelpNavigator.Topic)
         Me.dgBitacora.Location = New System.Drawing.Point(68, 106)
         Me.dgBitacora.Name = "dgBitacora"
         Me.dgBitacora.ReadOnly = True
         Me.dgBitacora.RowHeadersVisible = False
+        Me.HelpProviderHG.SetShowHelp(Me.dgBitacora, True)
         Me.dgBitacora.Size = New System.Drawing.Size(866, 348)
         Me.dgBitacora.TabIndex = 43
         '
@@ -211,8 +239,11 @@ Partial Class FormBitacora
         'Button2
         '
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!)
+        Me.HelpProviderHG.SetHelpKeyword(Me.Button2, "FormBitacora.htm#Button2")
+        Me.HelpProviderHG.SetHelpNavigator(Me.Button2, System.Windows.Forms.HelpNavigator.Topic)
         Me.Button2.Location = New System.Drawing.Point(183, 509)
         Me.Button2.Name = "Button2"
+        Me.HelpProviderHG.SetShowHelp(Me.Button2, True)
         Me.Button2.Size = New System.Drawing.Size(97, 27)
         Me.Button2.TabIndex = 139
         Me.Button2.Text = "Descendente"
@@ -221,12 +252,19 @@ Partial Class FormBitacora
         'Button3
         '
         Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.Button3, "FormBitacora.htm#Button3")
+        Me.HelpProviderHG.SetHelpNavigator(Me.Button3, System.Windows.Forms.HelpNavigator.Topic)
         Me.Button3.Location = New System.Drawing.Point(183, 476)
         Me.Button3.Name = "Button3"
+        Me.HelpProviderHG.SetShowHelp(Me.Button3, True)
         Me.Button3.Size = New System.Drawing.Size(97, 27)
         Me.Button3.TabIndex = 138
         Me.Button3.Text = "Ascendente"
         Me.Button3.UseVisualStyleBackColor = True
+        '
+        'HelpProviderHG
+        '
+        Me.HelpProviderHG.HelpNamespace = "MiProyecto.chm"
         '
         'FormBitacora
         '
@@ -249,7 +287,10 @@ Partial Class FormBitacora
         Me.Controls.Add(Me.lblUsuario)
         Me.Controls.Add(Me.lblFechaDesde)
         Me.Controls.Add(Me.lblFechaHasta)
+        Me.HelpProviderHG.SetHelpKeyword(Me, "FormBitacora.htm")
+        Me.HelpProviderHG.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.Topic)
         Me.Name = "FormBitacora"
+        Me.HelpProviderHG.SetShowHelp(Me, True)
         Me.Text = "FormBitacora"
         CType(Me.dgBitacora, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -277,4 +318,5 @@ Partial Class FormBitacora
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents HelpProviderHG As System.Windows.Forms.HelpProvider
 End Class

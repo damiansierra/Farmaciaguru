@@ -42,6 +42,7 @@ Partial Class FormVentas
         Me.Label1 = New System.Windows.Forms.Label()
         Me.txtFechaHora = New System.Windows.Forms.TextBox()
         Me.txtNroVenta = New System.Windows.Forms.TextBox()
+        Me.HelpProviderHG = New System.Windows.Forms.HelpProvider()
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.dgMedicamentosPorVenta, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -49,11 +50,14 @@ Partial Class FormVentas
         'txtCantidad
         '
         Me.txtCantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.txtCantidad, "FormVentas.htm#txtCantidad")
+        Me.HelpProviderHG.SetHelpNavigator(Me.txtCantidad, System.Windows.Forms.HelpNavigator.Topic)
         Me.txtCantidad.Location = New System.Drawing.Point(506, 51)
         Me.txtCantidad.Margin = New System.Windows.Forms.Padding(2)
         Me.txtCantidad.Maximum = New Decimal(New Integer() {32767, 0, 0, 0})
         Me.txtCantidad.Minimum = New Decimal(New Integer() {1, 0, 0, 0})
         Me.txtCantidad.Name = "txtCantidad"
+        Me.HelpProviderHG.SetShowHelp(Me.txtCantidad, True)
         Me.txtCantidad.Size = New System.Drawing.Size(90, 24)
         Me.txtCantidad.TabIndex = 140
         Me.txtCantidad.Value = New Decimal(New Integer() {1, 0, 0, 0})
@@ -62,10 +66,13 @@ Partial Class FormVentas
         '
         Me.txtImporteTotal.Enabled = False
         Me.txtImporteTotal.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.txtImporteTotal, "FormVentas.htm#Label9")
+        Me.HelpProviderHG.SetHelpNavigator(Me.txtImporteTotal, System.Windows.Forms.HelpNavigator.Topic)
         Me.txtImporteTotal.Location = New System.Drawing.Point(473, 482)
         Me.txtImporteTotal.Margin = New System.Windows.Forms.Padding(2)
         Me.txtImporteTotal.Name = "txtImporteTotal"
         Me.txtImporteTotal.ReadOnly = True
+        Me.HelpProviderHG.SetShowHelp(Me.txtImporteTotal, True)
         Me.txtImporteTotal.Size = New System.Drawing.Size(127, 24)
         Me.txtImporteTotal.TabIndex = 139
         Me.txtImporteTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -87,10 +94,13 @@ Partial Class FormVentas
         Me.dgMedicamentosPorVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dgMedicamentosPorVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgMedicamentosPorVenta.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.idrenglon, Me.Nombre, Me.Cantidad, Me.Precio})
+        Me.HelpProviderHG.SetHelpKeyword(Me.dgMedicamentosPorVenta, "FormVentas.htm#dgMedicamentosPorVenta")
+        Me.HelpProviderHG.SetHelpNavigator(Me.dgMedicamentosPorVenta, System.Windows.Forms.HelpNavigator.Topic)
         Me.dgMedicamentosPorVenta.Location = New System.Drawing.Point(54, 152)
         Me.dgMedicamentosPorVenta.Name = "dgMedicamentosPorVenta"
         Me.dgMedicamentosPorVenta.ReadOnly = True
         Me.dgMedicamentosPorVenta.RowHeadersVisible = False
+        Me.HelpProviderHG.SetShowHelp(Me.dgMedicamentosPorVenta, True)
         Me.dgMedicamentosPorVenta.Size = New System.Drawing.Size(546, 325)
         Me.dgMedicamentosPorVenta.TabIndex = 137
         '
@@ -121,8 +131,11 @@ Partial Class FormVentas
         'btnAceptar
         '
         Me.btnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.btnAceptar, "FormVentas.htm#btnAceptar")
+        Me.HelpProviderHG.SetHelpNavigator(Me.btnAceptar, System.Windows.Forms.HelpNavigator.Topic)
         Me.btnAceptar.Location = New System.Drawing.Point(473, 521)
         Me.btnAceptar.Name = "btnAceptar"
+        Me.HelpProviderHG.SetShowHelp(Me.btnAceptar, True)
         Me.btnAceptar.Size = New System.Drawing.Size(127, 27)
         Me.btnAceptar.TabIndex = 133
         Me.btnAceptar.Text = "&Aceptar"
@@ -130,8 +143,11 @@ Partial Class FormVentas
         'btnAgregarMedicamento
         '
         Me.btnAgregarMedicamento.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.btnAgregarMedicamento, "FormVentas.htm#btnAgregarMedicamento")
+        Me.HelpProviderHG.SetHelpNavigator(Me.btnAgregarMedicamento, System.Windows.Forms.HelpNavigator.Topic)
         Me.btnAgregarMedicamento.Location = New System.Drawing.Point(473, 96)
         Me.btnAgregarMedicamento.Name = "btnAgregarMedicamento"
+        Me.HelpProviderHG.SetShowHelp(Me.btnAgregarMedicamento, True)
         Me.btnAgregarMedicamento.Size = New System.Drawing.Size(123, 27)
         Me.btnAgregarMedicamento.TabIndex = 131
         Me.btnAgregarMedicamento.Text = "Agregar"
@@ -172,8 +188,11 @@ Partial Class FormVentas
         Me.cmbMedicamento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbMedicamento.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbMedicamento.FormattingEnabled = True
+        Me.HelpProviderHG.SetHelpKeyword(Me.cmbMedicamento, "FormVentas.htm#Label3")
+        Me.HelpProviderHG.SetHelpNavigator(Me.cmbMedicamento, System.Windows.Forms.HelpNavigator.Topic)
         Me.cmbMedicamento.Location = New System.Drawing.Point(124, 48)
         Me.cmbMedicamento.Name = "cmbMedicamento"
+        Me.HelpProviderHG.SetShowHelp(Me.cmbMedicamento, True)
         Me.cmbMedicamento.Size = New System.Drawing.Size(225, 26)
         Me.cmbMedicamento.TabIndex = 122
         '
@@ -181,9 +200,12 @@ Partial Class FormVentas
         '
         Me.txtPrecioLista.Enabled = False
         Me.txtPrecioLista.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.txtPrecioLista, "FormVentas.htm#Label5")
+        Me.HelpProviderHG.SetHelpNavigator(Me.txtPrecioLista, System.Windows.Forms.HelpNavigator.Topic)
         Me.txtPrecioLista.Location = New System.Drawing.Point(238, 82)
         Me.txtPrecioLista.Name = "txtPrecioLista"
         Me.txtPrecioLista.ReadOnly = True
+        Me.HelpProviderHG.SetShowHelp(Me.txtPrecioLista, True)
         Me.txtPrecioLista.Size = New System.Drawing.Size(111, 24)
         Me.txtPrecioLista.TabIndex = 141
         Me.txtPrecioLista.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -192,9 +214,12 @@ Partial Class FormVentas
         '
         Me.txtDisponible.Enabled = False
         Me.txtDisponible.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.txtDisponible, "FormVentas.htm#Label8")
+        Me.HelpProviderHG.SetHelpNavigator(Me.txtDisponible, System.Windows.Forms.HelpNavigator.Topic)
         Me.txtDisponible.Location = New System.Drawing.Point(238, 114)
         Me.txtDisponible.Name = "txtDisponible"
         Me.txtDisponible.ReadOnly = True
+        Me.HelpProviderHG.SetShowHelp(Me.txtDisponible, True)
         Me.txtDisponible.Size = New System.Drawing.Size(111, 24)
         Me.txtDisponible.TabIndex = 143
         Me.txtDisponible.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -223,9 +248,12 @@ Partial Class FormVentas
         '
         Me.txtFechaHora.Enabled = False
         Me.txtFechaHora.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.txtFechaHora, "FormVentas.htm#txtFechaHora")
+        Me.HelpProviderHG.SetHelpNavigator(Me.txtFechaHora, System.Windows.Forms.HelpNavigator.Topic)
         Me.txtFechaHora.Location = New System.Drawing.Point(206, 483)
         Me.txtFechaHora.Name = "txtFechaHora"
         Me.txtFechaHora.ReadOnly = True
+        Me.HelpProviderHG.SetShowHelp(Me.txtFechaHora, True)
         Me.txtFechaHora.Size = New System.Drawing.Size(163, 24)
         Me.txtFechaHora.TabIndex = 144
         '
@@ -233,11 +261,18 @@ Partial Class FormVentas
         '
         Me.txtNroVenta.Enabled = False
         Me.txtNroVenta.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.HelpProviderHG.SetHelpKeyword(Me.txtNroVenta, "FormVentas.htm#Label1")
+        Me.HelpProviderHG.SetHelpNavigator(Me.txtNroVenta, System.Windows.Forms.HelpNavigator.Topic)
         Me.txtNroVenta.Location = New System.Drawing.Point(111, 484)
         Me.txtNroVenta.Name = "txtNroVenta"
         Me.txtNroVenta.ReadOnly = True
+        Me.HelpProviderHG.SetShowHelp(Me.txtNroVenta, True)
         Me.txtNroVenta.Size = New System.Drawing.Size(89, 24)
         Me.txtNroVenta.TabIndex = 145
+        '
+        'HelpProviderHG
+        '
+        Me.HelpProviderHG.HelpNamespace = "MiProyecto.chm"
         '
         'FormVentas
         '
@@ -260,7 +295,10 @@ Partial Class FormVentas
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.cmbMedicamento)
+        Me.HelpProviderHG.SetHelpKeyword(Me, "FormVentas.htm")
+        Me.HelpProviderHG.SetHelpNavigator(Me, System.Windows.Forms.HelpNavigator.Topic)
         Me.Name = "FormVentas"
+        Me.HelpProviderHG.SetShowHelp(Me, True)
         Me.Text = "FormVentas"
         CType(Me.txtCantidad, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.dgMedicamentosPorVenta, System.ComponentModel.ISupportInitialize).EndInit()
@@ -288,4 +326,5 @@ Partial Class FormVentas
     Friend WithEvents Nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Cantidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Precio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents HelpProviderHG As System.Windows.Forms.HelpProvider
 End Class

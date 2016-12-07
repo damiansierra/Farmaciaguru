@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form Name="FormUsuario" Text="FormUsuario" WindowSize="361, 276" ClientAreaOffset="8, 31" BorderStyle="2" HasMap="True" PicFileName="images\FormUsuario.png" HtmlFileName="FormUsuario.htm" SourceProjectType="VB.NET" SourceProjectName="UI" OriginalClassName="VB.NET" HWND="264550">
+  <Body>
+    <Controls>
+      <Label Name="Label1" Caption="Nick" Bookmark="Label1" Description="" ClassName="Label" TabIndex="0" HotSpot="63,91,102,111" />
+      <Label Name="Label2" Caption="Nombre" Bookmark="Label2" Description="" ClassName="Label" TabIndex="1" HotSpot="63,130,128,150" />
+      <Label Name="Label3" Caption="Apellido" Bookmark="Label3" Description="" ClassName="Label" TabIndex="2" HotSpot="63,165,128,185" />
+      <TextBox Name="TxtNick" Caption="Nick" Bookmark="Label1" Description="" ClassName="TextBox" TabIndex="5" HotSpot="169,91,318,111" />
+      <TextBox Name="TxtNombre" Caption="Nombre" Bookmark="Label2" Description="" ClassName="TextBox" TabIndex="6" HotSpot="169,130,318,150" />
+      <TextBox Name="TxtApellido" Caption="Apellido" Bookmark="Label3" Description="" ClassName="TextBox" TabIndex="7" HotSpot="169,165,318,185" />
+      <Button Name="btnAceptar" Caption="Aceptar" Bookmark="btnAceptar" Description="" ClassName="Button" TabIndex="9" HotSpot="243,216,318,239" />
+    </Controls>
+  </Body>
+</Form>

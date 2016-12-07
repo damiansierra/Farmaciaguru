@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Form Name="FormUsuarioEliminar" Text="FormUsuarioEliminar" WindowSize="431, 290" ClientAreaOffset="8, 31" BorderStyle="2" HasMap="True" PicFileName="images\FormUsuarioEliminar.png" HtmlFileName="FormUsuarioEliminar.htm" SourceProjectType="VB.NET" SourceProjectName="UI" OriginalClassName="VB.NET" HWND="923038">
+  <Body>
+    <Controls>
+      <ComboBox Name="COMBOUSER" Caption="Usuario" Bookmark="Label1" Description="" ClassName="ComboBox" TabIndex="0" HotSpot="172,112,345,140" />
+      <Label Name="Label1" Caption="Usuario" Bookmark="Label1" Description="" ClassName="Label" TabIndex="1" HotSpot="74,115,138,135" />
+      <Button Name="Button1" Caption="Eliminar" Bookmark="Button1" Description="" ClassName="Button" TabIndex="2" HotSpot="240,204,345,242" />
+    </Controls>
+  </Body>
+</Form>

@@ -2,6 +2,7 @@
 
 
     Dim MenuUI As UI.FormInicio
+    Dim ven As New List(Of BE.Ticket)
 
 
     Private Sub frmVentas_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -47,6 +48,7 @@
 
 
 
+
         Dim TotalImporte As Double
         dgVentas.Rows.Clear()
         Dim fechaDesde = New DateTime(dtpFechaDesde.Value.Year, dtpFechaDesde.Value.Month, dtpFechaDesde.Value.Day, 0, 0, 0)
@@ -64,6 +66,8 @@
             dgVentas.Rows.Item(n).Cells("Total").Value = item.totalventa
             TotalImporte = 0
         Next
+        ven = Ventas
+
         Return Ventas
     End Function
 
@@ -84,8 +88,13 @@
 
 
     Private Sub btnExportar_Click(sender As Object, e As EventArgs) Handles btnExportar.Click
-        '      Dim VentasReporteUI As New UI.frmVentasReporte(ListarVentas(), "Reporte de Ventas desde " + dtpFechaDesde.Value.Day.ToString + "/" + dtpFechaDesde.Value.Month.ToString + "/" + dtpFechaDesde.Value.Year.ToString + " hasta " + dtpFechaHasta.Value.Day.ToString + "/" + dtpFechaHasta.Value.Month.ToString + "/" + dtpFechaHasta.Value.Year.ToString)
-        '    VentasReporteUI.Show()
+        Try
+            Dim rep_bit As New UI.Form1(ven)
+            rep_bit.ShowDialog()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+
     End Sub
 
 

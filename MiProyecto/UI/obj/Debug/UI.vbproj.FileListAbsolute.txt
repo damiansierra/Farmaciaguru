@@ -127,3 +127,8 @@ F:\ultimo\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.vbproj.GenerateResource.Cache
 F:\ultimo\Farmaciaguru\MiProyecto\UI\obj\Debug\RdlCompile.cache
 F:\ultimo\Farmaciaguru\MiProyecto\UI\obj\Debug\RdlCompile.compiled
 F:\ultimo\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.exe
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormConexion.resources
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.FormReporteBit.resources
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\RdlCompile.cache
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\RdlCompile.compiled
+D:\Mis Documentos\GitHub\Farmaciaguru\MiProyecto\UI\obj\Debug\UI.Form1.resources

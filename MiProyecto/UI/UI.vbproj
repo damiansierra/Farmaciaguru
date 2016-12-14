@@ -76,6 +76,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FormaFamiliaAlta.Designer.vb">
       <DependentUpon>FormaFamiliaAlta.vb</DependentUpon>
     </Compile>
@@ -98,6 +104,12 @@
       <DependentUpon>FormBitacora.vb</DependentUpon>
     </Compile>
     <Compile Include="FormBitacora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConexion.Designer.vb">
+      <DependentUpon>FormConexion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormConexion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormFamiliaBaja.Designer.vb">
@@ -195,6 +207,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormaFamiliaAlta.resx">
       <DependentUpon>FormaFamiliaAlta.vb</DependentUpon>
     </EmbeddedResource>
@@ -206,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormBitacora.resx">
       <DependentUpon>FormBitacora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConexion.resx">
+      <DependentUpon>FormConexion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFamiliaBaja.resx">
       <DependentUpon>FormFamiliaBaja.vb</DependentUpon>
@@ -253,9 +271,11 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="Report2.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="BE.Bitacora.datasource" />
+    <None Include="BE.Ticket.datasource" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>

@@ -10,9 +10,6 @@ Public Class Seguridad
     Private Const key As String = "Pa$$word"
 
 
-
-
-
     Public Shared Function DesEncriptar(ByVal pPalabraEncriptada As String) As String
 
         Dim bytesADescencriptar As Byte() = Convert.FromBase64String(pPalabraEncriptada)

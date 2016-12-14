@@ -1,9 +1,9 @@
 ﻿Public Class RenglonTicket
 
-    Public idrenglon As Integer
-    Public ticket As BE.Ticket
-    Public producto As BE.Producto
-    Public cantidad As String
-    Public precio_historico As String
+    Public Property idrenglon As Integer
+    Public Property ticket As BE.Ticket
+    Public Property producto As BE.Producto
+    Public Property cantidad As String
+    Public Property precio_historico As String
 
 End Class

@@ -89,6 +89,7 @@
     <Compile Include="PatenteBLL.vb" />
     <Compile Include="Producto.vb" />
     <Compile Include="Ticket.vb" />
+    <Compile Include="Ultimo.vb" />
     <Compile Include="Usuario.vb" />
   </ItemGroup>
   <ItemGroup>

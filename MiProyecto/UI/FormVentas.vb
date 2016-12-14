@@ -89,7 +89,7 @@
     Public Function ValidarStock() As Boolean
         Dim valido = True
         Dim cantStock As Integer = ObtenerMedicamento.stock
-        If cantStock < CInt(txtCantidad.Text) Then
+        If cantStock <= CInt(txtCantidad.Text) Then
             valido = False
             MsgBox("La cantidad solicitad es superior al stock disponible")
         End If

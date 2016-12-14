@@ -42,7 +42,7 @@
 
             Dim productos As New BE.Producto
 
-            Dim INSERT As String = "INSERT INTO  TICKET VALUES " & "('" & obj.idticket & "','" & obj.idusuario & "','" & obj.fechahora & "','" & obj.totalventa & "')"
+            Dim INSERT As String = "INSERT INTO  TICKET VALUES " & "('" & obj.idticket & "','" & obj.idusuario & "','" & Format(obj.fechahora, "yyyy-MM-dd") & "','" & obj.totalventa & "')"
             DAL.Conexion.GetInstance.Escribir(INSERT)
           
 

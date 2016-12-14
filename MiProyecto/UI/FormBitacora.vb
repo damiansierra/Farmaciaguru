@@ -1,6 +1,6 @@
 ﻿Public Class FormBitacora
 
-  
+    Dim BitacorasBE2 As New List(Of BE.Bitacora)
 
     Dim MenuUI As UI.FormInicio
     ' Dim TraduccionBLL As BLL.Traduccion
@@ -29,6 +29,7 @@
             dgBitacora.Rows.Item(n).Cells("Fecha_Hora").Value = BitacorasBE.FechaHora.ToString("yyyy/MM/dd HH:mm:ss")
             dgBitacora.Rows.Item(n).Cells("Criticidad").Value = BitacorasBE.criticidad
         Next
+        BitacorasBE2 = bitacoras
         Return bitacoras
     End Function
 
@@ -116,6 +117,8 @@
         Try
             '      Dim bitacoraReporte As New UI.frmBitacoraReporte(ListarBitacoras, "Reporte de Bitacoras ")
             '      bitacoraReporte.Show()
+            Dim rep_bit As New UI.FormReporteBit(BitacorasBE2)
+            rep_bit.ShowDialog()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

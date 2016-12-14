@@ -46,6 +46,8 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="SevenZipSharp">
       <HintPath>..\SevenZipSharp.dll</HintPath>
     </Reference>
@@ -53,6 +55,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -125,6 +128,12 @@
       <DependentUpon>FormPatente.vb</DependentUpon>
     </Compile>
     <Compile Include="FormPatente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReporteBit.Designer.vb">
+      <DependentUpon>FormReporteBit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormReporteBit.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormRestore.Designer.vb">
@@ -213,6 +222,9 @@
     <EmbeddedResource Include="FormPatente.resx">
       <DependentUpon>FormPatente.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormReporteBit.resx">
+      <DependentUpon>FormReporteBit.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormRestore.resx">
       <DependentUpon>FormRestore.vb</DependentUpon>
     </EmbeddedResource>
@@ -240,8 +252,10 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Report1.rdlc" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="BE.Bitacora.datasource" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
